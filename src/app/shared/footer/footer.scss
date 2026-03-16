@@ -1,0 +1,20 @@
+.app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 24px;
+    background-color: #F5F0E4;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+    z-index: 10;
+}
+
+.footer-message {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: #62501f;
+    opacity: 1;
+    margin: 0;
+    text-align: center;
+}

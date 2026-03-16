@@ -1,0 +1,66 @@
+.navbar {
+  background-color: #EDE5CC;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.header-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.header-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #2C1F0E;
+}
+
+.client-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+}
+
+.client-number {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2C1F0E;
+}
+
+.header-cart {
+  width: 34px;
+  height: 34px;
+  background-color: #FDFAF4;
+  border: 1px solid #E8DFC8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-badge {
+  top: -5px;
+  right: -5px;
+  background-color: #C9A84C;
+  color: #FDFAF4;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 700;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon {
+  font-size: 0.95rem;
+  font-style: normal;
+}
