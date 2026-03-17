@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "BRAND": "PRIMECUTS",
+    "WELCOME": "WELCOME",
+    "CLIENT": "Client #"
+  },
+  "LANGUAGE": {
+    "TITLE": "Choose your language",
+    "SUBTITLE": "Please select your language",
+    "SCREEN_LABEL": "01 / LANGUAGE",
+    "FOOTER": "Tap to select",
+    "FRENCH": "French",
+    "ARABIC": "Arabic",
+    "ENGLISH": "English"
+  },
+  "WELCOME": {
+    "TITLE": "Welcome!",
+    "DESCRIPTION": "Welcome to PRIMECUTS, your premium butchery.",
+    "BTN_START": "START"
+  },
+  "CATALOG": {
+    "TITLE": "Our Meats",
+    "FOOTER": "Select a meat"
+  }
+}

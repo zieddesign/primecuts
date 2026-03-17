@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "BRAND": "PRIMECUTS",
+    "WELCOME": "BIENVENUE",
+    "CLIENT": "Client #"
+  },
+  "LANGUAGE": {
+    "TITLE": "Choisissez votre langue",
+    "SUBTITLE": "Veuillez sélectionner votre langue",
+    "SCREEN_LABEL": "01 / LANGUE",
+    "FOOTER": "Touchez pour sélectionner",
+    "FRENCH": "Français",
+    "ARABIC": "العربية",
+    "ENGLISH": "English"
+  },
+  "WELCOME": {
+    "TITLE": "Bienvenue !",
+    "DESCRIPTION": "Bienvenue chez PRIMECUTS, votre boucherie de prestige.",
+    "BTN_START": "COMMENCER"
+  },
+  "CATALOG": {
+    "TITLE": "Nos Viandes",
+    "FOOTER": "Sélectionnez une viande"
+  }
+}
