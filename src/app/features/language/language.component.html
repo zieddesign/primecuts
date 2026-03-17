@@ -1,0 +1,36 @@
+<div class="language-screen">
+
+  <app-header [clientNumber]="'247'" [cartCount]="0"></app-header>
+
+  <div class="language-content d-flex flex-column align-items-center">
+    <!-- Title -->
+<h2 class="lang-title text-center mb-1">{{ 'LANGUAGE.TITLE' | translate }}</h2>
+<p class="lang-subtitle mb-4">{{ 'LANGUAGE.SUBTITLE' | translate }}</p>
+
+    <!-- Language options -->
+    <div class="lang-list d-flex flex-column align-items-center gap-3 w-100">
+      @for (lang of languages; track lang.code) {
+        <button
+          class="lang-btn"
+          [class.selected]="selectedLang === lang.code"
+          (click)="selectLanguage(lang.code)">
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="lang-flag-wrapper">
+              <img [src]="lang.flag" [alt]="lang.code" class="lang-flag-img" />
+            </div>
+            <div class="d-flex flex-column">
+              <span class="lang-label">{{ lang.label }}</span>
+              <span class="lang-sublabel">{{ lang.sublabel }}</span>
+            </div>
+          </div>
+
+          <div class="lang-arrow"> <span>› </span> </div>
+
+        </button>
+      }
+    </div>
+
+  </div>
+<app-footer message="Touchez pour sélectionner · اضغط للاختيار · Tap to select"></app-footer>
+</div>

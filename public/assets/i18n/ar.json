@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "BRAND": "PRIMECUTS",
+    "WELCOME": "مرحباً",
+    "CLIENT": "العميل #"
+  },
+  "LANGUAGE": {
+    "TITLE": "اختر لغتك",
+    "SUBTITLE": "يرجى اختيار لغتك",
+    "SCREEN_LABEL": "01 / لغة",
+    "FOOTER": "المس للاختيار · Tap to select",
+    "FRENCH": "الفرنسية",
+    "ARABIC": "العربية",
+    "ENGLISH": "الإنجليزية"
+  },
+  "WELCOME": {
+    "TITLE": "مرحباً بك !",
+    "DESCRIPTION": "مرحباً بك في PRIMECUTS، ملحمتك الفاخرة. اكتشف تشكيلتنا من اللحوم المميزة.",
+    "BTN_START": "ابدأ الآن"
+  },
+  "CATALOG": {
+    "TITLE": "لحومنا",
+    "FOOTER": "اختر نوع اللحم"
+  }
+}
