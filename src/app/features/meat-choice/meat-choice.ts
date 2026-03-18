@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common'; // Ajoutez ceci
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 
 @Component({
@@ -25,6 +25,7 @@ export class MeatChoiceComponent implements OnInit {
   ];
 
   constructor(
+    private translate: TranslateService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
