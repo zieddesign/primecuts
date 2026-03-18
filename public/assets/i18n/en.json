@@ -35,5 +35,13 @@
     "CAMEL_SUB": "Camel",
     "CHEVRE": "GOAT",
     "CHEVRE_SUB": "Goat"
+  },
+  "POPUP": {
+    "NEW_ORDER": "NEW ORDER",
+    "WELCOME": "Welcome!",
+    "DESC": "Please enter your name to start your meat selection.",
+    "CLIENT_NAME": "CUSTOMER NAME",
+    "PLACEHOLDER": "Ex. Oussama Gaalich",
+    "START": "START"
   }
 }

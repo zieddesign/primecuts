@@ -47,12 +47,6 @@ export class MeatChoiceComponent implements OnInit {
     this.showPopup = false;
   }
 
-  startOrder(): void {
-    if (this.clientName.trim() && isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('clientName', this.clientName);
-      this.showPopup = false;
-    }
-  }
 
   selectMeat(code: string): void {
     this.router.navigate(['/selection', code]);

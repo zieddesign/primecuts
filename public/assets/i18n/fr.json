@@ -35,5 +35,13 @@
     "CAMEL_SUB": "CHAMEAU",
     "CHEVRE": "CHÈVRE",
     "CHEVRE_SUB": "CAPRIN"
+  },
+  "POPUP": {
+    "NEW_ORDER": "NOUVELLE COMMANDE",
+    "WELCOME": "Bienvenue !",
+    "DESC": "Veuillez entrer votre nom pour commencer votre sélection de viandes.",
+    "CLIENT_NAME": "NOM DU CLIENT",
+    "PLACEHOLDER": "Ex. Oussama Gaalich",
+    "START": "COMMENCER"
   }
 }

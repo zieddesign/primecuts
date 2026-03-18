@@ -1,73 +1,60 @@
 <div class="meat-screen">
-  <app-header [clientNumber]="'247'" [cartCount]="0"></app-header>
+    <app-header [clientNumber]="'247'" [cartCount]="0"></app-header>
 
-  <div class="meat-content">
-    <p class="screen-label">{{ 'MEAT.SCREEN_LABEL' | translate }}</p>
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <h2 class="meat-title">{{ 'MEAT.TITLE' | translate }}</h2>
-      <span class="meat-count">{{ 'MEAT.COUNT' | translate }}</span>
-    </div>
-
-    <div class="meat-grid">
-      @for (meat of meats; track meat.code) {
-        <div class="meat-card" (click)="selectMeat(meat.code)">
-          <div class="meat-card-image">
-            <img [src]="meat.image" [alt]="meat.code" class="meat-img" />
-          </div>
-          <div class="meat-card-footer">
-            <span class="meat-label">{{ meat.labelKey | translate }}</span>
-            <span class="meat-sublabel">{{ meat.sublabelKey | translate }}</span>
-          </div>
+    <div class="meat-content">
+        <p class="screen-label">{{ 'MEAT.SCREEN_LABEL' | translate }}</p>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="meat-title">{{ 'MEAT.TITLE' | translate }}</h2>
+            <span class="meat-count">{{ 'MEAT.COUNT' | translate }}</span>
         </div>
-      }
+
+        <div class="meat-grid">
+            @for (meat of meats; track meat.code) {
+            <div class="meat-card" (click)="selectMeat(meat.code)">
+                <div class="meat-card-image">
+                    <!-- <img [src]="meat.image" [alt]="meat.code" class="meat-img" /> -->
+                </div>
+                <div class="meat-card-footer">
+                    <span class="meat-label">{{ meat.labelKey | translate }}</span>
+                    <span class="meat-sublabel">{{ meat.sublabelKey | translate }}</span>
+                </div>
+            </div>
+            }
+        </div>
     </div>
-  </div>
 
-  <div class="boucher-btn d-flex align-items-center justify-content-center gap-2">
-    <span class="boucher-dot"></span>
-    <span class="boucher-label">{{ 'MEAT.BOUCHER' | translate }}</span>
-  </div>
+    <div class="boucher-btn d-flex align-items-center justify-content-center gap-2">
+        <span class="boucher-dot"></span>
+        <span class="boucher-label">{{ 'MEAT.BOUCHER' | translate }}</span>
+    </div>
 
-  @if (showPopup) {
+    @if (showPopup) {
     <div class="popup-overlay" (click)="closePopup()">
-      <div class="popup-card" (click)="$event.stopPropagation()">
+        <div class="popup-card" (click)="$event.stopPropagation()">
 
-        <div class="d-flex align-items-start justify-content-between mb-3">
-          <div>
-            <p class="popup-label">NOUVELLE COMMANDE</p>
-            <h3 class="popup-title">Bienvenue !</h3>
-          </div>
-          <img src="assets/images/logo-bull.svg" alt="PrimeCuts" class="popup-logo" />
+            <div class="d-flex align-items-start justify-content-between mb-3">
+                <div>
+                    <p class="popup-label">{{ 'POPUP.NEW_ORDER' | translate }}</p>
+                    <h3 class="popup-title">{{ 'POPUP.WELCOME' | translate }}</h3>
+                </div>
+                <img src="assets/images/logo-bull.svg" alt="PrimeCuts" class="popup-logo" />
+            </div>
+
+            <p class="popup-desc">{{ 'POPUP.DESC' | translate }}</p>
+
+            <label class="popup-input-label">{{ 'POPUP.CLIENT_NAME' | translate }}</label>
+            <input type="text" class="popup-input form-control" [placeholder]="'POPUP.PLACEHOLDER' | translate"
+                [(ngModel)]="clientName" autofocus />
+
+            <div class="d-flex justify-content-center my-3">
+                <span class="popup-dot"></span>
+            </div>
+
+            <button class="btn-commencer w-100" (click)="showPopup = false">
+                ▶ {{ 'POPUP.START' | translate }}
+            </button>
+
         </div>
-
-        <p class="popup-desc">Veuillez entrer votre nom pour commencer votre sélection de viandes.</p>
-
-        <label class="popup-input-label">NOM DU CLIENT</label>
-        <input
-          type="text"
-          class="popup-input form-control"
-          placeholder="Ex. Oussama Gaalich"
-          [(ngModel)]="clientName"
-          (keyup.enter)="startOrder()"
-          autofocus
-        />
-
-        <div class="d-flex justify-content-center my-3">
-          <span class="popup-dot"></span>
-        </div>
-
-        <button 
-          class="btn-commencer w-100" 
-          [disabled]="!clientName.trim()"
-          (click)="startOrder()">
-          ▶ COMMENCER
-        </button>
-
-        <button class="btn-skip w-100 mt-2" (click)="closePopup()">
-          Continuer sans nom
-        </button>
-
-      </div>
     </div>
-  }
+    }
 </div>
