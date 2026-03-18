@@ -8,18 +8,32 @@
     "TITLE": "اختر لغتك",
     "SUBTITLE": "يرجى اختيار لغتك",
     "SCREEN_LABEL": "01 / لغة",
-    "FOOTER": "المس للاختيار · Tap to select",
+    "FOOTER": "المس للاختيار",
     "FRENCH": "الفرنسية",
     "ARABIC": "العربية",
     "ENGLISH": "الإنجليزية"
   },
   "WELCOME": {
     "TITLE": "مرحباً بك !",
-    "DESCRIPTION": "مرحباً بك في PRIMECUTS، ملحمتك الفاخرة. اكتشف تشكيلتنا من اللحوم المميزة.",
+    "DESCRIPTION": "مرحباً بك في PRIMECUTS، ملحمتك الفاخرة.",
     "BTN_START": "ابدأ الآن"
   },
   "CATALOG": {
     "TITLE": "لحومنا",
     "FOOTER": "اختر نوع اللحم"
+  },
+  "MEAT": {
+    "SCREEN_LABEL": "03 · اختيار اللحم",
+    "TITLE": "لحومنا",
+    "COUNT": "4 أصناف",
+    "BOUCHER": "نصيحة الجزار",
+    "BEEF": "بقري",
+    "BEEF_SUB": "لحم البقر",
+    "AGNEAU": "خروف",
+    "AGNEAU_SUB": "لحم الضأن",
+    "CAMEL": "جمل",
+    "CAMEL_SUB": "لحم الإبل",
+    "CHEVRE": "ماعز",
+    "CHEVRE_SUB": "لحم الماعز"
   }
 }

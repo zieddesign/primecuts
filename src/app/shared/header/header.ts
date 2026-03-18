@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrls: ['./header.scss']
 })
 export class HeaderComponent {
   @Input() clientNumber: string = '247';

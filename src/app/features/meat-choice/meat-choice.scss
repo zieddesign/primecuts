@@ -1,0 +1,249 @@
+.meat-screen {
+  background-color: #F5F0E4;
+  min-height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.meat-content {
+  padding: 20px 16px;
+  flex: 1;
+}
+
+.screen-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.meat-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2C1F0E;
+  margin: 0;
+}
+
+.meat-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #9A8A6A;
+}
+
+.meat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.meat-card {
+  background-color: #FDFAF4;
+  border: 1px solid #E8DFC8;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: #C9A84C;
+    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.15);
+  }
+}
+
+.meat-card-image {
+  flex: 1;
+  min-height: 160px;
+  background-color: #F5F0E4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.meat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meat-card-footer {
+  padding: 10px 12px;
+  border-top: 1px solid #E8DFC8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #2C1F0E;
+}
+
+.meat-sublabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: #9A8A6A;
+  margin-top: 2px;
+}
+
+.boucher-btn {
+  padding: 16px;
+  border-top: 1px solid #E8DFC8;
+  cursor: pointer;
+  background-color: #F5F0E4;
+
+  &:hover .boucher-label {
+    color: #C9A84C;
+  }
+}
+
+.boucher-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid #C9A84C;
+  display: inline-block;
+}
+
+.boucher-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: #9A8A6A;
+  transition: color 0.2s ease;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.popup-card {
+  background-color: #FDFAF4;
+  border: 1px solid #E8DFC8;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.popup-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.popup-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.popup-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2C1F0E;
+  margin: 4px 0 0;
+}
+
+.popup-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: #9A8A6A;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.popup-input-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.popup-input {
+  background-color: #F5F0E4;
+  border: 1px solid #E8DFC8;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #2C1F0E;
+  padding: 10px 14px;
+
+  &::placeholder {
+    color: #C4B89A;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 1px #C9A84C;
+    background-color: #FDFAF4;
+  }
+}
+
+.popup-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #C9A84C;
+  display: inline-block;
+}
+
+.btn-commencer {
+  background-color: #C9A84C;
+  color: #FDFAF4;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #B8973E;
+  }
+}
+
+.btn-skip {
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  color: #9A8A6A;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: #C9A84C;
+  }
+}

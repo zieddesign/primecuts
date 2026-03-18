@@ -21,5 +21,19 @@
   "CATALOG": {
     "TITLE": "Nos Viandes",
     "FOOTER": "Sélectionnez une viande"
+  },
+  "MEAT": {
+    "SCREEN_LABEL": "03 · CHOIX DE VIANDE",
+    "TITLE": "Nos Viandes",
+    "COUNT": "4 catégories",
+    "BOUCHER": "CONSEIL DU BOUCHER",
+    "BEEF": "BEEF",
+    "BEEF_SUB": "BŒUF",
+    "AGNEAU": "AGNEAU",
+    "AGNEAU_SUB": "MOUTON",
+    "CAMEL": "CAMEL",
+    "CAMEL_SUB": "CHAMEAU",
+    "CHEVRE": "CHÈVRE",
+    "CHEVRE_SUB": "CAPRIN"
   }
 }

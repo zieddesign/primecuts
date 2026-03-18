@@ -21,5 +21,19 @@
   "CATALOG": {
     "TITLE": "Our Meats",
     "FOOTER": "Select a meat"
+  },
+  "MEAT": {
+    "SCREEN_LABEL": "03 · MEAT CHOICE",
+    "TITLE": "Our Meats",
+    "COUNT": "4 categories",
+    "BOUCHER": "BUTCHER'S ADVICE",
+    "BEEF": "BEEF",
+    "BEEF_SUB": "Cattle",
+    "AGNEAU": "LAMB",
+    "AGNEAU_SUB": "Sheep",
+    "CAMEL": "CAMEL",
+    "CAMEL_SUB": "Camel",
+    "CHEVRE": "GOAT",
+    "CHEVRE_SUB": "Goat"
   }
 }

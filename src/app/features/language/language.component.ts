@@ -9,7 +9,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, HeaderComponent, FooterComponent, TranslateModule],
   templateUrl: './language.component.html',
-  styleUrl: './language.component.scss'
+  styleUrls: ['./language.component.scss']
 })
 export class LanguageComponent {
 
@@ -25,12 +25,11 @@ export class LanguageComponent {
     private translate: TranslateService
   ) { }
 
-  selectLanguage(code: string): void {
-    this.selectedLang = code;
-    this.translate.use(code);
-    localStorage.setItem('lang', code);
-    setTimeout(() => {
-      this.router.navigate(['/welcome']);
-    }, 300);
-  }
+selectLanguage(code: string): void {
+  this.selectedLang = code;
+  this.translate.use(code);
+  localStorage.setItem('lang', code);
+  localStorage.setItem('showWelcomePopup', 'true');
+  this.router.navigate(['/meat-choice']);
+}
 }

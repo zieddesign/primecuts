@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Language } from './language';
+import { MeatChoiceComponent } from './meat-choice';
 
-describe('Language', () => {
-  let component: Language;
-  let fixture: ComponentFixture<Language>;
+describe('MeatChoiceComponent', () => {
+  let component: MeatChoiceComponent;
+  let fixture: ComponentFixture<MeatChoiceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Language],
+      imports: [MeatChoiceComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Language);
+    fixture = TestBed.createComponent(MeatChoiceComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
