@@ -43,5 +43,37 @@
     "CLIENT_NAME": "CUSTOMER NAME",
     "PLACEHOLDER": "Ex. Oussama Gaalich",
     "START": "START"
+  },
+  "SELECTION": {
+    "WELCOME": "WELCOME",
+    "CLIENT": "Client #247",
+    "TOUCH_HINT": "Touch a zone on the animal to select your cut",
+    "CUTS_LABEL": "AVAILABLE CUTS",
+    "TYPE_STEAK": "⊙ STEAK TYPE",
+    "CUISSON": "COOKING",
+    "TENEUR_GRAS": "% FAT CONTENT",
+    "SAVEUR": "⊙ FLAVOR",
+    "PREV": "‹ PREV",
+    "CONSEIL": "⊙ ADVICE",
+    "NEXT": "NEXT ›"
+  },
+  "CUTS": {
+    "ENTRECOTE": "Entrecôte",
+    "FILET": "Filet",
+    "BAVETTE": "Bavette",
+    "EPAULE": "Shoulder",
+    "RUMSTEAK": "Rumpsteak",
+    "RIBEYE": "RIBEYE"
+  },
+  "DETAILS": {
+    "TYPE_ENTRECOTE": "Entrecôte",
+    "CUISSON_SAIGNANT": "Rare",
+    "GRAS_ELEVEE": "High",
+    "SAVEUR_PERSILLEE": "Marbled"
+  },
+  "CART": {
+    "EMPTY": "Empty basket",
+    "GOTO": "Go to basket",
+    "PRICE": "price"
   }
 }

@@ -1,3 +1,5 @@
+@use 'bootstrap/scss/bootstrap';
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +11,21 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+[dir="rtl"] {
+  .navbar-brand {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+
+  .dropdown-menu-end {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .ms-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
 }

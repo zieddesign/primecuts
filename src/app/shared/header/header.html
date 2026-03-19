@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top px-3 py-2">
 
   <!-- Logo + Brand -->
-  <a class="navbar-brand d-flex align-items-center gap-2">
+  <a class="navbar-brand d-flex align-items-center gap-2 cursor-pointer" (click)="goToLanguage()">
     <img src="assets/images/header-logo.svg" alt="PrimeCuts" class="header-logo-img" />
     <span class="header-brand">{{ 'HEADER.BRAND' | translate }}</span>
   </a>
@@ -12,10 +12,41 @@
       <span class="client-label">{{ 'HEADER.WELCOME' | translate }}</span>
       <span class="client-number">Client #{{ clientNumber }}</span>
     </div>
-    <div class="header-cart position-relative">
-      <span class="cart-badge position-absolute">{{ cartCount }}</span>
-      <i class="cart-icon">🛒</i>
+
+    <!-- Cart Bootstrap dropdown -->
+    <div class="dropdown">
+      <div class="header-cart position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="cart-badge position-absolute">{{ cartCount }}</span>
+        <i class="cart-icon">🛒</i>
+      </div>
+
+      <ul class="dropdown-menu dropdown-menu-end cart-dropdown p-3">
+
+        @if (cartItems.length === 0) {
+        <li>
+          <p class="cart-empty text-center">{{ 'CART.EMPTY' | translate }}</p>
+        </li>
+        }
+
+        @for (item of cartItems; track item.id) {
+        <li class="cart-item d-flex align-items-center justify-content-between py-2">
+          <div>
+            <p class="cart-item-label mb-0">{{ item.cut }} / {{ item.meat }}</p>
+            <p class="cart-item-price mb-0">{{ 'CART.PRICE' | translate }} {{ item.price }} TND</p>
+          </div>
+          <button class="cart-item-remove btn p-0" (click)="removeItem(item.id)">✕</button>
+        </li>
+        }
+
+        <li>
+          <button class="cart-goto btn btn-link p-0 w-100 text-start" (click)="goToBasket()">
+            {{ 'CART.GOTO' | translate }}
+          </button>
+        </li>
+
+      </ul>
     </div>
+
   </div>
 
 </nav>

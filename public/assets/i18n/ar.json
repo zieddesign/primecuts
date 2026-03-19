@@ -43,5 +43,37 @@
     "CLIENT_NAME": "اسم العميل",
     "PLACEHOLDER": "مثال: أسامة جاليش",
     "START": "ابدأ الآن"
+  },
+  "SELECTION": {
+    "WELCOME": "مرحباً",
+    "CLIENT": "العميل #247",
+    "TOUCH_HINT": "المس منطقة على الحيوان لاختيار قطعتك",
+    "CUTS_LABEL": "القطع المتاحة",
+    "TYPE_STEAK": "⊙ نوع الستيك",
+    "CUISSON": "درجة الطهي",
+    "TENEUR_GRAS": "% نسبة الدهون",
+    "SAVEUR": "⊙ النكهة",
+    "PREV": "‹ السابق",
+    "CONSEIL": "⊙ نصيحة",
+    "NEXT": "التالي ›"
+  },
+  "CUTS": {
+    "ENTRECOTE": "ضلع",
+    "FILET": "فيليه",
+    "BAVETTE": "باڤيت",
+    "EPAULE": "كتف",
+    "RUMSTEAK": "رامستيك",
+    "RIBEYE": "ضلع البقر · RIBEYÉ"
+  },
+  "DETAILS": {
+    "TYPE_ENTRECOTE": "ضلع",
+    "CUISSON_SAIGNANT": "نيء",
+    "GRAS_ELEVEE": "مرتفعة",
+    "SAVEUR_PERSILLEE": "مُعشَّبة"
+  },
+  "CART": {
+    "EMPTY": "السلة فارغة",
+    "GOTO": "عرض السلة",
+    "PRICE": "السعر"
   }
 }

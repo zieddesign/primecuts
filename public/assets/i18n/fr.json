@@ -43,5 +43,37 @@
     "CLIENT_NAME": "NOM DU CLIENT",
     "PLACEHOLDER": "Ex. Oussama Gaalich",
     "START": "COMMENCER"
+  },
+  "SELECTION": {
+    "WELCOME": "BIENVENUE",
+    "CLIENT": "Client #247",
+    "TOUCH_HINT": "Touchez une zone sur l'animal pour sélectionner votre morceau",
+    "CUTS_LABEL": "MORCEAUX DISPONIBLES",
+    "TYPE_STEAK": "⊙ TYPE DE STEAK",
+    "CUISSON": "À CUISSON",
+    "TENEUR_GRAS": "% TENEUR GRAS",
+    "SAVEUR": "⊙ SAVEUR",
+    "PREV": "‹ PREV",
+    "CONSEIL": "⊙ CONSEIL",
+    "NEXT": "NEXT ›"
+  },
+  "CUTS": {
+    "ENTRECOTE": "Entrecôte",
+    "FILET": "Filet",
+    "BAVETTE": "Bavette",
+    "EPAULE": "Épaule",
+    "RUMSTEAK": "Rumsteak",
+    "RIBEYE": "RIBEYÉ · ضلع البقر"
+  },
+  "DETAILS": {
+    "TYPE_ENTRECOTE": "Entrecôte",
+    "CUISSON_SAIGNANT": "Saignant",
+    "GRAS_ELEVEE": "Élevée",
+    "SAVEUR_PERSILLEE": "Persillée"
+  },
+  "CART": {
+    "EMPTY": "Panier vide",
+    "GOTO": "Voir le panier",
+    "PRICE": "prix"
   }
 }

@@ -23,5 +23,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/meat-choice/meat-choice')
         .then(m => m.MeatChoiceComponent)
+  },
+  {
+    path: 'selection/:type',
+    loadComponent: () =>
+      import('./features/selection/selection')
+        .then(m => m.SelectionComponent)
   }
 ];

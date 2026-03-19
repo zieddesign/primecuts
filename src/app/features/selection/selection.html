@@ -1,0 +1,95 @@
+<div class="selection-screen">
+
+  <app-header [clientNumber]="'247'" [cartCount]="2"></app-header>
+
+  <div class="selection-content">
+
+    <!-- Meat badge -->
+    <div class="meat-badge">{{ meatType | uppercase }}</div>
+
+    <!-- Client + meat tag -->
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <div>
+        <p class="client-label">{{ 'SELECTION.WELCOME' | translate }}</p>
+        <p class="client-name">{{ 'SELECTION.CLIENT' | translate }}</p>
+      </div>
+      <div class="meat-tag d-flex align-items-center gap-2">
+        <span class="meat-dot"></span>
+        <span class="meat-tag-label">{{ meatType | uppercase }}</span>
+      </div>
+    </div>
+
+    <!-- Touch hint -->
+    <div class="touch-hint d-flex align-items-center gap-2 mb-3">
+      <span class="hint-icon">⊙</span>
+      <span class="hint-text">{{ 'SELECTION.TOUCH_HINT' | translate }}</span>
+    </div>
+
+    <!-- Animal image zone -->
+    <div class="animal-zone mb-3">
+      <!-- <img [src]="'assets/images/' + meatType + '.jpg'" [alt]="meatType" class="animal-img" /> -->
+    </div>
+
+    <!-- Cuts label -->
+    <p class="cuts-label">{{ 'SELECTION.CUTS_LABEL' | translate }}</p>
+
+    <!-- Cuts tabs -->
+    <div class="cuts-tabs d-flex gap-2 mb-3">
+      @for (cut of cuts; track cut.code) {
+        <button
+          class="cut-tab"
+          [class.active]="selectedCut.code === cut.code"
+          (click)="selectCut(cut)">
+          {{ cut.labelKey | translate }}
+        </button>
+      }
+    </div>
+
+    <!-- Cut detail card -->
+    <div class="cut-card">
+
+      <div class="d-flex align-items-start justify-content-between mb-2">
+        <div>
+          <h3 class="cut-name">{{ selectedCut.labelKey | translate }}</h3>
+          <p class="cut-sublabel">{{ selectedCut.sublabelKey | translate }}</p>
+        </div>
+        <div class="d-flex gap-1">
+          @for (star of getStars(selectedCut.rating); track $index) {
+            <span [class]="star ? 'star active' : 'star'">★</span>
+          }
+        </div>
+      </div>
+
+      <div class="cut-divider"></div>
+
+      <div class="details-grid">
+        <div class="detail-item">
+          <p class="detail-label">{{ 'SELECTION.TYPE_STEAK' | translate }}</p>
+          <p class="detail-value">{{ details.typeSteak | translate }}</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">{{ 'SELECTION.CUISSON' | translate }}</p>
+          <p class="detail-value">{{ details.cuisson | translate }}</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">{{ 'SELECTION.TENEUR_GRAS' | translate }}</p>
+          <p class="detail-value underline">{{ details.teneurGras | translate }}</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">{{ 'SELECTION.SAVEUR' | translate }}</p>
+          <p class="detail-value">{{ details.saveur | translate }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom nav -->
+  <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
+    <button class="btn-prev" (click)="goBack()">{{ 'SELECTION.PREV' | translate }}</button>
+    <button class="btn-conseil">{{ 'SELECTION.CONSEIL' | translate }}</button>
+    <button class="btn-next" (click)="goNext()">{{ 'SELECTION.NEXT' | translate }}</button>
+  </div>
+
+</div>
