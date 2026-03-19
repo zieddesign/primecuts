@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../../shared/header/header';
-import { FooterComponent } from '../../shared/footer/footer';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { FooterComponent } from '../../shared/footer/footer';
+import { HeaderComponent } from '../../shared/header/header';
+
 @Component({
   selector: 'app-language',
   standalone: true,
@@ -21,15 +22,16 @@ export class LanguageComponent {
 
   selectedLang: string = '';
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private translate: TranslateService
-  ) { }
+  ) {}
 
-selectLanguage(code: string): void {
-  this.selectedLang = code;
-  this.translate.use(code);
-  localStorage.setItem('lang', code);
-  localStorage.setItem('showWelcomePopup', 'true');
-  this.router.navigate(['/meat-choice']);
-}
+  selectLanguage(code: string): void {
+    this.selectedLang = code;
+    this.translate.use(code);
+    localStorage.setItem('lang', code);
+
+    this.router.navigate(['/meat-choice'], { state: { showPopup: true } });
+  }
 }

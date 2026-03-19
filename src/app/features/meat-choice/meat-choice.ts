@@ -1,9 +1,8 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common'; 
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule, TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 
 @Component({
@@ -26,28 +25,19 @@ export class MeatChoiceComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      
-      setTimeout(() => {
-        const shouldShow = localStorage.getItem('showWelcomePopup');
-        if (shouldShow === 'true') {
-          this.showPopup = true;
-          localStorage.removeItem('showWelcomePopup');
-        }
-      }, 0);
-      
+    const navState = this.router.getCurrentNavigation()?.extras?.state || history.state;
+    if (navState?.showPopup) {
+      this.showPopup = true;
     }
   }
 
   closePopup(): void {
     this.showPopup = false;
   }
-
 
   selectMeat(code: string): void {
     this.router.navigate(['/selection', code]);
