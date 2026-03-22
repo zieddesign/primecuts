@@ -31,9 +31,19 @@ export const routes: Routes = [
         .then(m => m.SelectionComponent)
   },
   {
-  path: 'cut-type/:type/:part',
-  loadComponent: () =>
-    import('./features/cut-type/cut-type')
-      .then(m => m.CutTypeComponent)
-}
+    path: 'cut-type/:type/:part',
+    loadComponent: () =>
+      import('./features/cut-type/cut-type')
+        .then(m => m.CutTypeComponent)
+  },
+  {
+    path: 'summary/:type/:part/:cutType/:size',
+    loadComponent: () =>
+      import('./features/cut-type/cut-type')
+        .then(m => m.CutTypeComponent)
+  },
+  {
+    path: '**',
+    redirectTo: 'splash'
+  }
 ];

@@ -10,8 +10,8 @@
     <!-- Client + breadcrumb -->
     <div class="d-flex align-items-center justify-content-between mb-3">
       <div>
-        <p class="client-label">{{ 'SELECTION.WELCOME' | translate }}</p>
-        <p class="client-name">{{ 'SELECTION.CLIENT' | translate }}</p>
+        <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
+        <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
       </div>
       <div class="breadcrumb-nav d-flex align-items-center gap-2">
         <span class="breadcrumb-item-label">Viandes</span>
@@ -58,9 +58,84 @@
 
   <!-- Bottom nav -->
   <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
-    <button class="btn-prev" (click)="goBack()">{{ 'SELECTION.PREV' | translate }}</button>
+    <button class="btn-prev" (click)="goBack()">{{ 'COMMON.PREV' | translate }}</button>
     <button class="btn-conseil">{{ 'SELECTION.CONSEIL' | translate }}</button>
-    <button class="btn-next" (click)="goNext()">{{ 'SELECTION.NEXT' | translate }}</button>
+    <button class="btn-next" (click)="goNext()">{{ 'COMMON.NEXT' | translate }}</button>
   </div>
 
 </div>
+<!-- Popup Format Cube -->
+@if (showCubePopup) {
+  <div class="modal fade show d-block" tabindex="-1" (click)="closeCubePopup()">
+    <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+      <div class="modal-content cube-modal">
+        <div class="modal-header cube-modal-header">
+          <div>
+            <p class="cube-sous-option">{{ 'POPUP_CUBE.SOUS_OPTION' | translate }}</p>
+            <h5 class="cube-title">{{ 'POPUP_CUBE.TITLE' | translate }}</h5>
+          </div>
+          <button class="cube-close" (click)="closeCubePopup()">✕</button>
+        </div>
+        <div class="modal-body cube-modal-body">
+          <p class="cube-choose-label">{{ 'POPUP_CUBE.CHOOSE' | translate }}</p>
+          @for (option of cubeOptions; track option.code) {
+            <div class="cube-option" [class.selected]="selectedCubeOption === option.code" (click)="selectCubeOption(option.code)">
+              <div class="cube-checkbox">
+                @if (selectedCubeOption === option.code) {
+                  <span class="cube-check">✓</span>
+                }
+              </div>
+              <div>
+                <p class="cube-option-label">{{ 'POPUP_CUBE.' + option.code.toUpperCase() + '_LABEL' | translate }}</p>
+                <p class="cube-option-sub">{{ 'POPUP_CUBE.' + option.code.toUpperCase() + '_SUB' | translate }}</p>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="modal-footer cube-modal-footer">
+          <button class="btn-annuler" (click)="closeCubePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
+          <button class="btn-confirmer" (click)="confirmCube()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+}
+
+<!-- Popup Format Tranche -->
+@if (showTranchePopup) {
+  <div class="modal fade show d-block" tabindex="-1" (click)="closeTranchePopup()">
+    <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+      <div class="modal-content cube-modal">
+        <div class="modal-header cube-modal-header">
+          <div>
+            <p class="cube-sous-option">{{ 'POPUP_TRANCHE.SOUS_OPTION' | translate }}</p>
+            <h5 class="cube-title">{{ 'POPUP_TRANCHE.TITLE' | translate }}</h5>
+          </div>
+          <button class="cube-close" (click)="closeTranchePopup()">✕</button>
+        </div>
+        <div class="modal-body cube-modal-body">
+          <p class="cube-choose-label">{{ 'POPUP_TRANCHE.CHOOSE' | translate }}</p>
+          @for (option of trancheOptions; track option.code) {
+            <div class="cube-option" [class.selected]="selectedTrancheOption === option.code" (click)="selectTrancheOption(option.code)">
+              <div class="cube-checkbox">
+                @if (selectedTrancheOption === option.code) {
+                  <span class="cube-check">✓</span>
+                }
+              </div>
+              <div>
+                <p class="cube-option-label">{{ 'POPUP_TRANCHE.' + option.code.toUpperCase() + '_LABEL' | translate }}</p>
+                <p class="cube-option-sub">{{ 'POPUP_TRANCHE.' + option.code.toUpperCase() + '_SUB' | translate }}</p>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="modal-footer cube-modal-footer">
+          <button class="btn-annuler" (click)="closeTranchePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
+          <button class="btn-confirmer" (click)="confirmTranche()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+}

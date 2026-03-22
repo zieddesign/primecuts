@@ -1,4 +1,13 @@
 {
+  "COMMON": {
+    "ANNULER": "CANCEL",
+    "CONFIRMER": "✓ CONFIRM",
+    "PREV": "‹ PREV",
+    "NEXT": "NEXT ›",
+    "CONSEIL": "⊙ ADVICE",
+    "WELCOME": "WELCOME",
+    "CLIENT": "Client #247"
+  },
   "HEADER": {
     "BRAND": "PRIMECUTS",
     "WELCOME": "WELCOME",
@@ -45,18 +54,12 @@
     "START": "START"
   },
   "SELECTION": {
-    "WELCOME": "WELCOME",
-    "CLIENT": "Client #247",
     "TOUCH_HINT": "Touch a zone on the animal to select your cut",
     "CUTS_LABEL": "AVAILABLE CUTS",
     "TYPE_STEAK": "⊙ STEAK TYPE",
     "CUISSON": "COOKING",
     "TENEUR_GRAS": "% FAT CONTENT",
-    "SAVEUR": "⊙ FLAVOR",
-    "PREV": "‹ PREV",
-    "CONSEIL": "⊙ ADVICE",
-    "NEXT": "NEXT ›",
-    "MEAT_TYPE":"MEAT TYPE"
+    "SAVEUR": "⊙ FLAVOR"
   },
   "CUTS": {
     "ENTRECOTE": "Entrecôte",
@@ -78,14 +81,36 @@
     "PRICE": "price"
   },
   "CUT_TYPE": {
-  "LABEL": "CUT TYPE",
-  "TRANCHE": "SLICE",
-  "TRANCHE_SUB": "Steak",
-  "CUBE": "CUBE",
-  "CUBE_SUB": "Skewer",
-  "ROULETTE": "ROLL",
-  "ROULETTE_SUB": "Rolled",
-  "HACHE": "MINCED",
-  "HACHE_SUB": "Ground"
-}
+    "LABEL": "CUT TYPE",
+    "TRANCHE": "SLICE",
+    "TRANCHE_SUB": "Steak",
+    "CUBE": "CUBE",
+    "CUBE_SUB": "Skewer",
+    "ROULETTE": "ROLL",
+    "ROULETTE_SUB": "Rolled",
+    "HACHE": "MINCED",
+    "HACHE_SUB": "Ground"
+  },
+  "POPUP_CUBE": {
+    "SOUS_OPTION": "SUB OPTION · CUBE",
+    "TITLE": "Cube Format",
+    "CHOOSE": "CHOOSE YOUR CUBE SIZE",
+    "C1_LABEL": "C1 — Small — 2cm",
+    "C1_SUB": "Light skewers",
+    "C2_LABEL": "C2 — Medium — 3cm",
+    "C2_SUB": "Standard / tagine format",
+    "C3_LABEL": "C3 — Large — 4cm",
+    "C3_SUB": "Stew & slow cooking"
+  },
+  "POPUP_TRANCHE": {
+    "SOUS_OPTION": "SUB OPTION · SLICE",
+    "TITLE": "Slice Format",
+    "CHOOSE": "CHOOSE YOUR SLICE THICKNESS",
+    "S1_LABEL": "S1 — Thin — 5mm",
+    "S1_SUB": "Thin slice for carpaccio",
+    "S2_LABEL": "S2 — Normal — 12mm",
+    "S2_SUB": "Classic steak format",
+    "S3_LABEL": "S3 — Thick — 20mm",
+    "S3_SUB": "Generous grilled steak"
+  }
 }
