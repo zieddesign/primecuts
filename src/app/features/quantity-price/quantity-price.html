@@ -1,123 +1,116 @@
 <div class="qp-screen">
-  <app-header [clientNumber]="'247'" [cartCount]="1"></app-header>
+    <app-header [clientNumber]="'247'" [cartCount]="1"></app-header>
 
-  <div class="qp-content">
-    
-    <div class="meat-tabs d-flex gap-2 mb-3">
-      @for (tab of meatTabs; track tab.code) {
-        <button
-          class="meat-tab"
-          [class.active]="meatType === tab.code"
-          (click)="meatType = tab.code">
-          {{ tab.label }}
-        </button>
-      }
-    </div>
+    <div class="qp-content">
 
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <div>
-        <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
-        <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
-      </div>
-      <div class="breadcrumb-nav d-flex align-items-center gap-1">
-        <span class="bc-item">{{ meatType | uppercase }}</span>
-        <span class="bc-sep">›</span>
-        <span class="bc-item">{{ selectedPart | uppercase }}</span>
-        <span class="bc-sep">›</span>
-        <span class="bc-item active">QUANTITÉ</span>
-      </div>
-    </div>
+        <div class="meat-tabs d-flex gap-2 mb-3">
+            @for (tab of meatTabs; track tab.code) {
+            <button class="meat-tab" [class.active]="meatType === tab.code" (click)="meatType = tab.code">
+                {{ tab.label | translate}}
+            </button>
+            }
+        </div>
 
-    <div class="cook-hint d-flex align-items-center gap-2 mb-3">
-      <span class="hint-icon">⊞</span>
-      <span class="hint-text">PRÉPARATION · {{ cutType | uppercase }}</span>
-    </div>
-
-    @if (cutType === 'cube' || cutType === 'tranche') {
-      <div class="cut-cards d-flex gap-3 mb-4">
-        @for (cut of cuts; track cut.code) {
-          <div
-            class="cut-select-card"
-            [class.selected]="cut.selected"
-            (click)="selectCut(cut.code)">
-            <p class="cut-select-label">{{ cut.label }}</p>
-            <p class="cut-select-sub">{{ cut.sublabel }}</p>
-            <div class="cut-select-badge" [class.active]="cut.selected">
-              {{ cut.selected ? 'SÉLECTIONNÉ' : 'ALTERNATIF' }}
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
+                <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
             </div>
-          </div>
+            <div class="breadcrumb-nav d-flex align-items-center gap-1">
+                <span class="bc-item">{{ 'MEAT.' + meatType.toUpperCase() | translate }}</span>
+                <span class="bc-sep">›</span>
+                <span class="bc-item">{{ 'CUTS.' + selectedPart.toUpperCase() | translate }}</span>
+                <span class="bc-sep">›</span>
+                <span class="bc-item active">{{ 'QUANTITY.TITLE' | translate }}</span>
+            </div>
+        </div>
+
+        <div class="cook-hint d-flex align-items-center gap-2 mb-3">
+            <span class="hint-icon">⊞</span>
+            <span class="hint-text">{{ 'COMMON.PREPARATION' | translate }} · {{ cutType | uppercase }}</span>
+        </div>
+
+        @if (cutType === 'cube' || cutType === 'tranche') {
+        <div class="cut-cards d-flex gap-3 mb-4">
+            @for (cut of cuts; track cut.code) {
+            <div class="cut-select-card" [class.selected]="cut.selected" (click)="selectCut(cut.code)">
+                <p class="cut-select-label">{{ cut.label }}</p>
+                <p class="cut-select-sub">{{ cut.sublabel }}</p>
+                <div class="cut-select-badge" [class.active]="cut.selected">
+                    {{ (cut.selected ? 'CUT.SELECTED' : 'CUT.ALTERNATIVE') | translate }}
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="qp-row d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <p class="qp-label">{{ 'QUANTITY.PIECES_LABEL' | translate }}</p>
+                <p class="qp-sublabel">{{ 'QUANTITY.PIECES_SUB' | translate }}</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <input type="number" class="qp-input" [(ngModel)]="quantity" min="1" />
+                <span class="qp-unit">{{ 'UNIT.PCS' | translate }}</span>
+                <div class="qp-check active">✓</div>
+            </div>
+        </div>
         }
-      </div>
 
-      <div class="qp-row d-flex align-items-center justify-content-between mb-3">
-        <div>
-          <p class="qp-label">Nombre de pièce</p>
-          <p class="qp-sublabel">QUANTITÉ (PCS)</p>
+        @if (cutType === 'hache' || cutType === 'roulette') {
+        <div class="hache-preview-zone d-flex flex-column align-items-center justify-content-center mb-4">
+            <div class="hache-card-selected">
+                <p class="hache-label-badge">{{ 'CUT_TYPE.' + cutType.toUpperCase() | translate }}</p>
+            </div>
+            <p class="text-muted mt-2 small">{{ 'QUANTITY.WEIGHT_HINT' | translate }}</p>
         </div>
-        <div class="d-flex align-items-center gap-2">
-          <input type="number" class="qp-input" [(ngModel)]="quantity" min="1" />
-          <span class="qp-unit">PCS</span>
-          <div class="qp-check active">✓</div>
-        </div>
-      </div>
-    }
+        }
 
-    @if (cutType === 'hache' || cutType === 'roulette') {
-      <div class="hache-preview-zone d-flex flex-column align-items-center justify-content-center mb-4">
-        <div class="hache-card-selected">
-          <!-- <img [src]="'assets/images/' + cutType + '.png'" [alt]="cutType" class="hache-img-large" /> -->
-          <p class="hache-label-badge">{{ cutType | uppercase }}</p>
+        <div class="d-flex justify-content-end mb-2">
+            <span class="fixe-label">{{ 'QUANTITY.ESTIMATED_VALUES' | translate }}</span>
         </div>
-        <p class="text-muted mt-2 small">Saisissez le poids souhaité ci-dessous</p>
-      </div>
-    }
 
-    <div class="d-flex justify-content-end mb-2">
-      <span class="fixe-label">VALEURS ESTIMATIVES</span>
+        <div class="qp-row d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <p class="qp-label">{{ 'QUANTITY.WEIGHT_LABEL' | translate }}</p>
+                <p class="qp-sublabel">{{ 'QUANTITY.WEIGHT_SUB' | translate }}</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <input type="text" class="qp-input" [(ngModel)]="estimatedWeight" placeholder="0.0" />
+                <span class="qp-unit">{{ 'UNIT.KG' | translate }}</span>
+                <div class="qp-check" [class.active]="estimatedWeight">
+                    @if (estimatedWeight) { <span>✓</span> }
+                </div>
+            </div>
+        </div>
+
+        <div class="qp-row d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <p class="qp-label">{{ 'QUANTITY.PRICE_LABEL' | translate }}</p>
+                <p class="qp-sublabel">{{ 'QUANTITY.PRICE_SUB' | translate }}</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <input type="text" class="qp-input" [(ngModel)]="estimatedPrice" placeholder="0.0" />
+                <span class="qp-unit">{{ 'UNIT.TND' | translate }}</span>
+                <div class="qp-check" [class.active]="estimatedPrice">
+                    @if (estimatedPrice) { <span>✓</span> }
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="qp-row d-flex align-items-center justify-content-between mb-3">
-      <div>
-        <p class="qp-label">Poids estimatif</p>
-        <p class="qp-sublabel">WEIGHT</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <input type="text" class="qp-input" [(ngModel)]="estimatedWeight" placeholder="0.0" />
-        <span class="qp-unit">KG</span>
-        <div class="qp-check" [class.active]="estimatedWeight">
-          @if (estimatedWeight) { <span>✓</span> }
-        </div>
-      </div>
+    <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
+        <button class="btn-prev" (click)="goBack()">
+            {{ 'COMMON.PREV' | translate }}
+        </button>
+
+        <button class="btn-conseil">
+            {{ 'COMMON.CONSEIL' | translate }}
+        </button>
+
+        <button class="btn-next" (click)="goNext()">
+            {{ 'COMMON.NEXT' | translate }}
+        </button>
     </div>
-
-    <div class="qp-row d-flex align-items-center justify-content-between mb-3">
-      <div>
-        <p class="qp-label">Prix estimatif</p>
-        <p class="qp-sublabel">PRICE</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <input type="text" class="qp-input" [(ngModel)]="estimatedPrice" placeholder="0.0" />
-        <span class="qp-unit">TND</span>
-        <div class="qp-check" [class.active]="estimatedPrice">
-          @if (estimatedPrice) { <span>✓</span> }
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
-    <button class="btn-prev" (click)="goBack()">
-      {{ 'COMMON.PREV' | translate }}
-    </button>
-    
-    <button class="btn-conseil">
-      {{ 'COMMON.CONSEIL' | translate }}
-    </button>
-    
-    <button class="btn-next" (click)="goNext()">
-      {{ 'COMMON.NEXT' | translate }}
-    </button>
-  </div>
 
 </div>

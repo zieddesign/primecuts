@@ -6,7 +6,8 @@
     "NEXT": "التالي ›",
     "CONSEIL": "⊙ نصيحة",
     "WELCOME": "مرحباً",
-    "CLIENT": "العميل #247"
+    "CLIENT": "العميل #247",
+    "PREPARATION": "تحضير"
   },
   "HEADER": {
     "BRAND": "PRIMECUTS",
@@ -67,7 +68,7 @@
     "BAVETTE": "باڤيت",
     "EPAULE": "كتف",
     "RUMSTEAK": "رامستيك",
-    "RIBEYE": "ضلع البقر · RIBEYÉ"
+    "RIBEYE": "ضلع البقر · RIBEYE"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "ضلع",
@@ -123,5 +124,25 @@
     "GRAS_0": "0% دهون",
     "GRAS_10": "10% دهون",
     "GRAS_20": "20% دهون"
+  },
+  "QUANTITY": {
+    "TITLE": "الكمية",
+    "PIECES_LABEL": "عدد القطع",
+    "PIECES_SUB": "الكمية (قطعة)",
+    "WEIGHT_HINT": "يرجى إدخال الوزن المطلوب أدناه",
+    "ESTIMATED_VALUES": "قيم تقديرية",
+    "WEIGHT_LABEL": "الوزن التقديري",
+    "WEIGHT_SUB": "الوزن",
+    "PRICE_LABEL": "الثمن التقديري",
+    "PRICE_SUB": "الثمن"
+  },
+  "CUT": {
+    "SELECTED": "محدد",
+    "ALTERNATIVE": "بديل"
+  },
+  "UNIT": {
+    "PCS": "قطعة",
+    "KG": "كغ",
+    "TND": "د.ت"
   }
 }

@@ -1,22 +1,23 @@
 {
   "COMMON": {
-    "ANNULER": "CANCEL",
-    "CONFIRMER": "✓ CONFIRM",
-    "PREV": "‹ PREV",
-    "NEXT": "NEXT ›",
-    "CONSEIL": "⊙ ADVICE",
-    "WELCOME": "WELCOME",
-    "CLIENT": "Client #247"
+    "ANNULER": "Cancel",
+    "CONFIRMER": "✓ Confirm",
+    "PREV": "‹ Previous",
+    "NEXT": "Next ›",
+    "CONSEIL": "⊙ Tip",
+    "WELCOME": "Welcome",
+    "CLIENT": "Client #247",
+    "PREPARATION": "PREPARATION"
   },
   "HEADER": {
     "BRAND": "PRIMECUTS",
-    "WELCOME": "WELCOME",
+    "WELCOME": "Welcome",
     "CLIENT": "Client #"
   },
   "LANGUAGE": {
     "TITLE": "Choose your language",
     "SUBTITLE": "Please select your language",
-    "SCREEN_LABEL": "01 / LANGUAGE",
+    "SCREEN_LABEL": "01 / Language",
     "FOOTER": "Tap to select",
     "FRENCH": "French",
     "ARABIC": "Arabic",
@@ -24,104 +25,124 @@
   },
   "WELCOME": {
     "TITLE": "Welcome!",
-    "DESCRIPTION": "Welcome to PRIMECUTS, your premium butchery.",
-    "BTN_START": "START"
+    "DESCRIPTION": "Welcome to PRIMECUTS, your premium butcher shop.",
+    "BTN_START": "Get Started"
   },
   "CATALOG": {
     "TITLE": "Our Meats",
-    "FOOTER": "Select a meat"
+    "FOOTER": "Choose a meat type"
   },
   "MEAT": {
-    "SCREEN_LABEL": "03 · MEAT CHOICE",
+    "SCREEN_LABEL": "03 · Meat Selection",
     "TITLE": "Our Meats",
     "COUNT": "4 categories",
-    "BOUCHER": "BUTCHER'S ADVICE",
-    "BEEF": "BEEF",
-    "BEEF_SUB": "Cattle",
-    "AGNEAU": "LAMB",
-    "AGNEAU_SUB": "Sheep",
-    "CAMEL": "CAMEL",
-    "CAMEL_SUB": "Camel",
-    "CHEVRE": "GOAT",
-    "CHEVRE_SUB": "Goat"
+    "BOUCHER": "Butcher's tip",
+    "BEEF": "Beef",
+    "BEEF_SUB": "Bovine meat",
+    "AGNEAU": "Lamb",
+    "AGNEAU_SUB": "Ovine meat",
+    "CAMEL": "Camel",
+    "CAMEL_SUB": "Camel meat",
+    "CHEVRE": "Goat",
+    "CHEVRE_SUB": "Caprine meat"
   },
   "POPUP": {
-    "NEW_ORDER": "NEW ORDER",
+    "NEW_ORDER": "New Order",
     "WELCOME": "Welcome!",
-    "DESC": "Please enter your name to start your meat selection.",
-    "CLIENT_NAME": "CUSTOMER NAME",
-    "PLACEHOLDER": "Ex. Oussama Gaalich",
-    "START": "START"
+    "DESC": "Please enter your name to begin your meat selection.",
+    "CLIENT_NAME": "Client name",
+    "PLACEHOLDER": "e.g. Oussama Jalish",
+    "START": "Get Started"
   },
   "SELECTION": {
-    "TOUCH_HINT": "Touch a zone on the animal to select your cut",
-    "CUTS_LABEL": "AVAILABLE CUTS",
-    "TYPE_STEAK": "⊙ STEAK TYPE",
-    "CUISSON": "COOKING",
-    "TENEUR_GRAS": "% FAT CONTENT",
-    "SAVEUR": "⊙ FLAVOR"
+    "TOUCH_HINT": "Touch an area on the animal to choose your cut",
+    "CUTS_LABEL": "Available cuts",
+    "TYPE_STEAK": "⊙ Steak type",
+    "CUISSON": "Cooking",
+    "TENEUR_GRAS": "% Fat content",
+    "SAVEUR": "⊙ Flavour"
   },
   "CUTS": {
-    "ENTRECOTE": "Entrecôte",
-    "FILET": "Filet",
-    "BAVETTE": "Bavette",
+    "ENTRECOTE": "Rib eye steak",
+    "FILET": "Fillet",
+    "BAVETTE": "Flank steak",
     "EPAULE": "Shoulder",
-    "RUMSTEAK": "Rumpsteak",
-    "RIBEYE": "RIBEYE"
+    "RUMSTEAK": "Rump steak",
+    "RIBEYE": "Rib of beef · RIBEYE"
   },
   "DETAILS": {
-    "TYPE_ENTRECOTE": "Entrecôte",
+    "TYPE_ENTRECOTE": "Rib eye",
     "CUISSON_SAIGNANT": "Rare",
     "GRAS_ELEVEE": "High",
     "SAVEUR_PERSILLEE": "Marbled"
   },
   "CART": {
-    "EMPTY": "Empty basket",
-    "GOTO": "Go to basket",
-    "PRICE": "price"
+    "EMPTY": "Cart is empty",
+    "GOTO": "View cart",
+    "PRICE": "Price"
   },
   "CUT_TYPE": {
-    "LABEL": "CUT TYPE",
-    "TRANCHE": "SLICE",
+    "LABEL": "Cut type",
+    "TRANCHE": "Slice",
     "TRANCHE_SUB": "Steak",
-    "CUBE": "CUBE",
-    "CUBE_SUB": "Skewer",
-    "ROULETTE": "ROLL",
+    "CUBE": "Cube",
+    "CUBE_SUB": "Grilled",
+    "ROULETTE": "Roll",
     "ROULETTE_SUB": "Rolled",
-    "HACHE": "MINCED",
-    "HACHE_SUB": "Ground"
+    "HACHE": "Minced",
+    "HACHE_SUB": "Kefta"
   },
   "POPUP_CUBE": {
-    "SOUS_OPTION": "SUB OPTION · CUBE",
-    "TITLE": "Cube Format",
-    "CHOOSE": "CHOOSE YOUR CUBE SIZE",
-    "C1_LABEL": "C1 — Small — 2cm",
-    "C1_SUB": "Light skewers",
-    "C2_LABEL": "C2 — Medium — 3cm",
-    "C2_SUB": "Standard / tagine format",
-    "C3_LABEL": "C3 — Large — 4cm",
-    "C3_SUB": "Stew & slow cooking"
+    "SOUS_OPTION": "Sub-option · Cube",
+    "TITLE": "Cube size",
+    "CHOOSE": "Choose your cube size",
+    "C1_LABEL": "C1 — Small — 2 cm",
+    "C1_SUB": "Light grilling",
+    "C2_LABEL": "C2 — Medium — 3 cm",
+    "C2_SUB": "Standard size / tajine",
+    "C3_LABEL": "C3 — Large — 4 cm",
+    "C3_SUB": "Stew and slow cooking"
   },
   "POPUP_TRANCHE": {
-    "SOUS_OPTION": "SUB OPTION · SLICE",
-    "TITLE": "Slice Format",
-    "CHOOSE": "CHOOSE YOUR SLICE THICKNESS",
-    "S1_LABEL": "S1 — Thin — 5mm",
+    "SOUS_OPTION": "Sub-option · Slice",
+    "TITLE": "Slice thickness",
+    "CHOOSE": "Choose your slice thickness",
+    "S1_LABEL": "S1 — Thin — 5 mm",
     "S1_SUB": "Thin slice for carpaccio",
-    "S2_LABEL": "S2 — Normal — 12mm",
-    "S2_SUB": "Classic steak format",
-    "S3_LABEL": "S3 — Thick — 20mm",
-    "S3_SUB": "Generous grilled steak"
+    "S2_LABEL": "S2 — Regular — 12 mm",
+    "S2_SUB": "Classic steak",
+    "S3_LABEL": "S3 — Thick — 20 mm",
+    "S3_SUB": "Thick steak for grilling"
   },
   "POPUP_HACHE": {
-    "SOUS_OPTION": "SUB OPTION · MINCED",
-    "TITLE": "Minced Options",
-    "CHOOSE": "CHOOSE YOUR OPTIONS",
-    "ORDINAIRE": "PLAIN",
-    "SANS_EPICE": "NO SPICE",
-    "EPICE_CHEF": "CHEF SPICE",
-    "GRAS_0": "0% FAT",
-    "GRAS_10": "10% FAT",
-    "GRAS_20": "20% FAT"
+    "SOUS_OPTION": "Sub-option · Minced",
+    "TITLE": "Minced options",
+    "CHOOSE": "Choose your options",
+    "ORDINAIRE": "Plain",
+    "SANS_EPICE": "No spices",
+    "EPICE_CHEF": "Chef's spices",
+    "GRAS_0": "0% fat",
+    "GRAS_10": "10% fat",
+    "GRAS_20": "20% fat"
+  },
+  "QUANTITY": {
+    "TITLE": "QUANTITY",
+    "PIECES_LABEL": "Number of pieces",
+    "PIECES_SUB": "QUANTITY (PCS)",
+    "WEIGHT_HINT": "Enter the desired weight below",
+    "ESTIMATED_VALUES": "ESTIMATED VALUES",
+    "WEIGHT_LABEL": "Estimated weight",
+    "WEIGHT_SUB": "WEIGHT",
+    "PRICE_LABEL": "Estimated price",
+    "PRICE_SUB": "PRICE"
+  },
+  "CUT": {
+    "SELECTED": "SELECTED",
+    "ALTERNATIVE": "ALTERNATIVE"
+  },
+  "UNIT": {
+    "PCS": "PCS",
+    "KG": "KG",
+    "TND": "TND"
   }
 }

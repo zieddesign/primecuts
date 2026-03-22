@@ -1,65 +1,66 @@
 {
   "COMMON": {
-    "ANNULER": "ANNULER",
-    "CONFIRMER": "✓ CONFIRMER",
-    "PREV": "‹ PREV",
-    "NEXT": "NEXT ›",
-    "CONSEIL": "⊙ CONSEIL",
-    "WELCOME": "BIENVENUE",
-    "CLIENT": "Client #247"
+    "ANNULER": "Annuler",
+    "CONFIRMER": "✓ Confirmer",
+    "PREV": "‹ Précédent",
+    "NEXT": "Suivant ›",
+    "CONSEIL": "⊙ Conseil",
+    "WELCOME": "Bienvenue",
+    "CLIENT": "Client #247",
+    "PREPARATION": "PRÉPARATION"
   },
   "HEADER": {
     "BRAND": "PRIMECUTS",
-    "WELCOME": "BIENVENUE",
+    "WELCOME": "Bienvenue",
     "CLIENT": "Client #"
   },
   "LANGUAGE": {
     "TITLE": "Choisissez votre langue",
     "SUBTITLE": "Veuillez sélectionner votre langue",
-    "SCREEN_LABEL": "01 / LANGUE",
-    "FOOTER": "Touchez pour sélectionner",
+    "SCREEN_LABEL": "01 / Langue",
+    "FOOTER": "Touchez pour choisir",
     "FRENCH": "Français",
-    "ARABIC": "العربية",
-    "ENGLISH": "English"
+    "ARABIC": "Arabe",
+    "ENGLISH": "Anglais"
   },
   "WELCOME": {
     "TITLE": "Bienvenue !",
     "DESCRIPTION": "Bienvenue chez PRIMECUTS, votre boucherie de prestige.",
-    "BTN_START": "COMMENCER"
+    "BTN_START": "Commencer"
   },
   "CATALOG": {
-    "TITLE": "Nos Viandes",
-    "FOOTER": "Sélectionnez une viande"
+    "TITLE": "Nos viandes",
+    "FOOTER": "Choisissez un type de viande"
   },
   "MEAT": {
-    "SCREEN_LABEL": "03 · CHOIX DE VIANDE",
-    "TITLE": "Nos Viandes",
+    "SCREEN_LABEL": "03 · Choix de la viande",
+    "TITLE": "Nos viandes",
     "COUNT": "4 catégories",
-    "BOUCHER": "CONSEIL DU BOUCHER",
-    "BEEF": "BEEF",
-    "BEEF_SUB": "BŒUF",
-    "AGNEAU": "AGNEAU",
-    "AGNEAU_SUB": "MOUTON",
-    "CAMEL": "CAMEL",
-    "CAMEL_SUB": "CHAMEAU",
-    "CHEVRE": "CHÈVRE",
-    "CHEVRE_SUB": "CAPRIN"
+    "BOUCHER": "Conseil du boucher",
+    "BEEF": "Bœuf",
+    "BEEF_SUB": "Viande bovine",
+    "AGNEAU": "Agneau",
+    "AGNEAU_SUB": "Viande ovine",
+    "CAMEL": "Chameau",
+    "CAMEL_SUB": "Viande de chameau",
+    "CHEVRE": "Chèvre",
+    "CHEVRE_SUB": "Viande caprine"
   },
   "POPUP": {
-    "NEW_ORDER": "NOUVELLE COMMANDE",
+    "NEW_ORDER": "Nouvelle commande",
     "WELCOME": "Bienvenue !",
-    "DESC": "Veuillez entrer votre nom pour commencer votre sélection de viandes.",
-    "CLIENT_NAME": "NOM DU CLIENT",
-    "PLACEHOLDER": "Ex. Oussama Gaalich",
-    "START": "COMMENCER"
+    "DESC": "Veuillez saisir votre nom pour commencer la sélection.",
+    "CLIENT_NAME": "Nom du client",
+    "PLACEHOLDER": "Ex : Oussama Jalish",
+    "START": "Commencer"
   },
   "SELECTION": {
-    "TOUCH_HINT": "Touchez une zone sur l'animal pour sélectionner votre morceau",
-    "CUTS_LABEL": "MORCEAUX DISPONIBLES",
-    "TYPE_STEAK": "⊙ TYPE DE STEAK",
-    "CUISSON": "À CUISSON",
-    "TENEUR_GRAS": "% TENEUR GRAS",
-    "SAVEUR": "⊙ SAVEUR"
+    "TOUCH_HINT": "Touchez une zone de l'animal pour choisir votre coupe",
+    "CUTS_LABEL": "Coupes disponibles",
+    "TYPE_STEAK": "⊙ Type de steak",
+    "CUISSON": "Cuisson",
+    "TENEUR_GRAS": "% Teneur en gras",
+    "SAVEUR": "⊙ Saveur"
   },
   "CUTS": {
     "ENTRECOTE": "Entrecôte",
@@ -67,7 +68,7 @@
     "BAVETTE": "Bavette",
     "EPAULE": "Épaule",
     "RUMSTEAK": "Rumsteak",
-    "RIBEYE": "RIBEYÉ · ضلع البقر"
+    "RIBEYE": "Côte de bœuf · RIBEYE"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Entrecôte",
@@ -78,50 +79,70 @@
   "CART": {
     "EMPTY": "Panier vide",
     "GOTO": "Voir le panier",
-    "PRICE": "prix"
+    "PRICE": "Prix"
   },
   "CUT_TYPE": {
-    "LABEL": "TYPE DE DÉCOUPE",
-    "TRANCHE": "TRANCHE",
+    "LABEL": "Type de découpe",
+    "TRANCHE": "Tranche",
     "TRANCHE_SUB": "Steak",
-    "CUBE": "CUBE",
-    "CUBE_SUB": "Brochette",
-    "ROULETTE": "ROULETTE",
-    "ROULETTE_SUB": "Rouleau",
-    "HACHE": "HACHÉ",
-    "HACHE_SUB": "Minced"
+    "CUBE": "Cube",
+    "CUBE_SUB": "Grillé",
+    "ROULETTE": "Rouleau",
+    "ROULETTE_SUB": "Roulé",
+    "HACHE": "Haché",
+    "HACHE_SUB": "Kefta"
   },
   "POPUP_CUBE": {
-    "SOUS_OPTION": "SOUS OPTION · CUBE",
-    "TITLE": "Format Cube",
-    "CHOOSE": "CHOISISSEZ LA TAILLE DE VOS CUBES",
-    "C1_LABEL": "C1 — Petit — 2cm",
-    "C1_SUB": "Brochettes légères",
-    "C2_LABEL": "C2 — Moyen — 3cm",
-    "C2_SUB": "Format standard/tajine",
-    "C3_LABEL": "C3 — Grand — 4cm",
-    "C3_SUB": "Ragout & cuisson lente"
+    "SOUS_OPTION": "Sous-option · Cube",
+    "TITLE": "Taille des cubes",
+    "CHOOSE": "Choisissez la taille de vos cubes",
+    "C1_LABEL": "C1 — Petit — 2 cm",
+    "C1_SUB": "Grillade légère",
+    "C2_LABEL": "C2 — Moyen — 3 cm",
+    "C2_SUB": "Taille standard / tajine",
+    "C3_LABEL": "C3 — Grand — 4 cm",
+    "C3_SUB": "Ragoût et cuisson lente"
   },
   "POPUP_TRANCHE": {
-    "SOUS_OPTION": "SOUS OPTION · TRANCHE",
-    "TITLE": "Format Tranche",
-    "CHOOSE": "CHOISISSEZ L'ÉPAISSEUR DE VOTRE TRANCHE",
-    "S1_LABEL": "S1 — Fine — 5mm",
+    "SOUS_OPTION": "Sous-option · Tranche",
+    "TITLE": "Épaisseur de la tranche",
+    "CHOOSE": "Choisissez l'épaisseur de votre tranche",
+    "S1_LABEL": "S1 — Fine — 5 mm",
     "S1_SUB": "Tranche fine pour carpaccio",
-    "S2_LABEL": "S2 — Normale — 12mm",
-    "S2_SUB": "Format steak classique",
-    "S3_LABEL": "S3 — Épaisse — 20mm",
-    "S3_SUB": "Steak généreux, grillé"
+    "S2_LABEL": "S2 — Normale — 12 mm",
+    "S2_SUB": "Steak classique",
+    "S3_LABEL": "S3 — Épaisse — 20 mm",
+    "S3_SUB": "Steak épais pour la grillade"
   },
   "POPUP_HACHE": {
-    "SOUS_OPTION": "SOUS OPTION · HACHÉ",
-    "TITLE": "Options Haché",
-    "CHOOSE": "CHOISISSEZ VOS OPTIONS",
-    "ORDINAIRE": "ORDINAIRE",
-    "SANS_EPICE": "SANS EPICE",
-    "EPICE_CHEF": "EPICE DU CHEF",
-    "GRAS_0": "0% GRAISSE",
-    "GRAS_10": "10% GRAISSE",
-    "GRAS_20": "20% GRAISSE"
+    "SOUS_OPTION": "Sous-option · Haché",
+    "TITLE": "Options du haché",
+    "CHOOSE": "Choisissez vos options",
+    "ORDINAIRE": "Ordinaire",
+    "SANS_EPICE": "Sans épices",
+    "EPICE_CHEF": "Épices du chef",
+    "GRAS_0": "0% de gras",
+    "GRAS_10": "10% de gras",
+    "GRAS_20": "20% de gras"
+  },
+  "QUANTITY": {
+    "TITLE": "QUANTITÉ",
+    "PIECES_LABEL": "Nombre de pièce",
+    "PIECES_SUB": "QUANTITÉ (PCS)",
+    "WEIGHT_HINT": "Saisissez le poids souhaité ci-dessous",
+    "ESTIMATED_VALUES": "VALEURS ESTIMATIVES",
+    "WEIGHT_LABEL": "Poids estimatif",
+    "WEIGHT_SUB": "WEIGHT",
+    "PRICE_LABEL": "Prix estimatif",
+    "PRICE_SUB": "PRICE"
+  },
+  "CUT": {
+    "SELECTED": "SÉLECTIONNÉ",
+    "ALTERNATIVE": "ALTERNATIF"
+  },
+  "UNIT": {
+    "PCS": "PCS",
+    "KG": "KG",
+    "TND": "TND"
   }
 }
