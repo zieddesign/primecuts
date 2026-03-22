@@ -19,13 +19,12 @@ export class QuantityPriceComponent {
   cutType = 'cube';
   size = 'c2';
 
-  meatTabs = [
-    { code: 'beef', label: 'BŒUF' },
-    { code: 'veau', label: 'VEAU' },
-    { code: 'agneau', label: 'AGNEAU' },
-    { code: 'light', label: 'LIGHT' },
-    { code: 'arabian', label: 'ARABIAN' }
-  ];
+meatTabs = [
+  { code: 'beef',    label: 'MEAT.BEEF'   },
+  { code: 'agneau',  label: 'MEAT.AGNEAU' },
+  { code: 'camel',   label: 'MEAT.CAMEL'  },
+  { code: 'chevre',  label: 'MEAT.CHEVRE' },
+];
 
   cuts = [
     { code: 'cube', label: 'CUBE', sublabel: 'C2 — 3cm', selected: true },
@@ -64,4 +63,11 @@ export class QuantityPriceComponent {
   goNext(): void {
     this.router.navigate(['/summary']);
   }
+  getMeatKey(): string {
+  return 'MEAT.' + this.meatType.toUpperCase();
+}
+
+getPartKey(): string {
+  return 'CUTS.' + this.selectedPart.toUpperCase();
+}
 }
