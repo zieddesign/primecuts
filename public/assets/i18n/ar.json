@@ -75,5 +75,16 @@
     "EMPTY": "السلة فارغة",
     "GOTO": "عرض السلة",
     "PRICE": "السعر"
-  }
+  },
+  "CUT_TYPE": {
+  "LABEL": "نوع التقطيع",
+  "TRANCHE": "شريحة",
+  "TRANCHE_SUB": "ستيك",
+  "CUBE": "مكعبات",
+  "CUBE_SUB": "مشوي",
+  "ROULETTE": "رول",
+  "ROULETTE_SUB": "لفة",
+  "HACHE": "مفروم",
+  "HACHE_SUB": "كفتة"
+}
 }

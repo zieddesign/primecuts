@@ -29,5 +29,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/selection/selection')
         .then(m => m.SelectionComponent)
-  }
+  },
+  {
+  path: 'cut-type/:type/:part',
+  loadComponent: () =>
+    import('./features/cut-type/cut-type')
+      .then(m => m.CutTypeComponent)
+}
 ];

@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CommonModule, UpperCasePipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-selection',
   standalone: true,
-  imports: [CommonModule, UpperCasePipe, TranslateModule, HeaderComponent],
+  imports: [CommonModule,  TranslateModule, HeaderComponent],
   templateUrl: './selection.html',
   styleUrl: './selection.scss',
 })
 export class SelectionComponent {
 
   meatType = 'beef';
-
+   meats = [
+    { code: 'beef', labelKey: 'MEAT.BEEF', sublabelKey: 'MEAT.BEEF_SUB', image: 'assets/images/beef.jpg' },
+    { code: 'agneau', labelKey: 'MEAT.AGNEAU', sublabelKey: 'MEAT.AGNEAU_SUB', image: 'assets/images/agneau.jpg' },
+    { code: 'camel', labelKey: 'MEAT.CAMEL', sublabelKey: 'MEAT.CAMEL_SUB', image: 'assets/images/camel.jpg' },
+    { code: 'chevre', labelKey: 'MEAT.CHEVRE', sublabelKey: 'MEAT.CHEVRE_SUB', image: 'assets/images/chevre.jpg' }
+  ];
+selectedMeat = this.meats.find(m => m.code === this.meatType) || this.meats[0];
 cuts = [
   { code: 'entrecote', labelKey: 'CUTS.ENTRECOTE', sublabelKey: 'CUTS.RIBEYE', rating: 4 },
   { code: 'filet', labelKey: 'CUTS.FILET', sublabelKey: 'CUTS.FILET', rating: 5 },
@@ -37,6 +43,8 @@ details = {
     private route: ActivatedRoute
   ) {
     this.meatType = this.route.snapshot.paramMap.get('type') || 'beef';
+      this.selectedMeat = this.meats.find(m => m.code === this.meatType) || this.meats[0];
+
   }
 
   selectCut(cut: any): void {
@@ -54,4 +62,7 @@ details = {
   goNext(): void {
     this.router.navigate(['/summary']);
   }
+  goToCutType(): void {
+  this.router.navigate(['/cut-type', this.meatType, this.selectedCut.code]);
+}
 }

@@ -55,7 +55,8 @@
     "SAVEUR": "⊙ FLAVOR",
     "PREV": "‹ PREV",
     "CONSEIL": "⊙ ADVICE",
-    "NEXT": "NEXT ›"
+    "NEXT": "NEXT ›",
+    "MEAT_TYPE":"MEAT TYPE"
   },
   "CUTS": {
     "ENTRECOTE": "Entrecôte",
@@ -75,5 +76,16 @@
     "EMPTY": "Empty basket",
     "GOTO": "Go to basket",
     "PRICE": "price"
-  }
+  },
+  "CUT_TYPE": {
+  "LABEL": "CUT TYPE",
+  "TRANCHE": "SLICE",
+  "TRANCHE_SUB": "Steak",
+  "CUBE": "CUBE",
+  "CUBE_SUB": "Skewer",
+  "ROULETTE": "ROLL",
+  "ROULETTE_SUB": "Rolled",
+  "HACHE": "MINCED",
+  "HACHE_SUB": "Ground"
+}
 }

@@ -75,5 +75,16 @@
     "EMPTY": "Panier vide",
     "GOTO": "Voir le panier",
     "PRICE": "prix"
-  }
+  },
+  "CUT_TYPE": {
+  "LABEL": "TYPE DE DÉCOUPE",
+  "TRANCHE": "TRANCHE",
+  "TRANCHE_SUB": "Steak",
+  "CUBE": "CUBE",
+  "CUBE_SUB": "Brochette",
+  "ROULETTE": "ROULETTE",
+  "ROULETTE_SUB": "Rouleau",
+  "HACHE": "HACHÉ",
+  "HACHE_SUB": "Minced"
+}
 }
