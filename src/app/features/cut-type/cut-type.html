@@ -44,7 +44,7 @@
       @for (cut of cutTypes; track cut.code) {
         <div class="cut-card" (click)="selectCutType(cut.code)">
           <div class="cut-card-image">
-            <img [src]="cut.image" [alt]="cut.code" class="cut-img" *ngIf="cut.image" />
+            <!-- <img [src]="cut.image" [alt]="cut.code" class="cut-img" *ngIf="cut.image" /> -->
           </div>
           <div class="cut-card-footer">
             <span class="cut-label">{{ cut.labelKey | translate }}</span>
