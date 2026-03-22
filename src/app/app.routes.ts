@@ -1,5 +1,10 @@
 import { Routes } from '@angular/router';
 
+/**
+ * Application Routing Configuration
+ * * Note: The order of routes matters. Specific routes with more parameters 
+ * should generally come before or alongside their simpler versions.
+ */
 export const routes: Routes = [
   {
     path: '',
@@ -36,12 +41,27 @@ export const routes: Routes = [
       import('./features/cut-type/cut-type')
         .then(m => m.CutTypeComponent)
   },
+
+  // --- QUANTITY & PRICE SECTION ---
+  
+  // 1. Route for cuts WITHOUT a specific size (e.g., Haché, Roulette)
+  // URL: /quantity-price/beef/entrecote/hache
   {
-    path: 'summary/:type/:part/:cutType/:size',
+    path: 'quantity-price/:type/:part/:cutType',
     loadComponent: () =>
-      import('./features/cut-type/cut-type')
-        .then(m => m.CutTypeComponent)
+      import('./features/quantity-price/quantity-price')
+        .then(m => m.QuantityPriceComponent)
   },
+  
+  // 2. Route for cuts WITH a specific size (e.g., Cube C2, Tranche S1)
+  // URL: /quantity-price/beef/entrecote/cube/c2
+  {
+    path: 'quantity-price/:type/:part/:cutType/:size',
+    loadComponent: () =>
+      import('./features/quantity-price/quantity-price')
+        .then(m => m.QuantityPriceComponent)
+  },
+
   {
     path: '**',
     redirectTo: 'splash'
