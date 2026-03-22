@@ -1,4 +1,13 @@
 {
+  "COMMON": {
+    "ANNULER": "ANNULER",
+    "CONFIRMER": "✓ CONFIRMER",
+    "PREV": "‹ PREV",
+    "NEXT": "NEXT ›",
+    "CONSEIL": "⊙ CONSEIL",
+    "WELCOME": "BIENVENUE",
+    "CLIENT": "Client #247"
+  },
   "HEADER": {
     "BRAND": "PRIMECUTS",
     "WELCOME": "BIENVENUE",
@@ -45,17 +54,12 @@
     "START": "COMMENCER"
   },
   "SELECTION": {
-    "WELCOME": "BIENVENUE",
-    "CLIENT": "Client #247",
     "TOUCH_HINT": "Touchez une zone sur l'animal pour sélectionner votre morceau",
     "CUTS_LABEL": "MORCEAUX DISPONIBLES",
     "TYPE_STEAK": "⊙ TYPE DE STEAK",
     "CUISSON": "À CUISSON",
     "TENEUR_GRAS": "% TENEUR GRAS",
-    "SAVEUR": "⊙ SAVEUR",
-    "PREV": "‹ PREV",
-    "CONSEIL": "⊙ CONSEIL",
-    "NEXT": "NEXT ›"
+    "SAVEUR": "⊙ SAVEUR"
   },
   "CUTS": {
     "ENTRECOTE": "Entrecôte",
@@ -75,5 +79,38 @@
     "EMPTY": "Panier vide",
     "GOTO": "Voir le panier",
     "PRICE": "prix"
+  },
+  "CUT_TYPE": {
+    "LABEL": "TYPE DE DÉCOUPE",
+    "TRANCHE": "TRANCHE",
+    "TRANCHE_SUB": "Steak",
+    "CUBE": "CUBE",
+    "CUBE_SUB": "Brochette",
+    "ROULETTE": "ROULETTE",
+    "ROULETTE_SUB": "Rouleau",
+    "HACHE": "HACHÉ",
+    "HACHE_SUB": "Minced"
+  },
+  "POPUP_CUBE": {
+    "SOUS_OPTION": "SOUS OPTION · CUBE",
+    "TITLE": "Format Cube",
+    "CHOOSE": "CHOISISSEZ LA TAILLE DE VOS CUBES",
+    "C1_LABEL": "C1 — Petit — 2cm",
+    "C1_SUB": "Brochettes légères",
+    "C2_LABEL": "C2 — Moyen — 3cm",
+    "C2_SUB": "Format standard/tajine",
+    "C3_LABEL": "C3 — Grand — 4cm",
+    "C3_SUB": "Ragout & cuisson lente"
+  },
+  "POPUP_TRANCHE": {
+    "SOUS_OPTION": "SOUS OPTION · TRANCHE",
+    "TITLE": "Format Tranche",
+    "CHOOSE": "CHOISISSEZ L'ÉPAISSEUR DE VOTRE TRANCHE",
+    "S1_LABEL": "S1 — Fine — 5mm",
+    "S1_SUB": "Tranche fine pour carpaccio",
+    "S2_LABEL": "S2 — Normale — 12mm",
+    "S2_SUB": "Format steak classique",
+    "S3_LABEL": "S3 — Épaisse — 20mm",
+    "S3_SUB": "Steak généreux, grillé"
   }
 }
