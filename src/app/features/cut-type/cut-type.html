@@ -139,3 +139,47 @@
   </div>
   <div class="modal-backdrop fade show"></div>
 }
+<!-- Popup Haché -->
+@if (showHachePopup) {
+  <div class="modal fade show d-block" tabindex="-1" (click)="closeHachePopup()">
+    <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+      <div class="modal-content cube-modal">
+
+        <div class="modal-header cube-modal-header">
+          <div>
+            <p class="cube-sous-option">{{ 'POPUP_HACHE.SOUS_OPTION' | translate }}</p>
+            <h5 class="cube-title">{{ 'POPUP_HACHE.TITLE' | translate }}</h5>
+          </div>
+          <button class="cube-close" (click)="closeHachePopup()">✕</button>
+        </div>
+
+        <div class="modal-body cube-modal-body">
+          <p class="cube-choose-label">{{ 'POPUP_HACHE.CHOOSE' | translate }}</p>
+
+          @for (option of hacheOptions; track option.code) {
+            <div
+              class="cube-option"
+              [class.selected]="isHacheSelected(option.code)"
+              (click)="toggleHacheOption(option.code)">
+              <div class="cube-checkbox">
+                @if (isHacheSelected(option.code)) {
+                  <span class="cube-check">✓</span>
+                }
+              </div>
+              <div>
+                <p class="cube-option-label">{{ option.label | translate }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="modal-footer cube-modal-footer">
+          <button class="btn-annuler" (click)="closeHachePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
+          <button class="btn-confirmer" (click)="confirmHache()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+}

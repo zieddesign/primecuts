@@ -17,6 +17,11 @@ export class CutTypeComponent {
   selectedPart = 'entrecote';
   showTranchePopup = false;
   selectedTrancheOption = 's2';
+  showHachePopup = false;
+  selectedHacheOptions: string[] = [];
+  showCubePopup = false;
+  selectedCubeOption = 'c2';
+
   cutTypes = [
     { code: 'tranche', labelKey: 'CUT_TYPE.TRANCHE', sublabelKey: 'CUT_TYPE.TRANCHE_SUB', image: '' },
     { code: 'cube', labelKey: 'CUT_TYPE.CUBE', sublabelKey: 'CUT_TYPE.CUBE_SUB', image: '' },
@@ -33,7 +38,14 @@ export class CutTypeComponent {
     { code: 'c2', label: 'C2 — Moyen — 3cm', sublabel: 'Format standard/tajine' },
     { code: 'c3', label: 'C3 — Grand — 4cm', sublabel: 'Ragout & cuisson lente' }
   ];
-
+  hacheOptions = [
+    { code: 'ordinaire', label: 'POPUP_HACHE.ORDINAIRE' },
+    { code: 'sans_epice', label: 'POPUP_HACHE.SANS_EPICE' },
+    { code: 'epice_chef', label: 'POPUP_HACHE.EPICE_CHEF' },
+    { code: 'gras_0', label: 'POPUP_HACHE.GRAS_0' },
+    { code: 'gras_10', label: 'POPUP_HACHE.GRAS_10' },
+    { code: 'gras_20', label: 'POPUP_HACHE.GRAS_20' }
+  ];
   constructor(
     private router: Router,
     private route: ActivatedRoute
@@ -51,6 +63,7 @@ export class CutTypeComponent {
       this.showTranchePopup = true;
       return;
     }
+    if (code === 'hache') { this.showHachePopup = true; return; }
     this.router.navigate(['/summary', this.meatType, this.selectedPart, code]);
   }
 
@@ -61,11 +74,6 @@ export class CutTypeComponent {
   goNext(): void {
     this.router.navigate(['/summary']);
   }
-  showCubePopup = false;
-  selectedCubeOption = 'c2';
-
-
-
 
   selectCubeOption(code: string): void {
     this.selectedCubeOption = code;
@@ -90,5 +98,25 @@ export class CutTypeComponent {
   confirmTranche(): void {
     this.showTranchePopup = false;
     this.router.navigate(['/summary', this.meatType, this.selectedPart, 'tranche', this.selectedTrancheOption]);
+  }
+  isHacheSelected(code: string): boolean {
+    return this.selectedHacheOptions.includes(code);
+  }
+
+  closeHachePopup(): void {
+    this.showHachePopup = false;
+  }
+
+  confirmHache(): void {
+    this.showHachePopup = false;
+    this.router.navigate(['/summary', this.meatType, this.selectedPart, 'hache']);
+  }
+  toggleHacheOption(code: string): void {
+    const index = this.selectedHacheOptions.indexOf(code);
+    if (index > -1) {
+      this.selectedHacheOptions.splice(index, 1);
+    } else {
+      this.selectedHacheOptions.push(code);
+    }
   }
 }

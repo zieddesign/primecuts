@@ -112,5 +112,16 @@
     "S2_SUB": "Classic steak format",
     "S3_LABEL": "S3 — Thick — 20mm",
     "S3_SUB": "Generous grilled steak"
+  },
+  "POPUP_HACHE": {
+    "SOUS_OPTION": "SUB OPTION · MINCED",
+    "TITLE": "Minced Options",
+    "CHOOSE": "CHOOSE YOUR OPTIONS",
+    "ORDINAIRE": "PLAIN",
+    "SANS_EPICE": "NO SPICE",
+    "EPICE_CHEF": "CHEF SPICE",
+    "GRAS_0": "0% FAT",
+    "GRAS_10": "10% FAT",
+    "GRAS_20": "20% FAT"
   }
 }

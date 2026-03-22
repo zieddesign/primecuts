@@ -112,5 +112,16 @@
     "S2_SUB": "Format steak classique",
     "S3_LABEL": "S3 — Épaisse — 20mm",
     "S3_SUB": "Steak généreux, grillé"
+  },
+  "POPUP_HACHE": {
+    "SOUS_OPTION": "SOUS OPTION · HACHÉ",
+    "TITLE": "Options Haché",
+    "CHOOSE": "CHOISISSEZ VOS OPTIONS",
+    "ORDINAIRE": "ORDINAIRE",
+    "SANS_EPICE": "SANS EPICE",
+    "EPICE_CHEF": "EPICE DU CHEF",
+    "GRAS_0": "0% GRAISSE",
+    "GRAS_10": "10% GRAISSE",
+    "GRAS_20": "20% GRAISSE"
   }
 }
