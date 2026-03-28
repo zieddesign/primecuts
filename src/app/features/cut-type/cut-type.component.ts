@@ -8,8 +8,8 @@ import { HeaderComponent } from '../../shared/header/header';
   selector: 'app-cut-type',
   standalone: true,
   imports: [CommonModule, TranslateModule, HeaderComponent],
-  templateUrl: './cut-type.html',
-  styleUrl: './cut-type.scss',
+  templateUrl: './cut-type.component.html',
+  styleUrl: './cut-type.component.scss',
 })
 export class CutTypeComponent implements OnInit {
   // Current selection state from route parameters

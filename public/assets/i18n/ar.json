@@ -144,5 +144,49 @@
     "PCS": "قطعة",
     "KG": "كغ",
     "TND": "د.ت"
+  },
+  "EMBALLAGE": {
+    "SCREEN_LABEL": "08 — اختيار التغليف",
+    "SECTION_LABEL": "اختيار التغليف",
+    "TITLE": "التغليف",
+    "TITLE_SUB": "Package · Emballage",
+    "CARTON_NAME": "كرتون",
+    "CARTON_NAME_AR": "صندوق كرتون",
+    "CARTON_DESC": "صندوق متين، مثالي للنقل",
+    "SACHET_NAME": "كيس",
+    "SACHET_NAME_AR": "كيس ورق",
+    "SACHET_DESC": "كيس ورق فاخر مع إغلاق محكم",
+    "RECAP_LABEL": "ملخص الطلب",
+    "ADD_TO_CART": "أضف إلى السلة"
+  },
+  "ANOTHER_CUT": {
+    "BREADCRUMB_CUT": "القطع",
+    "BREADCRUMB_PKG": "التغليف",
+    "BREADCRUMB_RECAP": "الملخص",
+    "SECTION_LABEL": "المرحلة النهائية",
+    "TITLE": "إضافة<br>قطعة أخرى؟",
+    "SUBTITLE": "Add another cut · Ajouter une coupe",
+    "ORDER_TITLE": "تفاصيل الطلب",
+    "TOTAL_LABEL": "المجموع التقديري",
+    "BTN_ADD_LABEL": "إضافة قطعة أخرى",
+    "BTN_ADD_SUB": "Add another cut",
+    "BTN_FINISH_LABEL": "إنهاء والذهاب للسلة",
+    "BTN_FINISH_SUB": "Finish & go to basket",
+    "CANCEL_ALL": "إلغاء الكل",
+    "CANCEL_CUT": "إلغاء القطعة والذهاب للسلة",
+    "REMOVE": "حذف"
+  },
+  "BASKET": {
+    "SECTION_LABEL": "الملخص النهائي",
+    "TITLE": "السلة",
+    "TITLE_SUB": "Basket · Panier",
+    "CUT": "قطعة",
+    "EDIT": "تعديل",
+    "DELETE": "حذف",
+    "ADVICE": "نصيحة",
+    "TOTAL": "المجموع التقديري",
+    "CANCEL_ALL": "إلغاء الكل",
+    "PRINT": "طباعة التذكرة",
+    "START_OVER": "طلب جديد"
   }
 }

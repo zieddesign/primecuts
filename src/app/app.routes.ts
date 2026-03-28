@@ -32,36 +32,53 @@ export const routes: Routes = [
   {
     path: 'selection/:type',
     loadComponent: () =>
-      import('./features/selection/selection')
+      import('./features/selection/selection.component')
         .then(m => m.SelectionComponent)
   },
   {
     path: 'cut-type/:type/:part',
     loadComponent: () =>
-      import('./features/cut-type/cut-type')
+      import('./features/cut-type/cut-type.component')
         .then(m => m.CutTypeComponent)
   },
 
   // --- QUANTITY & PRICE SECTION ---
-  
+
   // 1. Route for cuts WITHOUT a specific size (e.g., Haché, Roulette)
   // URL: /quantity-price/beef/entrecote/hache
   {
     path: 'quantity-price/:type/:part/:cutType',
     loadComponent: () =>
-      import('./features/quantity-price/quantity-price')
+      import('./features/quantity-price/quantity-price.component')
         .then(m => m.QuantityPriceComponent)
   },
-  
+
   // 2. Route for cuts WITH a specific size (e.g., Cube C2, Tranche S1)
   // URL: /quantity-price/beef/entrecote/cube/c2
   {
     path: 'quantity-price/:type/:part/:cutType/:size',
     loadComponent: () =>
-      import('./features/quantity-price/quantity-price')
+      import('./features/quantity-price/quantity-price.component')
         .then(m => m.QuantityPriceComponent)
   },
-
+  {
+    path: 'emballage/:type/:part/:cutType/:size/:quantity',
+    loadComponent: () =>
+      import('./features/emballage/emballage.component')
+        .then(m => m.EmballageComponent)
+  },
+  {
+    path: 'another-cut',
+    loadComponent: () =>
+      import('./features/another-cut/another-cut.component')
+        .then(m => m.AnotherCutComponent)
+  },
+  {
+    path: 'basket',
+    loadComponent: () =>
+      import('./features/basket/basket.component')
+        .then(m => m.BasketComponent)
+  },
   {
     path: '**',
     redirectTo: 'splash'

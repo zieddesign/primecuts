@@ -29,3 +29,16 @@ html, body {
     margin-right: auto !important;
   }
 }
+:root {
+  --pc-cream:      #FAF8F2;
+  --pc-cream2:     #F5F0E4;
+  --pc-cream3:     #EDE6D2;
+  --pc-gold:       #8B6914;
+  --pc-gold2:      #C9A84C;
+  --pc-gold3:      #A07830;
+  --pc-brown:      #2A1F00;
+  --pc-muted:      #9A8A6A;
+  --pc-border:     #D4C890;
+  --pc-shadow:     0 4px 15px rgba(139, 105, 20, 0.08);
+  --pc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

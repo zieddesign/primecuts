@@ -1,0 +1,123 @@
+<section class="ac-screen">
+
+    <app-header [cartCount]="orderItems.length"></app-header>
+
+    <div class="ac-welcome">
+        <div class="ac-welcome__user">
+            <p class="ac-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
+            <p class="ac-welcome__name">{{ 'HEADER.CLIENT' | translate }}247</p>
+        </div>
+        <nav class="ac-breadcrumb">
+            <span>{{ 'ANOTHER_CUT.BREADCRUMB_CUT' | translate }}</span>
+            <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+            <span>{{ 'ANOTHER_CUT.BREADCRUMB_PKG' | translate }}</span>
+            <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+            <span class="ac-breadcrumb__active">{{ 'ANOTHER_CUT.BREADCRUMB_RECAP' | translate }}</span>
+        </nav>
+    </div>
+
+    <div class="ac-section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="16" />
+            <line x1="8" y1="12" x2="16" y2="12" />
+        </svg>
+        <span>{{ 'ANOTHER_CUT.SECTION_LABEL' | translate }}</span>
+    </div>
+
+    <div class="ac-title-row">
+        <h2 class="ac-title" [innerHTML]="'ANOTHER_CUT.TITLE' | translate"></h2>
+        <span class="ac-title__sub">{{ 'ANOTHER_CUT.SUBTITLE' | translate }}</span>
+    </div>
+    <div class="ac-divider"></div>
+
+    <div class="ac-order-card">
+        <p class="ac-order-card__title">{{ 'ANOTHER_CUT.ORDER_TITLE' | translate }}</p>
+
+        <div class="ac-order-items">
+            <div *ngFor="let item of orderItems; let i = index" class="ac-order-item">
+                <div class="ac-order-item__left">
+                    <div class="ac-order-item__num">{{ i + 1 }}</div>
+                    <div class="ac-order-item__info">
+                        <p class="ac-order-item__name">
+                            {{ ('MEAT.' + item.meat.toUpperCase()) | translate }} · {{ ('CUTS.' +
+                            item.cut.toUpperCase()) | translate }}
+                        </p>
+                        <div class="ac-order-item__details">
+                            <span class="ac-detail-tag">
+                                {{ ('CUT_TYPE.' + item.cutType.toUpperCase()) | translate }}
+                                <strong *ngIf="item.subOption"> {{ item.subOption | uppercase }}</strong>
+                            </span>
+                            <span class="ac-detail-tag">{{ item.quantity }} {{ 'UNIT.PCS' | translate }}</span>
+                            <span class="ac-detail-tag">{{ item.packaging | titlecase }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ac-order-item__right">
+                    <span class="ac-order-item__qty">×{{ item.quantity }}</span>
+                    <button class="ac-order-item__remove" (click)="removeItem(i)"
+                        [attr.aria-label]="'ANOTHER_CUT.REMOVE' | translate">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ac-order-total">
+            <span class="ac-order-total__label">{{ 'ANOTHER_CUT.TOTAL_LABEL' | translate }}</span>
+            <span class="ac-order-total__val">{{ totalEstimate }}</span>
+        </div>
+    </div>
+
+    <div class="ac-actions-grid">
+
+        <button class="ac-action-btn ac-btn--add" (click)="addAnotherCut()">
+            <div class="ac-action-btn__corner">＋</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+            </svg>
+            <p class="ac-action-btn__label">{{ 'ANOTHER_CUT.BTN_ADD_LABEL' | translate }}</p>
+            <p class="ac-action-btn__sub">{{ 'ANOTHER_CUT.BTN_ADD_SUB' | translate }}</p>
+        </button>
+
+        <button class="ac-action-btn ac-btn--finish" (click)="finishAndGoToBasket()">
+            <div class="ac-action-btn__corner">→</div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            <p class="ac-action-btn__label">{{ 'ANOTHER_CUT.BTN_FINISH_LABEL' | translate }}</p>
+            <p class="ac-action-btn__sub">{{ 'ANOTHER_CUT.BTN_FINISH_SUB' | translate }}</p>
+        </button>
+
+    </div>
+
+    <div class="ac-cancel-row">
+        <button class="ac-cancel-link" (click)="cancelAll()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6" />
+                <path d="M19 6l-1 14H6L5 6" />
+                <path d="M10 11v6M14 11v6" />
+            </svg>
+            {{ 'ANOTHER_CUT.CANCEL_ALL' | translate }}
+        </button>
+        <button class="ac-cancel-link" (click)="cancelCutGoBasket()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            {{ 'ANOTHER_CUT.CANCEL_CUT' | translate }}
+        </button>
+    </div>
+
+</section>

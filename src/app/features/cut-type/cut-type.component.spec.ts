@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CutType } from './cut-type';
+import { CutType } from './cut-type.component';
 
 describe('CutType', () => {
   let component: CutType;
