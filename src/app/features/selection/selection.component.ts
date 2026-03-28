@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-selection',
   standalone: true,
   imports: [CommonModule,  TranslateModule, HeaderComponent],
-  templateUrl: './selection.html',
-  styleUrl: './selection.scss',
+  templateUrl: './selection.component.html',
+  styleUrl: './selection.component.scss',
 })
 export class SelectionComponent {
 

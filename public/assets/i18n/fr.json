@@ -144,5 +144,49 @@
     "PCS": "PCS",
     "KG": "KG",
     "TND": "TND"
+  },
+  "EMBALLAGE": {
+    "SCREEN_LABEL": "08 — Choix d'Emballage",
+    "SECTION_LABEL": "Choix du Packaging",
+    "TITLE": "Package",
+    "TITLE_SUB": "Emballage · التغليف",
+    "CARTON_NAME": "Carton",
+    "CARTON_NAME_AR": "صندوق كرتون",
+    "CARTON_DESC": "Boîte robuste, idéale pour transport",
+    "SACHET_NAME": "Sachet",
+    "SACHET_NAME_AR": "كيس ورق",
+    "SACHET_DESC": "Sac papier premium, avec fermeture scellée",
+    "RECAP_LABEL": "Récapitulatif commande",
+    "ADD_TO_CART": "Ajouter au Panier"
+  },
+  "ANOTHER_CUT": {
+    "BREADCRUMB_CUT": "Coupe",
+    "BREADCRUMB_PKG": "Emballage",
+    "BREADCRUMB_RECAP": "Récap",
+    "SECTION_LABEL": "Étape finale",
+    "TITLE": "Ajouter une<br>autre coupe ?",
+    "SUBTITLE": "Add another cut · إضافة قطع أخرى",
+    "ORDER_TITLE": "Description de la commande",
+    "TOTAL_LABEL": "Total estimé",
+    "BTN_ADD_LABEL": "Add another cut",
+    "BTN_ADD_SUB": "Ajouter une coupe",
+    "BTN_FINISH_LABEL": "Finish & go to basket",
+    "BTN_FINISH_SUB": "Finaliser la commande",
+    "CANCEL_ALL": "Cancel all",
+    "CANCEL_CUT": "Cancel cut & go to basket",
+    "REMOVE": "Supprimer"
+  },
+  "BASKET": {
+    "SECTION_LABEL": "Récapitulatif final",
+    "TITLE": "Panier",
+    "TITLE_SUB": "Basket · السلة",
+    "CUT": "Coupe",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer",
+    "ADVICE": "Conseil",
+    "TOTAL": "Total estimé",
+    "CANCEL_ALL": "Cancel all",
+    "PRINT": "Print ticket",
+    "START_OVER": "Nouvelle commande"
   }
 }

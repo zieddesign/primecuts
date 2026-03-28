@@ -1,0 +1,158 @@
+<section class="emb-screen">
+
+  <app-header [cartCount]="cartCount()"></app-header>
+
+  <div class="emb-welcome">
+    <div class="emb-welcome__user">
+      <p class="emb-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
+      <p class="emb-welcome__name">{{ 'HEADER.CLIENT' | translate }} #247</p>
+    </div>
+
+    <nav class="emb-breadcrumb" aria-label="Breadcrumb">
+      <span>{{ getMeatKey() | translate }}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+      <span>{{ getPartKey() | translate }}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+      <span>{{ getCutKey() | translate }}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+      <span class="emb-breadcrumb__active">{{ 'EMBALLAGE.TITLE' | translate }}</span>
+    </nav>
+  </div>
+
+  <div class="emb-section-label">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14">
+      <path
+        d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+    </svg>
+    <span>{{ 'EMBALLAGE.SECTION_LABEL' | translate }}</span>
+  </div>
+
+  <div class="emb-title-row">
+    <h2 class="emb-title">{{ 'EMBALLAGE.TITLE' | translate }}</h2>
+    <span class="emb-title__sub">{{ 'EMBALLAGE.TITLE_SUB' | translate }}</span>
+  </div>
+
+  <div class="emb-divider" aria-hidden="true"></div>
+
+  <div class="emb-grid" role="radiogroup">
+    <button *ngFor="let opt of packagingOptions(); trackBy: trackByOption" class="emb-card"
+      [class.emb-card--active]="opt.selected" (click)="selectPackaging(opt.id)" role="radio"
+      [attr.aria-checked]="opt.selected">
+      <div class="emb-card__check" aria-hidden="true"></div>
+
+      <div class="emb-card__icon">
+        <svg *ngIf="opt.id === 'carton'" viewBox="0 0 130 115" fill="none">
+          <defs>
+            <linearGradient id="bG" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#C9A84C" />
+              <stop offset="1" stop-color="#8B6914" />
+            </linearGradient>
+          </defs>
+          <path d="M18 50 L65 34 L112 50 L112 94 L65 110 L18 94Z" fill="url(#bG)" opacity="0.85" />
+          <path d="M18 50 L18 94 L65 110 L65 66Z" fill="#7A5C10" opacity="0.65" />
+          <path d="M65 34 L112 50 L112 40 L65 24Z" fill="#D4A850" opacity="0.8" />
+          <path d="M24 46 L65 32 L106 46 L65 58Z" fill="#EDE6D2" opacity="0.5" />
+          <ellipse cx="65" cy="108" rx="44" ry="7" fill="rgba(139,105,20,0.07)" />
+        </svg>
+
+        <svg *ngIf="opt.id === 'sachet'" viewBox="0 0 130 115" fill="none">
+          <defs>
+            <linearGradient id="sG" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#C9A84C"></stop>
+              <stop offset="1" stop-color="#8B6914"></stop>
+            </linearGradient>
+            <linearGradient id="sS" x1="0" y1="0" x2="1" y2="0">
+              <stop stop-color="#7A5C10"></stop>
+              <stop offset="1" stop-color="#8B6914"></stop>
+            </linearGradient>
+          </defs>
+          <!-- Bag body front -->
+          <path d="M35 28 L35 98 Q35 106 43 106 L90 106 Q98 106 98 98 L98 28Z" fill="url(#sG)" opacity="0.85"></path>
+          <!-- Side 3D -->
+          <path d="M98 28 L110 38 L110 108 Q110 114 104 114 L90 106 L98 98 L98 28Z" fill="url(#sS)" opacity="0.7">
+          </path>
+          <!-- Top fold -->
+          <path d="M35 28 L42 16 L91 16 L98 28Z" fill="#D4A850" opacity="0.92"></path>
+          <path d="M98 28 L106 18 L110 24 L110 38 L98 28Z" fill="#B8920E" opacity="0.7"></path>
+          <!-- Seal line -->
+          <line x1="42" y1="16" x2="91" y2="16" stroke="rgba(255,240,200,0.45)" stroke-width="1.5"></line>
+          <rect x="53" y="18" width="30" height="3" rx="1.5" fill="rgba(139,105,20,0.25)"></rect>
+          <!-- Bag vertical texture -->
+          <line x1="52" y1="28" x2="52" y2="103" stroke="rgba(255,240,200,0.13)" stroke-width="0.8"></line>
+          <line x1="66" y1="28" x2="66" y2="103" stroke="rgba(255,240,200,0.1)" stroke-width="0.8"></line>
+          <line x1="80" y1="28" x2="80" y2="103" stroke="rgba(255,240,200,0.13)" stroke-width="0.8"></line>
+          <!-- Bottom fold -->
+          <path d="M35 98 L43 106 L90 106 L98 98" stroke="rgba(139,105,20,0.18)" stroke-width="1" fill="none"></path>
+          <!-- Logo mark -->
+          <circle cx="66" cy="64" r="13" fill="none" stroke="rgba(255,240,200,0.18)" stroke-width="1"></circle>
+          <text x="66" y="68" text-anchor="middle" font-family="Montserrat" font-size="6" font-weight="700"
+            fill="rgba(255,240,200,0.3)" letter-spacing="1">PRIME</text>
+          <!-- Shadow -->
+          <ellipse cx="70" cy="112" rx="34" ry="5" fill="rgba(139,105,20,0.07)"></ellipse>
+        </svg>
+      </div>
+
+      <p class="emb-card__name">{{ opt.nameKey | translate }}</p>
+      <span class="emb-card__divider"></span>
+      <p class="emb-card__desc">{{ opt.descKey | translate }}</p>
+    </button>
+  </div>
+
+  <div class="emb-recap">
+    <div class="emb-recap__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+      </svg>
+    </div>
+    <div class="emb-recap__content">
+      <p class="emb-recap__label">{{ 'EMBALLAGE.RECAP_LABEL' | translate }}</p>
+      <div class="emb-recap__items">
+
+        <span class="emb-recap__tag">
+          {{ getMeatKey() | translate }} · {{ getPartKey() | translate }}
+        </span>
+
+        <span class="emb-recap__tag">
+          {{ getCutKey() | translate }}
+          <strong *ngIf="size"> {{ size | uppercase }}</strong>
+        </span>
+
+        <span class="emb-recap__tag">
+          {{ quantity }} {{ 'UNIT.PCS' | translate }}
+        </span>
+
+        <span class="emb-recap__tag emb-recap__tag--pkg">
+          {{ selectedPackaging().nameKey | translate }}
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="emb-actions">
+    <button class="emb-add-btn" (click)="onAddToCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="20">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 01-8 0" />
+      </svg>
+      {{ 'EMBALLAGE.ADD_TO_CART' | translate }}
+    </button>
+
+    <nav class="emb-bottom-nav">
+      <button class="emb-btn emb-btn--prev" (click)="onPrev()">
+        {{ 'COMMON.PREV' | translate }}
+      </button>
+      <button class="emb-btn emb-btn--conseil" (click)="onConseil()">
+        {{ 'COMMON.CONSEIL' | translate }}
+      </button>
+    </nav>
+  </div>
+</section>

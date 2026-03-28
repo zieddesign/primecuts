@@ -1,0 +1,118 @@
+<section class="bsk-screen">
+
+  <app-header [cartCount]="orderItems.length"></app-header>
+
+  <div class="bsk-welcome">
+    <div class="bsk-welcome__user">
+      <p class="bsk-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
+      <p class="bsk-welcome__name">{{ 'HEADER.CLIENT' | translate }}247</p>
+    </div>
+    <div class="bsk-welcome__actions">
+      <button class="bsk-nav-btn bsk-nav-btn--prev" (click)="onPrev()">
+        {{ 'COMMON.PREV' | translate }}
+      </button>
+      <button class="bsk-nav-btn bsk-nav-btn--advice" (click)="onAdvice()">
+        {{ 'BASKET.ADVICE' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div class="bsk-section-label">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 01-8 0" />
+    </svg>
+    <span>{{ 'BASKET.SECTION_LABEL' | translate }}</span>
+  </div>
+
+  <div class="bsk-title-row">
+    <h2 class="bsk-title">{{ 'BASKET.TITLE' | translate }}</h2>
+    <span class="bsk-title__sub">{{ 'BASKET.TITLE_SUB' | translate }}</span>
+  </div>
+  <div class="bsk-divider"></div>
+
+  <div class="bsk-empty" *ngIf="orderItems.length === 0">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="48">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <path d="M16 10a4 4 0 01-8 0" />
+    </svg>
+    <p class="bsk-empty__text">{{ 'CART.EMPTY' | translate }}</p>
+  </div>
+
+  <div class="bsk-items" *ngIf="orderItems.length > 0">
+
+    <div *ngFor="let item of orderItems; let i = index; trackBy: trackByItem" class="bsk-item">
+      <div class="bsk-item__header">
+        <div class="bsk-item__header-left">
+          <span class="bsk-item__index">{{ 'BASKET.CUT' | translate }} {{ i + 1 }}</span>
+          <span class="bsk-item__sep">/</span>
+          <span class="bsk-item__meat">
+            {{ ('MEAT.' + item.meat.toUpperCase()) | translate }}
+          </span>
+        </div>
+        <div class="bsk-item__header-actions">
+          <button class="bsk-item__btn bsk-item__btn--edit" (click)="editItem(i)">
+            {{ 'BASKET.EDIT' | translate }}
+          </button>
+          <button class="bsk-item__btn bsk-item__btn--delete" (click)="deleteItem(i)">
+            {{ 'BASKET.DELETE' | translate }}
+          </button>
+        </div>
+      </div>
+
+      <div class="bsk-item__body">
+        <div class="bsk-item__body-left">
+          <p class="bsk-item__cut-name">
+            {{ ('CUTS.' + item.cut.toUpperCase()) | translate }}
+            <span class="bsk-item__cut-detail">({{ getDetailLine(item) }})</span>
+          </p>
+          <div class="bsk-item__tags">
+            <span class="bsk-item__tag" *ngIf="item.cutType">
+              {{ ('CUT_TYPE.' + item.cutType.toUpperCase()) | translate }}
+            </span>
+            <span class="bsk-item__tag" *ngIf="item.weight">
+              {{ item.weight }} {{ 'UNIT.KG' | translate }}
+            </span>
+            <span class="bsk-item__tag" *ngIf="item.packaging">
+              {{ item.packaging | titlecase }}
+            </span>
+          </div>
+        </div>
+        <div class="bsk-item__body-right">
+          <p class="bsk-item__price-label">{{ 'CART.PRICE' | translate }}</p>
+          <p class="bsk-item__price-val">
+            {{ item.price > 0 ? (item.price | number:'1.0-2') + ' TND' : '-- TND' }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bsk-total" *ngIf="orderItems.length > 0">
+    <span class="bsk-total__label">{{ 'BASKET.TOTAL' | translate }}</span>
+    <span class="bsk-total__val">{{ totalFormatted }}</span>
+  </div>
+
+  <div class="bsk-footer">
+    <button class="bsk-footer__link bsk-footer__link--cancel" (click)="cancelAll()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="3 6 5 6 21 6" />
+        <path d="M19 6l-1 14H6L5 6" />
+        <path d="M10 11v6M14 11v6" />
+      </svg>
+      {{ 'BASKET.CANCEL_ALL' | translate }}
+    </button>
+    <button class="bsk-footer__link bsk-footer__link--print" (click)="printTicket()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 6 2 18 2 18 9" />
+        <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" />
+        <rect x="6" y="14" width="12" height="8" />
+      </svg>
+      {{ 'BASKET.PRINT' | translate }}
+    </button>
+  </div>
+
+</section>
