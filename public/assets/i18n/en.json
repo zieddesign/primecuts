@@ -140,7 +140,9 @@
     "CAMEL_MINCED": "Minced Camel",
     "CAMEL_MINCED_SUB": "Kefta / Burger",
     "CAMEL_FAT": "Camel Hump Fat",
-    "CAMEL_FAT_SUB": "Flavor / Mix"
+    "CAMEL_FAT_SUB": "Flavor / Mix",
+    "ARRIERE": "Hind quarter",
+    "ARRIERE_SUB": "Roast leg / Premium slicing"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Rib eye",
@@ -421,6 +423,9 @@
     "CAMEL_MINCED_AVOID": "Dry lean cooking",
     "CAMEL_FAT_COOKING": "Rendering / Flavor addition",
     "CAMEL_FAT_DISHES": "Mixed with lean meat",
-    "CAMEL_FAT_AVOID": "Direct grilling alone"
+    "CAMEL_FAT_AVOID": "Direct grilling alone",
+    "ARRIERE_COOKING": "Oven roast / Slow cook",
+    "ARRIERE_DISHES": "Roast leg, Eid feast, Premium slicing",
+    "ARRIERE_AVOID": "Aggressive long stewing / overcooking"
   }
 }
