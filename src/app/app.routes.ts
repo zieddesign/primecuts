@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 
 /**
  * Application Routing Configuration
- * * Note: The order of routes matters. Specific routes with more parameters 
- * should generally come before or alongside their simpler versions.
+ * Note: L'ordre est crucial. Les routes les plus spécifiques (avec le plus de paramètres)
+ * doivent être déclarées avant les versions simplifiées.
  */
 export const routes: Routes = [
   {
@@ -42,19 +42,7 @@ export const routes: Routes = [
         .then(m => m.CutTypeComponent)
   },
 
-  // --- QUANTITY & PRICE SECTION ---
-
-  // 1. Route for cuts WITHOUT a specific size (e.g., Haché, Roulette)
-  // URL: /quantity-price/beef/entrecote/hache
-  {
-    path: 'quantity-price/:type/:part/:cutType',
-    loadComponent: () =>
-      import('./features/quantity-price/quantity-price.component')
-        .then(m => m.QuantityPriceComponent)
-  },
-
-  // 2. Route for cuts WITH a specific size (e.g., Cube C2, Tranche S1)
-  // URL: /quantity-price/beef/entrecote/cube/c2
+  
   {
     path: 'quantity-price/:type/:part/:cutType/:size',
     loadComponent: () =>
@@ -62,11 +50,26 @@ export const routes: Routes = [
         .then(m => m.QuantityPriceComponent)
   },
   {
+    path: 'quantity-price/:type/:part/:cutType',
+    loadComponent: () =>
+      import('./features/quantity-price/quantity-price.component')
+        .then(m => m.QuantityPriceComponent)
+  },
+
+
+  {
     path: 'emballage/:type/:part/:cutType/:size/:quantity',
     loadComponent: () =>
       import('./features/emballage/emballage.component')
         .then(m => m.EmballageComponent)
   },
+  {
+    path: 'emballage/:type/:part/:cutType/:quantity',
+    loadComponent: () =>
+      import('./features/emballage/emballage.component')
+        .then(m => m.EmballageComponent)
+  },
+
   {
     path: 'another-cut',
     loadComponent: () =>
@@ -79,6 +82,7 @@ export const routes: Routes = [
       import('./features/basket/basket.component')
         .then(m => m.BasketComponent)
   },
+
   {
     path: '**',
     redirectTo: 'splash'

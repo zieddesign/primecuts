@@ -140,12 +140,14 @@ export class CutTypeComponent implements OnInit {
     return this.selectedHacheOptions.includes(code);
   }
 
-  confirmHache(): void {
-    this.showHachePopup = false;
-    // Note: Redirection is now to weight input (quantity-price) 
-    // rather than the summary to ensure price calculation.
-    this.router.navigate(['/quantity-price', this.meatType, this.selectedPart, 'hache']);
-  }
+confirmHache(): void {
+  this.showHachePopup = false;
+  this.router.navigate(
+    ['/quantity-price', this.meatType, this.selectedPart, 'hache'],
+    { queryParams: { options: this.selectedHacheOptions.join(',') } }
+  );
+}
+
 
   closeHachePopup(): void {
     this.showHachePopup = false;
