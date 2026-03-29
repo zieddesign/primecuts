@@ -21,28 +21,21 @@
       </div>
 
       <ul class="dropdown-menu dropdown-menu-end cart-dropdown p-3">
-
-        @if (cartItems.length === 0) {
-        <li>
-          <p class="cart-empty text-center">{{ 'CART.EMPTY' | translate }}</p>
-        </li>
-        }
-
-        @for (item of cartItems; track item.id) {
+        @for (item of cartItems; track $index) {
         <li class="cart-item d-flex align-items-center justify-content-between py-2">
           <div>
-            <p class="cart-item-label mb-0">{{ item.cut }} / {{ item.meat }}</p>
+            <p class="cart-item-label mb-0">{{ item.cutType }} / {{ item.meat }}</p>
             <p class="cart-item-price mb-0">{{ 'CART.PRICE' | translate }} {{ item.price }} TND</p>
           </div>
-          <button class="cart-item-remove btn p-0" (click)="removeItem(item.id)">✕</button>
+          <button class="cart-item-remove btn p-0" (click)="removeItem($index)">✕</button>
         </li>
         }
-
         <li>
           <button class="cart-goto btn btn-link p-0 w-100 text-start" (click)="goToBasket()">
             {{ 'CART.GOTO' | translate }}
           </button>
         </li>
+
 
       </ul>
     </div>
