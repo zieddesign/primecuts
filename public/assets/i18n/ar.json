@@ -142,7 +142,9 @@
     "CAMEL_FAT": "شحم سنام الجمل",
     "CAMEL_FAT_SUB": "نكهة / مزج مع اللحم",
     "ARRIERE": "الربع الخلفي",
-    "ARRIERE_SUB": "فخذ مشوي / تقطيع فاخر"
+    "ARRIERE_SUB": "فخذ مشوي / تقطيع فاخر",
+     "AVANT": "الربع الأمامي",
+    "AVANT_SUB": "مكعبات / كسكسي / مرقة"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "ضلع",
@@ -420,6 +422,9 @@
     "CAMEL_FAT_AVOID": "شواء مباشر وحده",
     "ARRIERE_COOKING": "شواء بالفرن / طهي بطيء",
     "ARRIERE_DISHES": "فخذ مشوي، عيد، تقطيع فاخر",
-    "ARRIERE_AVOID": "مرقة طويلة قوية"
+    "ARRIERE_AVOID": "مرقة طويلة قوية",
+    "AVANT_COOKING": "طهي بطيء / مكعبات / مفروم",
+    "AVANT_DISHES": "كسكسي بالعلوش، مرقة، كمونية",
+    "AVANT_AVOID": "شواء سريع كامل"
   }
 }
