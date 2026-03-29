@@ -1,95 +1,93 @@
 <div class="selection-screen">
-
   <app-header [clientNumber]="'247'" [cartCount]="2"></app-header>
 
   <div class="selection-content">
-
-    <!-- Meat badge -->
     <div class="meat-badge">{{ selectedMeat.labelKey | translate }}</div>
 
-    <!-- Client + meat tag -->
-    <div class="d-flex align-items-center justify-content-between mb-3">
+    <div class="sel-toprow">
       <div>
         <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
-        <p class="client-name">{{ 'SELECTION.CLIENT' | translate }}</p>
+        <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
       </div>
-      <div class="meat-tag d-flex align-items-center gap-2">
+      <div class="meat-tag">
         <span class="meat-dot"></span>
         <span class="meat-tag-label">{{ selectedMeat.labelKey | translate }}</span>
       </div>
     </div>
 
-    <!-- Touch hint -->
-    <div class="touch-hint d-flex align-items-center gap-2 mb-3">
+    <div class="touch-hint">
       <span class="hint-icon">⊙</span>
       <span class="hint-text">{{ 'SELECTION.TOUCH_HINT' | translate }}</span>
     </div>
 
-    <!-- Animal image zone -->
-    <div class="animal-zone mb-3" (click)="goToCutType()" style="cursor: pointer;">
-      <!-- <img [src]="'assets/images/' + meatType + '.jpg'" [alt]="meatType" class="animal-img" /> -->
+    <div class="cut-tags-zone">
+      <p class="cuts-label">{{ 'SELECTION.CUTS_LABEL' | translate }}</p>
+      <div class="cut-tags-grid">
+        @for (cut of cuts; track cut.code) {
+          <button class="cut-tag-card" [class.cut-tag-card--active]="selectedCut.code === cut.code" (click)="selectCut(cut)">
+            <span class="cut-tag-card__icon">
+              <ng-container [ngSwitch]="cut.code">
+                <svg *ngSwitchCase="'filet'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="12" rx="6" ry="9"/><path d="M12 3v18"/></svg>
+                <svg *ngSwitchCase="'cotelettes'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 5c0-2-3-3-5-3S7 3 7 5c0 3 3 5 5 7s5 4 5 7v3h-2v-3c0-2-2-4-4-6s-4-3-4-6"/></svg>
+                <svg *ngSwitchDefault viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/></svg>
+              </ng-container>
+            </span>
+            <span class="cut-tag-card__label">{{ cut.labelKey | translate }}</span>
+            <span class="cut-tag-card__stars">
+              @for (star of getStars(cut.rating); track $index) { <span [class]="star ? 'star star--on' : 'star'">★</span> }
+            </span>
+          </button>
+        }
+      </div>
     </div>
 
-    <!-- Cuts label -->
-    <p class="cuts-label">{{ 'SELECTION.CUTS_LABEL' | translate }}</p>
-
-    <!-- Cuts tabs -->
-    <div class="cuts-tabs d-flex gap-2 mb-3">
-      @for (cut of cuts; track cut.code) {
-        <button
-          class="cut-tab"
-          [class.active]="selectedCut.code === cut.code"
-          (click)="selectCut(cut)">
-          {{ cut.labelKey | translate }}
-        </button>
-      }
-    </div>
-
-    <!-- Cut detail card -->
     <div class="cut-card">
-
-      <div class="d-flex align-items-start justify-content-between mb-2">
+      <div class="cut-card__header">
         <div>
           <h3 class="cut-name">{{ selectedCut.labelKey | translate }}</h3>
           <p class="cut-sublabel">{{ selectedCut.sublabelKey | translate }}</p>
         </div>
-        <div class="d-flex gap-1">
-          @for (star of getStars(selectedCut.rating); track $index) {
-            <span [class]="star ? 'star active' : 'star'">★</span>
-          }
-        </div>
       </div>
 
-      <div class="cut-divider"></div>
+      <div class="cut-table">
+        <div class="cut-table__row">
+          <div class="cut-table__cell">
+            <p class="cut-table__label">{{ 'CUTS_DATA.TENDERNESS' | translate }}</p>
+            <div class="cut-table__stars">
+              @for (star of getTendernessStars(selectedCut.tenderness); track $index) { <span class="star star--on">★</span> }
+              @for (star of getTendernessStars(5 - selectedCut.tenderness); track $index) { <span class="star">★</span> }
+            </div>
+          </div>
+          <div class="cut-table__cell">
+            <p class="cut-table__label">{{ 'CUTS_DATA.JUICINESS' | translate }}</p>
+            <p class="cut-table__value">{{ selectedCut.juiciness | translate }}</p>
+          </div>
+        </div>
 
-      <div class="details-grid">
-        <div class="detail-item">
-          <p class="detail-label">{{ 'SELECTION.TYPE_STEAK' | translate }}</p>
-          <p class="detail-value">{{ details.typeSteak | translate }}</p>
+        <div class="cut-table__row cut-table__row--full">
+          <div class="cut-table__cell">
+            <p class="cut-table__label">{{ 'CUTS_DATA.COOKING' | translate }}</p>
+            <p class="cut-table__value">{{ selectedCut.cooking | translate }}</p>
+          </div>
         </div>
-        <div class="detail-item">
-          <p class="detail-label">{{ 'SELECTION.CUISSON' | translate }}</p>
-          <p class="detail-value">{{ details.cuisson | translate }}</p>
+        <div class="cut-table__row cut-table__row--full">
+          <div class="cut-table__cell">
+            <p class="cut-table__label">{{ 'CUTS_DATA.DISHES' | translate }}</p>
+            <p class="cut-table__value">{{ selectedCut.dishes | translate }}</p>
+          </div>
         </div>
-        <div class="detail-item">
-          <p class="detail-label">{{ 'SELECTION.TENEUR_GRAS' | translate }}</p>
-          <p class="detail-value underline">{{ details.teneurGras | translate }}</p>
-        </div>
-        <div class="detail-item">
-          <p class="detail-label">{{ 'SELECTION.SAVEUR' | translate }}</p>
-          <p class="detail-value">{{ details.saveur | translate }}</p>
+        <div class="cut-table__row cut-table__row--full cut-table__row--avoid">
+          <div class="cut-table__cell">
+            <p class="cut-table__label">{{ 'CUTS_DATA.AVOID' | translate }}</p>
+            <p class="cut-table__value cut-table__value--muted">{{ selectedCut.avoid | translate }}</p>
+          </div>
         </div>
       </div>
-
     </div>
-
   </div>
 
-  <!-- Bottom nav -->
-  <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
+  <div class="bottom-nav">
     <button class="btn-prev" (click)="goBack()">{{ 'COMMON.PREV' | translate }}</button>
-    <button class="btn-conseil">{{ 'SELECTION.CONSEIL' | translate }}</button>
     <button class="btn-next" (click)="goNext()">{{ 'COMMON.NEXT' | translate }}</button>
   </div>
-
 </div>
