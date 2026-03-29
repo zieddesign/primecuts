@@ -1,27 +1,33 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { OrderService, OrderItem } from '../../shared/services/order.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrls: ['./header.scss']
 })
-export class HeaderComponent {
-  @Input() clientNumber: string = '247';
-  @Input() cartCount: number = 0;
+export class HeaderComponent implements OnInit {
+  @Input() clientNumber: string = '247';  
+  @Input() cartCount: number = 0;          
 
+  cartItems: OrderItem[] = [];
   showCart = false;
 
-  cartItems = [
-    { id: 1, cut: 'Cut 1', meat: 'Beef', price: 50 },
-    { id: 2, cut: 'Cut 2', meat: 'Agneau', price: 75 }
-  ];
+  constructor(
+    private router: Router,
+    private orderService: OrderService
+  ) {}
 
-  constructor(private router: Router) {}
+  ngOnInit(): void {
+    // Initialisation du panier
+    this.cartItems = this.orderService.getItems();
+    this.cartCount = this.orderService.count;
+  }
 
   goToLanguage(): void {
     this.router.navigate(['/language']);
@@ -31,13 +37,16 @@ export class HeaderComponent {
     this.showCart = !this.showCart;
   }
 
-  removeItem(id: number): void {
-    this.cartItems = this.cartItems.filter(item => item.id !== id);
-    this.cartCount = this.cartItems.length;
-  }
+removeItem(index: number): void {
+  this.orderService.removeItem(index);
+  this.cartItems = this.orderService.getItems();
+  this.cartCount = this.orderService.count;
+}
 
-  goToBasket(): void {
-    this.showCart = false;
-    this.router.navigate(['/basket']);
-  }
+
+goToBasket(): void {
+  this.showCart = false;
+  this.router.navigate(['/basket']);
+}
+
 }
