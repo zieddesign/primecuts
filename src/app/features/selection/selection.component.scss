@@ -399,4 +399,46 @@
     box-shadow: 0 10px 24px rgba(139, 105, 20, 0.35);
     transform: translateY(-1px);
   }
+}.cut-tag-card {
+  position: relative; /* Important pour le positionnement absolu du check */
+  // ... vos styles existants
+  
+  &__check {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid #d1d1d1; /* Couleur grise par défaut */
+    background: white;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 4px;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(-45deg) translateY(-1px);
+      opacity: 0;
+    }
+  }
+
+  // Quand la carte est active
+  &--active {
+    border-color: var(--pc-gold); // Ou votre couleur dorée
+    
+    .cut-tag-card__check {
+      background: var(--pc-gold);
+      border-color: var(--pc-gold);
+      
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
 }

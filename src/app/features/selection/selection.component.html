@@ -24,19 +24,17 @@
       <p class="cuts-label">{{ 'SELECTION.CUTS_LABEL' | translate }}</p>
       <div class="cut-tags-grid">
         @for (cut of cuts; track cut.code) {
-          <button class="cut-tag-card" [class.cut-tag-card--active]="selectedCut.code === cut.code" (click)="selectCut(cut)">
-            <span class="cut-tag-card__icon">
-              <ng-container [ngSwitch]="cut.code">
-                <svg *ngSwitchCase="'filet'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="12" rx="6" ry="9"/><path d="M12 3v18"/></svg>
-                <svg *ngSwitchCase="'cotelettes'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 5c0-2-3-3-5-3S7 3 7 5c0 3 3 5 5 7s5 4 5 7v3h-2v-3c0-2-2-4-4-6s-4-3-4-6"/></svg>
-                <svg *ngSwitchDefault viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/></svg>
-              </ng-container>
-            </span>
-            <span class="cut-tag-card__label">{{ cut.labelKey | translate }}</span>
-            <span class="cut-tag-card__stars">
-              @for (star of getStars(cut.rating); track $index) { <span [class]="star ? 'star star--on' : 'star'">★</span> }
-            </span>
-          </button>
+         <button class="cut-tag-card" 
+        [class.cut-tag-card--active]="selectedCut.code === cut.code" 
+        (click)="selectCut(cut)">
+  
+  <div class="cut-tag-card__check"></div>
+
+  <span class="cut-tag-card__icon">
+    </span>
+  
+  <span class="cut-tag-card__label">{{ cut.labelKey | translate }}</span>
+  </button>
         }
       </div>
     </div>
