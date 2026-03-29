@@ -140,7 +140,9 @@
     "CAMEL_MINCED": "لحم جمل مفروم",
     "CAMEL_MINCED_SUB": "كفتة / برجر",
     "CAMEL_FAT": "شحم سنام الجمل",
-    "CAMEL_FAT_SUB": "نكهة / مزج مع اللحم"
+    "CAMEL_FAT_SUB": "نكهة / مزج مع اللحم",
+    "ARRIERE": "الربع الخلفي",
+    "ARRIERE_SUB": "فخذ مشوي / تقطيع فاخر"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "ضلع",
@@ -322,7 +324,6 @@
     "LAMB_EPAULE_DISH": "كسكسي، كمونية، مرقة",
     "CAMEL_LEG_COOK": "طبخ بطيء / فرن",
     "CAMEL_LEG_DISH": "عصبان، كسكسي، صليطة",
-    "CAMEL_LEG_AVOID": "الشواء السريع",
     "CAMEL_HUMP_COOK": "إذابة / إضافة نكهة",
     "CAMEL_HUMP_DISH": "ممزوج مع لحم هبرة",
     "CAMEL_HUMP_AVOID": "الشواء المباشر وحده",
@@ -416,6 +417,9 @@
     "CAMEL_MINCED_AVOID": "طهي جاف للحم قليل الدهن",
     "CAMEL_FAT_COOKING": "إذابة / إضافة نكهة",
     "CAMEL_FAT_DISHES": "مزج مع اللحم",
-    "CAMEL_FAT_AVOID": "شواء مباشر وحده"
+    "CAMEL_FAT_AVOID": "شواء مباشر وحده",
+    "ARRIERE_COOKING": "شواء بالفرن / طهي بطيء",
+    "ARRIERE_DISHES": "فخذ مشوي، عيد، تقطيع فاخر",
+    "ARRIERE_AVOID": "مرقة طويلة قوية"
   }
 }

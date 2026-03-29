@@ -140,7 +140,9 @@
     "CAMEL_MINCED": "Haché de chameau",
     "CAMEL_MINCED_SUB": "Kefta / Burger",
     "CAMEL_FAT": "Gras de bosse",
-    "CAMEL_FAT_SUB": "Arôme / Mélange"
+    "CAMEL_FAT_SUB": "Arôme / Mélange",
+    "ARRIERE": "Quartier arrière",
+    "ARRIERE_SUB": "Gigot rôti / Découpe premium"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Entrecôte",
@@ -424,6 +426,9 @@
     "CAMEL_MINCED_AVOID": "Cuisson sèche trop maigre",
     "CAMEL_FAT_COOKING": "Fonte / Ajout de saveur",
     "CAMEL_FAT_DISHES": "Mélangé avec viande maigre",
-    "CAMEL_FAT_AVOID": "Grill direct seul"
+    "CAMEL_FAT_AVOID": "Grill direct seul",
+    "ARRIERE_COOKING": "Rôti au four / Cuisson lente",
+    "ARRIERE_DISHES": "Gigot rôti, Fête de l'Aïd, Découpe premium",
+    "ARRIERE_AVOID": "Ragoût trop agressif / sur-cuisson"
   }
 }
