@@ -39,7 +39,12 @@ export class MeatChoiceComponent implements OnInit {
     this.showPopup = false;
   }
 
-  selectMeat(code: string): void {
-    this.router.navigate(['/selection', code]);
-  }
+selectMeat(code: string): void {
+  this.router.navigate(['/selection', code]);
+}
+
+  goToSelection(type: string): void {
+  this.router.navigate(['/selection', type]);
+}
+
 }
