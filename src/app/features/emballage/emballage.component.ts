@@ -56,7 +56,11 @@ export class EmballageComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private orderService: OrderService
-  ) {}
+  ) {
+    const type = this.route.snapshot.paramMap.get('type');
+  const size = this.route.snapshot.paramMap.get('size'); 
+  const quantity = this.route.snapshot.paramMap.get('quantity');
+  }
 
   ngOnInit(): void {
     const p       = this.route.snapshot.params;

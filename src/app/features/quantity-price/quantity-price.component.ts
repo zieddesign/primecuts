@@ -35,21 +35,28 @@ export class QuantityPriceComponent {
   estimatedWeight = '';
   estimatedPrice  = '';
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
-    this.meatType    = this.route.snapshot.paramMap.get('type')    || 'beef';
-    this.selectedPart = this.route.snapshot.paramMap.get('part')   || 'entrecote';
-    this.cutType     = this.route.snapshot.paramMap.get('cutType') || 'cube';
-    this.size        = this.route.snapshot.paramMap.get('size')    || '';
+constructor(
+  private router: Router,
+  private route: ActivatedRoute
+) {
+  this.meatType     = this.route.snapshot.paramMap.get('type')    || 'beef';
+  this.selectedPart = this.route.snapshot.paramMap.get('part')    || 'entrecote';
+  this.cutType      = this.route.snapshot.paramMap.get('cutType') || 'cube';
+  this.size         = this.route.snapshot.paramMap.get('size')    || '';
 
-    // Initialise le cut sélectionné selon le paramètre
-    this.cuts = this.cuts.map(c => ({
-      ...c,
-      selected: c.code === this.cutType
-    }));
-  }
+  this.route.queryParamMap.subscribe(params => {
+    const options = params.get('options');
+    if (options) {
+      console.log('Options haché reçues:', options.split(','));
+    }
+  });
+
+  this.cuts = this.cuts.map(c => ({
+    ...c,
+    selected: c.code === this.cutType
+  }));
+}
+
 
   selectCut(code: string): void {
     this.cuts = this.cuts.map(c => ({ ...c, selected: c.code === code }));
