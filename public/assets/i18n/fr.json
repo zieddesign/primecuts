@@ -142,7 +142,9 @@
     "CAMEL_FAT": "Gras de bosse",
     "CAMEL_FAT_SUB": "Arôme / Mélange",
     "ARRIERE": "Quartier arrière",
-    "ARRIERE_SUB": "Gigot rôti / Découpe premium"
+    "ARRIERE_SUB": "Gigot rôti / Découpe premium",
+    "AVANT": "Quartier avant",
+    "AVANT_SUB": "Cubes / Couscous / Marqa"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Entrecôte",
@@ -429,6 +431,9 @@
     "CAMEL_FAT_AVOID": "Grill direct seul",
     "ARRIERE_COOKING": "Rôti au four / Cuisson lente",
     "ARRIERE_DISHES": "Gigot rôti, Fête de l'Aïd, Découpe premium",
-    "ARRIERE_AVOID": "Ragoût trop agressif / sur-cuisson"
+    "ARRIERE_AVOID": "Ragoût trop agressif / sur-cuisson",
+    "AVANT_COOKING": "Cuisson lente / Cubes / Haché",
+    "AVANT_DISHES": "Couscous bel 3alouch, Marqa, Kamounia",
+    "AVANT_AVOID": "Grill rapide entier"
   }
 }

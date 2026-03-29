@@ -142,7 +142,9 @@
     "CAMEL_FAT": "Camel Hump Fat",
     "CAMEL_FAT_SUB": "Flavor / Mix",
     "ARRIERE": "Hind quarter",
-    "ARRIERE_SUB": "Roast leg / Premium slicing"
+    "ARRIERE_SUB": "Roast leg / Premium slicing",
+    "AVANT": "Front quarter",
+    "AVANT_SUB": "Cubes / Couscous / Stew"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Rib eye",
@@ -426,6 +428,9 @@
     "CAMEL_FAT_AVOID": "Direct grilling alone",
     "ARRIERE_COOKING": "Oven roast / Slow cook",
     "ARRIERE_DISHES": "Roast leg, Eid feast, Premium slicing",
-    "ARRIERE_AVOID": "Aggressive long stewing / overcooking"
+    "ARRIERE_AVOID": "Aggressive long stewing / overcooking",
+    "AVANT_COOKING": "Slow cook / Cubes / Minced",
+    "AVANT_DISHES": "Couscous bel 3alouch, Stew, Kamounia",
+    "AVANT_AVOID": "Quick whole grilling"
   }
 }
