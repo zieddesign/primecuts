@@ -11,7 +11,7 @@
     <div class="meat-grid">
       <div class="meat-card" *ngFor="let meat of meats" (click)="selectMeat(meat.code)">
         <div class="meat-card-image">
-          <!-- <img [src]="meat.image" [alt]="meat.code" class="meat-img" /> -->
+          <img [src]="meat.image" [alt]="meat.code" class="meat-img" />
         </div>
         <div class="meat-card-footer">
           <span class="meat-label">{{ meat.labelKey | translate }}</span>
