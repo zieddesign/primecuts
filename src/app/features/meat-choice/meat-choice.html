@@ -1,3 +1,4 @@
+
 <div class="meat-screen">
   <app-header [clientNumber]="'247'" [cartCount]="0"></app-header>
 
@@ -27,7 +28,11 @@
   </div>
 
   <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
-    <div class="popup-card" (click)="$event.stopPropagation()">
+    <div
+      class="popup-card"
+      [class.popup-card--keyboard-open]="showKeyboard"
+      (click)="$event.stopPropagation()"
+    >
       <div class="d-flex align-items-start justify-content-between mb-3">
         <div>
           <p class="popup-label">{{ 'POPUP.NEW_ORDER' | translate }}</p>
@@ -39,17 +44,47 @@
       <p class="popup-desc">{{ 'POPUP.DESC' | translate }}</p>
 
       <label class="popup-input-label">{{ 'POPUP.CLIENT_NAME' | translate }}</label>
-      <input type="text" class="popup-input form-control"
-             [placeholder]="'POPUP.PLACEHOLDER' | translate"
-             [(ngModel)]="clientName" autofocus />
 
-      <div class="d-flex justify-content-center my-3">
-        <span class="popup-dot"></span>
+      <div
+        class="popup-input-display"
+        [class.popup-input-display--active]="showKeyboard"
+        (click)="openKeyboard()"
+      >
+        <span class="popup-input-display__val">
+          {{ clientName || ('POPUP.PLACEHOLDER' | translate) }}
+        </span>
+        <span class="popup-input-display__cursor" *ngIf="showKeyboard"></span>
+        <svg class="popup-input-display__icon" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.5" width="18">
+          <rect x="2" y="6" width="20" height="12" rx="2"/>
+          <line x1="6" y1="10" x2="6" y2="10"/>
+          <line x1="10" y1="10" x2="10" y2="10"/>
+          <line x1="14" y1="10" x2="14" y2="10"/>
+          <line x1="18" y1="10" x2="18" y2="10"/>
+          <line x1="6" y1="14" x2="18" y2="14"/>
+        </svg>
       </div>
 
-      <button class="btn-commencer w-100" (click)="showPopup = false">
-        ▶ {{ 'POPUP.START' | translate }}
-      </button>
+      <app-virtual-keyboard
+        *ngIf="showKeyboard"
+        [value]="clientName"
+        mode="text"
+        (valueChange)="onKeyboardChange($event)"
+        (confirmed)="onKeyboardConfirm($event)"
+        (closed)="onKeyboardClose()"
+      ></app-virtual-keyboard>
+
+      <ng-container *ngIf="!showKeyboard">
+        <div class="d-flex justify-content-center my-3">
+          <span class="popup-dot"></span>
+        </div>
+
+        <button class="btn-commencer w-100" (click)="confirmAndStart()">
+          ▶ {{ 'POPUP.START' | translate }}
+        </button>
+      </ng-container>
+
     </div>
   </div>
+
 </div>

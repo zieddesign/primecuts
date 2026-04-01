@@ -143,7 +143,7 @@
   border-radius: 16px;
   padding: 28px 24px;
   width: 100%;
-  max-width: 360px;
+  max-width: 730px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -247,4 +247,65 @@
   &:hover {
     color: #C9A84C;
   }
+}
+// ── Ajouter dans meat-choice.scss ────────────────────────
+
+// Popup s'agrandit quand le clavier est ouvert
+.popup-card--keyboard-open {
+  max-height: 95vh;
+  overflow: hidden;
+}
+
+// Zone d'affichage de la saisie (remplace l'input natif)
+.popup-input-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #D4C890;
+  background: linear-gradient(145deg, #F5F0E4, #EDE6D2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 50px;
+
+  &--active {
+    border-color: #C9A84C;
+    background: #FFFDF5;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+  }
+
+  &__val {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20px;
+    color: #2A1F00;
+    flex: 1;
+
+    // Placeholder style
+    &:empty::before,
+    &[data-placeholder]::before {
+      color: rgba(139, 105, 20, 0.3);
+    }
+  }
+
+  &__cursor {
+    width: 2px;
+    height: 20px;
+    background: #C9A84C;
+    animation: blink 1s step-end infinite;
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    color: #9A8A6A;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }

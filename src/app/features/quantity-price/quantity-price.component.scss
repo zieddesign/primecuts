@@ -272,3 +272,31 @@
   cursor: pointer;
   &:hover { background-color: #B8973E; }
 }
+.qp-input-styled {
+    background: #2a1a0a;
+    border: 1px solid #d4af37;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    min-width: 100px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.keyboard-modal-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: flex-end;
+    z-index: 1000;
+    
+    app-virtual-keyboard {
+        width: 100%;
+        background: #1a0f05;
+        border-top: 2px solid #d4af37;
+    }
+}
