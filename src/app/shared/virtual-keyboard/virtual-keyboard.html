@@ -1,0 +1,27 @@
+<div class="vkb-wrap">
+  <div class="vkb-display">
+    <span class="vkb-display__val">{{ value || '&nbsp;' }}</span>
+    <span class="vkb-display__cursor"></span>
+  </div>
+
+  <div class="vkb-keys">
+    <div class="vkb-row" *ngFor="let row of rows">
+      <button 
+        *ngFor="let key of row" 
+        class="vkb-key"
+        [class.vkb-key--action]="['⇧','⌫','✓','123','ABC','espace'].includes(key)"
+        [class.vkb-key--confirm]="key === '✓'"
+        (click)="press(key)"
+        type="button">
+        
+        <ng-container [ngSwitch]="key">
+          <span *ngSwitchCase="'espace'">ESPACE</span>
+          <span *ngSwitchCase="'⌫'">⌫</span>
+          <span *ngSwitchCase="'⇧'">⇧</span>
+          <span *ngSwitchCase="'✓'">VALIDER</span>
+          <span *ngSwitchDefault>{{ caps ? key.toUpperCase() : key }}</span>
+        </ng-container>
+      </button>
+    </div>
+  </div>
+</div>

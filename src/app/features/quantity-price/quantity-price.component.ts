@@ -69,7 +69,6 @@ constructor(
 
   goNext(): void {
     if (this.size) {
-      // Coupe AVEC taille — ex: /emballage/beef/entrecote/cube/c2/2
       this.router.navigate([
         '/emballage',
         this.meatType,
@@ -79,7 +78,6 @@ constructor(
         this.quantity,
       ]);
     } else {
-      // Coupe SANS taille — ex: /emballage/beef/entrecote/hache/2
       this.router.navigate([
         '/emballage',
         this.meatType,
@@ -96,5 +94,22 @@ constructor(
 
   getPartKey(): string {
     return 'CUTS.' + this.selectedPart.toUpperCase();
+  }
+  showKeyboard = false;
+  keyboardTarget: 'weight' | 'price' | 'quantity' = 'weight';
+
+  openKeyboard(target: 'weight' | 'price' | 'quantity'): void {
+    this.keyboardTarget = target;
+    this.showKeyboard = true;
+  }
+
+  onValueChange(val: string): void {
+    if (this.keyboardTarget === 'weight') this.estimatedWeight = val;
+    if (this.keyboardTarget === 'price') this.estimatedPrice = val;
+    if (this.keyboardTarget === 'quantity') this.quantity = parseInt(val) || 0;
+  }
+
+  onConfirm(): void {
+    this.showKeyboard = false;
   }
 }

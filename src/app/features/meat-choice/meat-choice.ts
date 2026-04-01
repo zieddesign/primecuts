@@ -1,26 +1,33 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
+import { VirtualKeyboardComponent } from '../../shared/virtual-keyboard/virtual-keyboard';
 
 @Component({
   selector: 'app-meat-choice',
   standalone: true,
-  imports: [CommonModule, TranslateModule, FormsModule, HeaderComponent],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    HeaderComponent,
+    VirtualKeyboardComponent,   
+  ],
   templateUrl: './meat-choice.html',
   styleUrls: ['./meat-choice.scss'],
 })
 export class MeatChoiceComponent implements OnInit {
-  showPopup = false;
-  clientName = '';
+
+  showPopup    = false;
+  showKeyboard = false;
+  clientName   = '';
 
   meats = [
-    { code: 'beef', labelKey: 'MEAT.BEEF', sublabelKey: 'MEAT.BEEF_SUB', image: 'assets/images/beef-butch-primecuts.png'},
-    { code: 'agneau', labelKey: 'MEAT.AGNEAU', sublabelKey: 'MEAT.AGNEAU_SUB', image: 'assets/images/lamb-butche.png'},
-    { code: 'camel', labelKey: 'MEAT.CAMEL', sublabelKey: 'MEAT.CAMEL_SUB', image: 'assets/images/camel-butch.png' },
-    { code: 'chevre', labelKey: 'MEAT.CHEVRE', sublabelKey: 'MEAT.CHEVRE_SUB', image: 'assets/images/goat-butche.png' }
+    { code: 'beef',   labelKey: 'MEAT.BEEF',   sublabelKey: 'MEAT.BEEF_SUB',   image: 'assets/images/beef-butch-primecuts.png' },
+    { code: 'agneau', labelKey: 'MEAT.AGNEAU', sublabelKey: 'MEAT.AGNEAU_SUB', image: 'assets/images/lamb-butche.png' },
+    { code: 'camel',  labelKey: 'MEAT.CAMEL',  sublabelKey: 'MEAT.CAMEL_SUB',  image: 'assets/images/camel-butch.png' },
+    { code: 'chevre', labelKey: 'MEAT.CHEVRE', sublabelKey: 'MEAT.CHEVRE_SUB', image: 'assets/images/goat-butche.png' },
   ];
 
   constructor(
@@ -35,16 +42,42 @@ export class MeatChoiceComponent implements OnInit {
     }
   }
 
-  closePopup(): void {
-    this.showPopup = false;
+  openKeyboard(): void {
+    this.showKeyboard = true;
   }
 
-selectMeat(code: string): void {
-  this.router.navigate(['/selection', code]);
-}
+  onKeyboardChange(val: string): void {
+    this.clientName = val;
+  }
+
+  onKeyboardConfirm(val: string): void {
+    this.clientName = val;
+    this.showKeyboard = false;
+  }
+
+  onKeyboardClose(): void {
+    this.showKeyboard = false;
+  }
+
+  closePopup(): void {
+    this.showPopup    = false;
+    this.showKeyboard = false;
+  }
+
+  confirmAndStart(): void {
+    this.showPopup    = false;
+    this.showKeyboard = false;
+  }
+
+  selectMeat(code: string): void {
+    this.router.navigate(['/selection', code]);
+  }
 
   goToSelection(type: string): void {
-  this.router.navigate(['/selection', type]);
+    this.router.navigate(['/selection', type]);
+  }
+onNameConfirmed(): void {
+  console.log('Nom confirmé :', this.clientName);
+  this.showKeyboard = false;
 }
-
 }
