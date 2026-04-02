@@ -1,23 +1,29 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule, UpperCasePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
+import { VirtualKeyboardComponent } from '../../shared/virtual-keyboard/virtual-keyboard';
 
 @Component({
   selector: 'app-quantity-price',
   standalone: true,
-  imports: [CommonModule, UpperCasePipe, FormsModule, TranslateModule, HeaderComponent],
+  imports: [
+    CommonModule,
+    UpperCasePipe,
+    TranslateModule,
+    HeaderComponent,
+    VirtualKeyboardComponent,   
+  ],
   templateUrl: './quantity-price.component.html',
   styleUrl: './quantity-price.component.scss',
 })
 export class QuantityPriceComponent {
 
-  meatType    = 'beef';
+  meatType     = 'beef';
   selectedPart = 'entrecote';
-  cutType     = 'cube';
-  size        = '';          
+  cutType      = 'cube';
+  size         = '';
 
   meatTabs = [
     { code: 'beef',   label: 'MEAT.BEEF'   },
@@ -31,35 +37,68 @@ export class QuantityPriceComponent {
     { code: 'tranche', label: 'TRANCHE', sublabel: 'S2 — 12mm', selected: false },
   ];
 
-  quantity        = 2;
+  // ── Valeurs saisies ───────────────────────────────────
+  quantity        = 0;
   estimatedWeight = '';
   estimatedPrice  = '';
 
-constructor(
-  private router: Router,
-  private route: ActivatedRoute
-) {
-  this.meatType     = this.route.snapshot.paramMap.get('type')    || 'beef';
-  this.selectedPart = this.route.snapshot.paramMap.get('part')    || 'entrecote';
-  this.cutType      = this.route.snapshot.paramMap.get('cutType') || 'cube';
-  this.size         = this.route.snapshot.paramMap.get('size')    || '';
+  // ── Clavier virtuel ───────────────────────────────────
+  showKeyboard    = false;
+  keyboardTarget: 'weight' | 'price' | 'quantity' = 'weight';
 
-  this.route.queryParamMap.subscribe(params => {
-    const options = params.get('options');
-    if (options) {
-      console.log('Options haché reçues:', options.split(','));
+  // Valeur courante affichée dans le clavier
+  get currentKeyboardValue(): string {
+    if (this.keyboardTarget === 'quantity') return this.quantity > 0 ? String(this.quantity) : '';
+    if (this.keyboardTarget === 'weight')   return this.estimatedWeight;
+    if (this.keyboardTarget === 'price')    return this.estimatedPrice;
+    return '';
+  }
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.meatType     = this.route.snapshot.paramMap.get('type')    || 'beef';
+    this.selectedPart = this.route.snapshot.paramMap.get('part')    || 'entrecote';
+    this.cutType      = this.route.snapshot.paramMap.get('cutType') || 'cube';
+    this.size         = this.route.snapshot.paramMap.get('size')    || '';
+
+    this.route.queryParamMap.subscribe(params => {
+      const options = params.get('options');
+      if (options) console.log('Options haché reçues:', options.split(','));
+    });
+
+    this.cuts = this.cuts.map(c => ({
+      ...c,
+      selected: c.code === this.cutType,
+    }));
+  }
+
+  // ── Keyboard handlers ─────────────────────────────────
+  openKeyboard(target: 'weight' | 'price' | 'quantity'): void {
+    this.keyboardTarget = target;
+    this.showKeyboard   = true;
+  }
+
+  closeKeyboard(): void {
+    this.showKeyboard = false;
+  }
+
+  onValueChange(val: string): void {
+    switch (this.keyboardTarget) {
+      case 'quantity': this.quantity        = parseInt(val)  || 0;  break;
+      case 'weight':   this.estimatedWeight = val;                   break;
+      case 'price':    this.estimatedPrice  = val;                   break;
     }
-  });
+  }
 
-  this.cuts = this.cuts.map(c => ({
-    ...c,
-    selected: c.code === this.cutType
-  }));
-}
+  onConfirm(): void {
+    this.showKeyboard = false;
+  }
 
-
+  // ── Actions ───────────────────────────────────────────
   selectCut(code: string): void {
-    this.cuts = this.cuts.map(c => ({ ...c, selected: c.code === code }));
+    this.cuts    = this.cuts.map(c => ({ ...c, selected: c.code === code }));
     this.cutType = code;
   }
 
@@ -68,48 +107,14 @@ constructor(
   }
 
   goNext(): void {
+    const base = ['/emballage', this.meatType, this.selectedPart, this.cutType];
     if (this.size) {
-      this.router.navigate([
-        '/emballage',
-        this.meatType,
-        this.selectedPart,
-        this.cutType,
-        this.size,
-        this.quantity,
-      ]);
+      this.router.navigate([...base, this.size, this.quantity]);
     } else {
-      this.router.navigate([
-        '/emballage',
-        this.meatType,
-        this.selectedPart,
-        this.cutType,
-        this.quantity,
-      ]);
+      this.router.navigate([...base, this.quantity]);
     }
   }
 
-  getMeatKey(): string {
-    return 'MEAT.' + this.meatType.toUpperCase();
-  }
-
-  getPartKey(): string {
-    return 'CUTS.' + this.selectedPart.toUpperCase();
-  }
-  showKeyboard = false;
-  keyboardTarget: 'weight' | 'price' | 'quantity' = 'weight';
-
-  openKeyboard(target: 'weight' | 'price' | 'quantity'): void {
-    this.keyboardTarget = target;
-    this.showKeyboard = true;
-  }
-
-  onValueChange(val: string): void {
-    if (this.keyboardTarget === 'weight') this.estimatedWeight = val;
-    if (this.keyboardTarget === 'price') this.estimatedPrice = val;
-    if (this.keyboardTarget === 'quantity') this.quantity = parseInt(val) || 0;
-  }
-
-  onConfirm(): void {
-    this.showKeyboard = false;
-  }
+  getMeatKey(): string { return 'MEAT.' + this.meatType.toUpperCase();  }
+  getPartKey(): string { return 'CUTS.' + this.selectedPart.toUpperCase(); }
 }

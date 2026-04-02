@@ -300,3 +300,101 @@
         border-top: 2px solid #d4af37;
     }
 }
+// ── Ajouter dans quantity-price.component.scss ────────────
+
+// Zone d'affichage cliquable (remplace l'input natif)
+.qp-input-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #D4C890;
+  background: linear-gradient(145deg, #F5F0E4, #EDE6D2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  color: #2A1F00;
+  text-align: right;
+  justify-content: flex-end;
+
+  &--active {
+    border-color: #C9A84C;
+    background: #FFFDF5;
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+  }
+
+  // Couleur placeholder
+  span:first-child {
+    &:empty { color: rgba(139, 105, 20, 0.25); }
+  }
+}
+
+// Curseur clignotant
+.qp-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background: #C9A84C;
+  animation: qp-blink 1s step-end infinite;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+@keyframes qp-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+// Overlay clavier — panneau bas de page
+.qp-keyboard-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+}
+
+.qp-keyboard-panel {
+     width: 300px;
+    background: #1a1200;
+    border-radius: 16px;
+    padding-top: 0;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+}
+
+// Header du clavier (label + unité)
+.qp-keyboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 8px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+
+  &__label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.7);
+  }
+
+  &__unit {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #C9A84C;
+    letter-spacing: 2px;
+  }
+}
+
+.bottom-nav--hidden {
+  display: none !important;
+}
