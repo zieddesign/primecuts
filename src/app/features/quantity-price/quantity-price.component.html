@@ -1,3 +1,4 @@
+
 <div class="qp-screen">
     <app-header [clientNumber]="'247'" [cartCount]="1"></app-header>
 
@@ -6,7 +7,7 @@
         <div class="meat-tabs d-flex gap-2 mb-3">
             @for (tab of meatTabs; track tab.code) {
             <button class="meat-tab" [class.active]="meatType === tab.code" (click)="meatType = tab.code">
-                {{ tab.label | translate}}
+                {{ tab.label | translate }}
             </button>
             }
         </div>
@@ -30,6 +31,7 @@
             <span class="hint-text">{{ 'COMMON.PREPARATION' | translate }} · {{ cutType | uppercase }}</span>
         </div>
 
+        <!-- Cut cards -->
         @if (cutType === 'cube' || cutType === 'tranche') {
         <div class="cut-cards d-flex gap-3 mb-4">
             @for (cut of cuts; track cut.code) {
@@ -42,18 +44,6 @@
             </div>
             }
         </div>
-
-        <div class="qp-row d-flex align-items-center justify-content-between mb-3">
-            <div>
-                <p class="qp-label">{{ 'QUANTITY.PIECES_LABEL' | translate }}</p>
-                <p class="qp-sublabel">{{ 'QUANTITY.PIECES_SUB' | translate }}</p>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <input type="number" class="qp-input" [(ngModel)]="quantity" min="1" />
-                <span class="qp-unit">{{ 'UNIT.PCS' | translate }}</span>
-                <div class="qp-check active">✓</div>
-            </div>
-        </div>
         }
 
         @if (cutType === 'hache' || cutType === 'roulette') {
@@ -65,52 +55,115 @@
         </div>
         }
 
+        <!-- ══ Nombre de pièce ══ -->
+        @if (cutType === 'cube' || cutType === 'tranche') {
+        <div class="qp-row d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <p class="qp-label">{{ 'QUANTITY.PIECES_LABEL' | translate }}</p>
+                <p class="qp-sublabel">{{ 'QUANTITY.PIECES_SUB' | translate }}</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <div
+                    class="qp-input-display"
+                    [class.qp-input-display--active]="keyboardTarget === 'quantity' && showKeyboard"
+                    (click)="openKeyboard('quantity')"
+                >
+                    <span>{{ quantity || '—' }}</span>
+                    <span class="qp-cursor" *ngIf="keyboardTarget === 'quantity' && showKeyboard"></span>
+                </div>
+                <span class="qp-unit">{{ 'UNIT.PCS' | translate }}</span>
+                <div class="qp-check" [class.active]="quantity > 0">
+                    <span *ngIf="quantity > 0">✓</span>
+                </div>
+            </div>
+        </div>
+        }
+
         <div class="d-flex justify-content-end mb-2">
             <span class="fixe-label">{{ 'QUANTITY.ESTIMATED_VALUES' | translate }}</span>
         </div>
 
+        <!-- ══ Poids estimatif ══ -->
         <div class="qp-row d-flex align-items-center justify-content-between mb-3">
             <div>
                 <p class="qp-label">{{ 'QUANTITY.WEIGHT_LABEL' | translate }}</p>
                 <p class="qp-sublabel">{{ 'QUANTITY.WEIGHT_SUB' | translate }}</p>
             </div>
             <div class="d-flex align-items-center gap-2">
-                <input type="text" class="qp-input" [(ngModel)]="estimatedWeight" placeholder="0.0" />
+                <div
+                    class="qp-input-display"
+                    [class.qp-input-display--active]="keyboardTarget === 'weight' && showKeyboard"
+                    (click)="openKeyboard('weight')"
+                >
+                    <span>{{ estimatedWeight || '0.0' }}</span>
+                    <span class="qp-cursor" *ngIf="keyboardTarget === 'weight' && showKeyboard"></span>
+                </div>
                 <span class="qp-unit">{{ 'UNIT.KG' | translate }}</span>
                 <div class="qp-check" [class.active]="estimatedWeight">
-                    @if (estimatedWeight) { <span>✓</span> }
+                    <span *ngIf="estimatedWeight">✓</span>
                 </div>
             </div>
         </div>
 
+        <!-- ══ Prix estimatif ══ -->
         <div class="qp-row d-flex align-items-center justify-content-between mb-3">
             <div>
                 <p class="qp-label">{{ 'QUANTITY.PRICE_LABEL' | translate }}</p>
                 <p class="qp-sublabel">{{ 'QUANTITY.PRICE_SUB' | translate }}</p>
             </div>
             <div class="d-flex align-items-center gap-2">
-                <input type="text" class="qp-input" [(ngModel)]="estimatedPrice" placeholder="0.0" />
+                <div
+                    class="qp-input-display"
+                    [class.qp-input-display--active]="keyboardTarget === 'price' && showKeyboard"
+                    (click)="openKeyboard('price')"
+                >
+                    <span>{{ estimatedPrice || '0.0' }}</span>
+                    <span class="qp-cursor" *ngIf="keyboardTarget === 'price' && showKeyboard"></span>
+                </div>
                 <span class="qp-unit">{{ 'UNIT.TND' | translate }}</span>
                 <div class="qp-check" [class.active]="estimatedPrice">
-                    @if (estimatedPrice) { <span>✓</span> }
+                    <span *ngIf="estimatedPrice">✓</span>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
-        <button class="btn-prev" (click)="goBack()">
-            {{ 'COMMON.PREV' | translate }}
-        </button>
+    <!-- ══ Clavier virtuel numérique ══ -->
+    <div class="qp-keyboard-overlay" *ngIf="showKeyboard" (click)="closeKeyboard()">
+        <div class="qp-keyboard-panel" (click)="$event.stopPropagation()">
 
-        <button class="btn-conseil">
-            {{ 'COMMON.CONSEIL' | translate }}
-        </button>
+            <!-- Label du champ actif -->
+            <div class="qp-keyboard-header">
+                <span class="qp-keyboard-header__label">
+                    @if (keyboardTarget === 'quantity') { {{ 'QUANTITY.PIECES_LABEL' | translate }} }
+                    @if (keyboardTarget === 'weight')   { {{ 'QUANTITY.WEIGHT_LABEL' | translate }} }
+                    @if (keyboardTarget === 'price')    { {{ 'QUANTITY.PRICE_LABEL'  | translate }} }
+                </span>
+                <span class="qp-keyboard-header__unit">
+                    @if (keyboardTarget === 'quantity') { {{ 'UNIT.PCS' | translate }} }
+                    @if (keyboardTarget === 'weight')   { {{ 'UNIT.KG'  | translate }} }
+                    @if (keyboardTarget === 'price')    { {{ 'UNIT.TND' | translate }} }
+                </span>
+            </div>
 
-        <button class="btn-next" (click)="goNext()">
-            {{ 'COMMON.NEXT' | translate }}
-        </button>
+            <app-virtual-keyboard
+                [value]="currentKeyboardValue"
+                mode="numeric"
+                (valueChange)="onValueChange($event)"
+                (confirmed)="onConfirm()"
+                (closed)="closeKeyboard()"
+            ></app-virtual-keyboard>
+
+        </div>
+    </div>
+
+    <!-- ══ Bottom nav ══ -->
+    <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2"
+         [class.bottom-nav--hidden]="showKeyboard">
+        <button class="btn-prev" (click)="goBack()">{{ 'COMMON.PREV' | translate }}</button>
+        <button class="btn-conseil">{{ 'COMMON.CONSEIL' | translate }}</button>
+        <button class="btn-next" (click)="goNext()">{{ 'COMMON.NEXT' | translate }}</button>
     </div>
 
 </div>
