@@ -18,7 +18,6 @@ export class CutTypeComponent implements OnInit {
   meatType = 'beef';
   selectedPart = 'entrecote';
   customerName: string = '';
-
   // ── Popups ───────────────────────────────
   showCubePopup = false;
   showTranchePopup = false;
@@ -104,8 +103,11 @@ export class CutTypeComponent implements OnInit {
 
   selectTrancheOption(code: string): void { this.selectedTrancheOption = code; }
   confirmTranche(): void {
+    if (this.selectedTrancheOption) {
+    this.closeTranchePopup();
     this.showTranchePopup = false;
     this.router.navigate(['/quantity-price', this.meatType, this.selectedPart, 'tranche', this.selectedTrancheOption]);
+    }
   }
   closeTranchePopup(): void { this.showTranchePopup = false; }
 
@@ -116,16 +118,20 @@ export class CutTypeComponent implements OnInit {
   }
   isHacheSelected(code: string): boolean { return this.selectedHacheOptions.includes(code); }
   confirmHache(): void {
+if (this.selectedHacheOptions.length > 0) {
+    this.closeHachePopup();
+
     this.showHachePopup = false;
     this.router.navigate(
       ['/quantity-price', this.meatType, this.selectedPart, 'hache'],
       { queryParams: { options: this.selectedHacheOptions.join(',') } }
     );
   }
+
+  }
   closeHachePopup(): void { this.showHachePopup = false; }
 
   goBack(): void { this.router.navigate(['/selection', this.meatType]); }
-  goNext(): void { this.router.navigate(['/summary']); }
 
   get canGoNext(): boolean {
     if (this.showCubePopup) return !!this.selectedCubeOption;
@@ -133,4 +139,6 @@ export class CutTypeComponent implements OnInit {
     if (this.showHachePopup) return this.selectedHacheOptions.length > 0;
     return true;
   }
+
+  
 }

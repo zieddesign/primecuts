@@ -96,8 +96,8 @@
     <span class="bsk-total__val">{{ totalFormatted }}</span>
   </div>
 
-  <div class="bsk-footer">
-    <button class="bsk-footer__link bsk-footer__link--cancel" (click)="cancelAll()">
+  <div class="bsk-footer ac-actions-grid">
+    <button class="bsk-footer__link bsk-footer__link--cancel btn-link-cancel" (click)="cancelAll()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="3 6 5 6 21 6" />
         <path d="M19 6l-1 14H6L5 6" />
@@ -105,7 +105,7 @@
       </svg>
       {{ 'BASKET.CANCEL_ALL' | translate }}
     </button>
-    <button class="bsk-footer__link bsk-footer__link--print" (click)="printTicket()">
+    <button class="bsk-footer__link bsk-footer__link--print ac-action-btn" (click)="printTicket()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 6 2 18 2 18 9" />
         <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2" />
