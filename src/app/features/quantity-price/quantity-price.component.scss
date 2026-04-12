@@ -1,5 +1,6 @@
 .qp-screen {
-  background-color: #F5F0E4;
+ background-color: var(--bg-body) !important;
+  transition: background-color 0.3s ease;
   min-height: 100vh;
   padding-top: 60px;
   display: flex;
@@ -397,4 +398,49 @@
 
 .bottom-nav--hidden {
   display: none !important;
+}
+.qp-screen {
+  background-color: var(--bg-body) !important;
+  transition: background-color 0.3s ease;
+}
+
+.meat-tab {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+
+  &.active {
+    background-color: var(--pc-gold2);
+    color: var(--text-main);
+  }
+}
+
+.qp-row {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color); 
+}
+
+.qp-label, .cut-select-label, .client-name {
+  color: var(--text-main);
+}
+
+.qp-input-display {
+  background: var(--bg-body);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+
+  &--active {
+    border-color: var(--pc-gold2);
+    background: var(--bg-card);
+  }
+}
+
+.qp-keyboard-panel {
+  background: #1A1200; 
+  border: 1px solid var(--pc-gold2);
+}
+
+.bottom-nav {
+  background-color: var(--bg-body);
+  border-top: 1px solid var(--border-color);
 }

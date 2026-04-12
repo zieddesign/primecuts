@@ -7,7 +7,8 @@
     "CONSEIL": "⊙ Tip",
     "WELCOME": "Welcome",
     "CLIENT": "Client #247",
-    "PREPARATION": "PREPARATION"
+    "PREPARATION": "PREPARATION",
+    "UNDERSTOOD": "Got it"
   },
   "HEADER": {
     "BRAND": "PRIMECUTS",
@@ -259,7 +260,7 @@
     "BREADCRUMB_PKG": "Packaging",
     "BREADCRUMB_RECAP": "Recap",
     "SECTION_LABEL": "Final step",
-    "TITLE": "Add another<br>cut?",
+    "TITLE": "Add another cut?",
     "SUBTITLE": "Ajouter une coupe",
     "ORDER_TITLE": "Order summary",
     "TOTAL_LABEL": "Estimated total",
@@ -441,5 +442,18 @@
     "AVANT_COOKING": "Slow cook / Cubes / Minced",
     "AVANT_DISHES": "Couscous bel 3alouch, Stew, Kamounia",
     "AVANT_AVOID": "Quick whole grilling"
+  },
+  "THEME": {
+    "LIGHT": "Light Mode",
+    "DARK": "Dark Mode",
+    "LABEL": "Theme"
+  },
+  "ADVISOR": {
+    "LABEL": "Expert Advice",
+    "TITLE": "Butcher's Tip",
+    "CONTENT_GENERAL": "For optimal tenderness, we recommend taking your meat out of the refrigerator 30 minutes before cooking.",
+    "TIP_1": "Sear over high heat to lock in the juices.",
+    "TIP_2": "Let the meat rest after cooking for a few minutes."
   }
+
 }

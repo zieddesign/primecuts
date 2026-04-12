@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { OrderService } from '../../shared/services/order.service';
+import { AdvisorService } from '../../shared/services/advisor.service';
 
 @Component({
   selector: 'app-cut-type',
@@ -30,10 +31,10 @@ export class CutTypeComponent implements OnInit {
 
   // ── Types de découpe affichés ────────────
   cutTypes = [
-    { code: 'tranche',  labelKey: 'CUT_TYPE.TRANCHE',  sublabelKey: 'CUT_TYPE.TRANCHE_SUB',  image: 'assets/images/tranche-main.png' },
-    { code: 'cube',     labelKey: 'CUT_TYPE.CUBE',     sublabelKey: 'CUT_TYPE.CUBE_SUB',     image: 'assets/images/cube-main.png' },
+    { code: 'tranche', labelKey: 'CUT_TYPE.TRANCHE', sublabelKey: 'CUT_TYPE.TRANCHE_SUB', image: 'assets/images/tranche-main.png' },
+    { code: 'cube', labelKey: 'CUT_TYPE.CUBE', sublabelKey: 'CUT_TYPE.CUBE_SUB', image: 'assets/images/cube-main.png' },
     { code: 'roulette', labelKey: 'CUT_TYPE.ROULETTE', sublabelKey: 'CUT_TYPE.ROULETTE_SUB', image: 'assets/images/roulette.png' },
-    { code: 'hache',    labelKey: 'CUT_TYPE.HACHE',    sublabelKey: 'CUT_TYPE.HACHE_SUB',    image: 'assets/images/hache.png' }
+    { code: 'hache', labelKey: 'CUT_TYPE.HACHE', sublabelKey: 'CUT_TYPE.HACHE_SUB', image: 'assets/images/hache.png' }
   ];
 
   // ── Options tranche ──────────────────────
@@ -52,29 +53,29 @@ export class CutTypeComponent implements OnInit {
 
   // ── Options haché ────────────────────────
   hacheOptions = [
-    { code: 'ordinaire',  label: 'POPUP_HACHE.ORDINAIRE' },
+    { code: 'ordinaire', label: 'POPUP_HACHE.ORDINAIRE' },
     { code: 'sans_epice', label: 'POPUP_HACHE.SANS_EPICE' },
     { code: 'epice_chef', label: 'POPUP_HACHE.EPICE_CHEF' },
-    { code: 'gras_0',     label: 'POPUP_HACHE.GRAS_0' },
-    { code: 'gras_10',    label: 'POPUP_HACHE.GRAS_10' },
-    { code: 'gras_20',    label: 'POPUP_HACHE.GRAS_20' }
+    { code: 'gras_0', label: 'POPUP_HACHE.GRAS_0' },
+    { code: 'gras_10', label: 'POPUP_HACHE.GRAS_10' },
+    { code: 'gras_20', label: 'POPUP_HACHE.GRAS_20' }
   ];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private orderService: OrderService
-  ) {}
+    private orderService: OrderService,
+    public advisorService: AdvisorService
+  ) { }
 
   ngOnInit(): void {
-    this.meatType     = this.route.snapshot.paramMap.get('type') || 'beef';
+    this.meatType = this.route.snapshot.paramMap.get('type') || 'beef';
     this.selectedPart = this.route.snapshot.paramMap.get('part') || 'entrecote';
     this.orderService.clientName$.subscribe(name => {
       this.customerName = name;
     });
   }
 
-  // ── Sélection d’un type de découpe ───────
   selectCutType(code: string): void {
     switch (code) {
       case 'cube':
@@ -87,7 +88,6 @@ export class CutTypeComponent implements OnInit {
         this.showHachePopup = true;
         break;
       case 'roulette':
-        // Redirection vers la même page que haché (poids + prix)
         this.router.navigate(['/quantity-price', this.meatType, this.selectedPart, 'roulette']);
         break;
       default:
@@ -95,7 +95,6 @@ export class CutTypeComponent implements OnInit {
     }
   }
 
-  // ── Cube ─────────────────────────────────
   selectCubeOption(code: string): void { this.selectedCubeOption = code; }
   confirmCube(): void {
     this.showCubePopup = false;
@@ -103,7 +102,6 @@ export class CutTypeComponent implements OnInit {
   }
   closeCubePopup(): void { this.showCubePopup = false; }
 
-  // ── Tranche ──────────────────────────────
   selectTrancheOption(code: string): void { this.selectedTrancheOption = code; }
   confirmTranche(): void {
     this.showTranchePopup = false;
@@ -111,7 +109,6 @@ export class CutTypeComponent implements OnInit {
   }
   closeTranchePopup(): void { this.showTranchePopup = false; }
 
-  // ── Haché ────────────────────────────────
   toggleHacheOption(code: string): void {
     const index = this.selectedHacheOptions.indexOf(code);
     if (index > -1) this.selectedHacheOptions.splice(index, 1);
@@ -127,7 +124,6 @@ export class CutTypeComponent implements OnInit {
   }
   closeHachePopup(): void { this.showHachePopup = false; }
 
-  // ── Navigation globale ───────────────────
   goBack(): void { this.router.navigate(['/selection', this.meatType]); }
   goNext(): void { this.router.navigate(['/summary']); }
 
@@ -135,6 +131,6 @@ export class CutTypeComponent implements OnInit {
     if (this.showCubePopup) return !!this.selectedCubeOption;
     if (this.showTranchePopup) return !!this.selectedTrancheOption;
     if (this.showHachePopup) return this.selectedHacheOptions.length > 0;
-    return true; 
+    return true;
   }
 }

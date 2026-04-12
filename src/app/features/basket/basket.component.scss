@@ -1,5 +1,5 @@
 .bsk-screen {
-  background-color: var(--pc-cream2);
+  background-color: var(--bg-body) !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -402,4 +402,45 @@
     background: white;
     padding-top: 0;
   }
+}
+.bsk-screen {
+  background-color: var(--bg-body) !important;
+}
+
+.bsk-welcome__name, .bsk-title, .bsk-item__index, 
+.bsk-item__meat, .bsk-item__cut-name, .bsk-total__val {
+  color: var(--text-main);
+}
+
+.bsk-welcome__greet, .bsk-item__cut-detail, .bsk-item__tag, .bsk-item__price-label {
+  color: var(--text-muted);
+}
+
+.bsk-item {
+  border-bottom-color: rgba(201, 168, 76, 0.15);
+
+  &__sep {
+    color: rgba(201, 168, 76, 0.2);
+  }
+
+  &__btn--edit {
+    background: rgba(201, 168, 76, 0.12);
+    border-color: rgba(201, 168, 76, 0.3);
+  }
+}
+
+.bsk-total {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.bsk-nav-btn--prev {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+}
+
+.bsk-footer__link--cancel {
+  color: var(--text-muted);
+  opacity: 0.6;
 }

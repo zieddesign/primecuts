@@ -1,34 +1,6 @@
 @use 'bootstrap/scss/bootstrap';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  background-color: #F5F0E4 !important;
-  height: 100%;
-  width: 100%;
-  // overflow: hidden;
-}
-
-[dir="rtl"] {
-  .navbar-brand {
-    margin-right: 0;
-    margin-left: 1rem;
-  }
-
-  .dropdown-menu-end {
-    left: 0 !important;
-    right: auto !important;
-  }
-
-  .ms-auto {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-}
+// 1. DÉFINITION DES VARIABLES (Thème par défaut : Light)
 :root {
   --pc-cream:      #FAF8F2;
   --pc-cream2:     #F5F0E4;
@@ -41,4 +13,128 @@ html, body {
   --pc-border:     #D4C890;
   --pc-shadow:     0 4px 15px rgba(139, 105, 20, 0.08);
   --pc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --bg-body:       #F5F0E4;
+  --text-main:     #2A1F00;
+  --bg-navbar:     #EDE5CC;
+  --bg-card:       #FDFAF4;
+  --text-muted:    #9A8A6A;
+  --text-inverse:    #9A8A6A;
+  --border-color:  rgba(201, 168, 76, 0.15);
+  --btn-language: #FDFAF4;
+   --text-inverse-txt:    #2f2424;
 }
+
+body.dark-mode {
+  --bg-body:       #121212;
+  --bg-card:       #1E1E1E; 
+  --text-main:     #FAF8F2;
+  --border-color:  rgba(255, 215, 0, 0.15);
+  --pc-shadow:     0 10px 40px rgba(0, 0, 0, 0.5);
+  --pc-border:     #444444; 
+  --pc-shadow:     0 4px 15px rgba(0, 0, 0, 0.5);
+  --bg-navbar:     #1A1A1A;
+  --bg-card:       #1E1E1E;
+  --text-muted:    #C9C9C9;
+  --text-inverse:    #1E1E1E;
+  --btn-language: #f7e4bd;
+  --text-inverse-txt:    #f7e4bd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+
+  background-color: var(--bg-body) !important;
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--text-main);
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-screen {
+  // Utilise la variable globale du body définie dans styles.scss
+  background-color: var(--bg-body) !important; 
+  min-height: 100vh;
+  padding-top: 60px;
+  transition: background-color 0.3s ease;
+}
+
+.lang-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  // Utilise la variable de texte principale
+  color: var(--text-main); 
+  line-height: 1.3;
+}
+
+.lang-btn {
+  // Utilise la variable de fond de carte/bouton
+  background-color: var(--card-bg); 
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+
+  .lang-label {
+    color: var(--text-main);
+  }
+
+  .lang-sublabel {
+    color: var(--text-muted);
+  }
+
+  &:hover {
+    border-color: var(--pc-gold2);
+  }
+
+  &.selected {
+    border-color: var(--pc-gold2);
+    box-shadow: 0 0 0 1px var(--pc-gold2);
+  }
+}
+
+.lang-flag-wrapper {
+  background-color: var(--bg-body);
+  border: 1px solid var(--border-color);
+  
+}
+[dir="rtl"] {
+  .form-switch {
+    padding-right: 2.5em;
+    padding-left: 0;
+    
+    .form-check-input {
+      margin-right: -2.5em;
+      margin-left: 0;
+      float: right;
+    }
+  }
+  
+  .theme-switch-wrapper .ms-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+  }
+}
+[dir="rtl"] .theme-switch-wrapper .theme-toggle-input {
+   
+    left: 77px!important;
+   
+}
+[dir="rtl"] .theme-switch-wrapper {
+   
+    padding: 11px 50px 11px 11px!important;
+   
+}
+

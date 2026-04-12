@@ -150,7 +150,7 @@
     <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2"
         [class.bottom-nav--hidden]="showKeyboard">
         <button class="btn-prev" (click)="goBack()">{{ 'COMMON.PREV' | translate }}</button>
-        <button class="btn-conseil">{{ 'COMMON.CONSEIL' | translate }}</button>
+        <button class="btn-conseil" (click)="advisorService.open()">{{ 'COMMON.CONSEIL' | translate }}</button>
         <button class="btn-next" (click)="goNext()" [disabled]="!canGoNext" [class.opacity-50]="!canGoNext">
             {{ 'COMMON.NEXT' | translate }}
         </button>

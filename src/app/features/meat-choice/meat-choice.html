@@ -22,10 +22,10 @@
     </div>
   </div>
 
-  <div class="boucher-btn d-flex align-items-center justify-content-center gap-2">
-    <span class="boucher-dot"></span>
-    <span class="boucher-label">{{ 'MEAT.BOUCHER' | translate }}</span>
-  </div>
+<button class="boucher-btn d-flex align-items-center justify-content-center gap-2 cursor-pointer" (click)="advisorService.open()">
+  <span class="boucher-dot"></span>
+  <span class="boucher-label">{{ 'MEAT.BOUCHER' | translate }}</span>
+</button>
 
   <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
     <div

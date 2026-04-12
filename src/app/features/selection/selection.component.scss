@@ -3,7 +3,7 @@
 
 // ── Screen ────────────────────────────────────────────────
 .selection-screen {
-  background: var(--pc-cream2, #F5F0E4);
+  background: var(--bg-body) !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
 .client-name {
   font-size: 13px;
   font-weight: 700;
-  color: var(--pc-brown, #2A1F00);
+  color: var(--text-main);
   letter-spacing: 1px;
 }
 
@@ -121,22 +121,22 @@
   gap: 6px;
   padding: 14px 8px 12px;
   border-radius: 10px;
-  border: 1.5px solid var(--pc-border, #D4C890);
-  background: linear-gradient(145deg, #FAF8F2, #F0EAD8);
+  background: var(--bg-card); 
+  border: 1.5px solid var(--border-color);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Montserrat', sans-serif;
 
   &:hover {
     transform: translateY(-3px);
-    border-color: var(--pc-gold2, #C9A84C);
     box-shadow: 0 8px 20px rgba(139, 105, 20, 0.12);
+    border-color: var(--pc-gold2);
   }
 
   &--active {
-    border-color: var(--pc-gold2, #C9A84C);
-    background: linear-gradient(145deg, #FFFDF5, #F5EDD8);
     box-shadow: 0 6px 18px rgba(139, 105, 20, 0.15);
+    background: var(--bg-card-active, #FFFDF5); 
+    border-color: var(--pc-gold2);
 
     &::before {
       content: '';
@@ -147,7 +147,7 @@
       background: linear-gradient(90deg, var(--pc-gold2, #C9A84C), var(--pc-gold3, #A07830));
     }
 
-    .cut-tag-card__label { color: var(--pc-brown, #2A1F00); font-weight: 800; }
+    .cut-tag-card__label { color: var(--text-inverse); font-weight: 800; }
     .cut-tag-card__icon  { color: var(--pc-gold2, #C9A84C); }
   }
 
@@ -208,8 +208,8 @@
 
 // ── Cut card ──────────────────────────────────────────────
 .cut-card {
-  background: linear-gradient(145deg, #FAF8F2, #F0EAD8);
-  border: 1px solid var(--pc-border, #D4C890);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 20px 20px 16px;
   box-shadow: 0 2px 12px rgba(139, 105, 20, 0.06);
@@ -237,7 +237,7 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 26px;
   font-weight: 300;
-  color: var(--pc-brown, #2A1F00);
+ color: var(--text-main);
   letter-spacing: 1px;
   text-transform: capitalize;
 }
@@ -313,7 +313,7 @@
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--pc-brown, #2A1F00);
+  color: var(--text-inverse-txt);
   letter-spacing: 0.5px;
 
   &--gold  { color: var(--pc-gold3, #A07830); font-weight: 600; }
@@ -338,8 +338,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px 16px;
-  background: var(--pc-cream2, #F5F0E4);
-  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  background: var(--bg-body);
+  border-top: 1px solid var(--border-color);
   z-index: 50;
 }
 
@@ -348,7 +348,7 @@
   padding: 0 20px;
   border-radius: 6px;
   border: 1.5px solid var(--pc-border, #D4C890);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 1);
   color: var(--pc-muted, #9A8A6A);
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;

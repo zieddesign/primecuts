@@ -59,7 +59,7 @@
   <!-- Bottom nav -->
   <div class="bottom-nav d-flex align-items-center justify-content-between px-3 py-2">
     <button class="btn-prev" (click)="goBack()">{{ 'COMMON.PREV' | translate }}</button>
-    <button class="btn-conseil">{{ 'SELECTION.CONSEIL' | translate }}</button>
+    <button class="btn-conseil" (click)="advisorService.open()">{{ 'SELECTION.CONSEIL' | translate }}</button>
     <button class="btn-next" (click)="goNext()">{{ 'COMMON.NEXT' | translate }}</button>
   </div>
 

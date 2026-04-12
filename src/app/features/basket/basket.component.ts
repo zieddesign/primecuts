@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { OrderService, OrderItem } from '../../shared/services/order.service';
+import { AdvisorService } from '../../shared/services/advisor.service';
 
 @Component({
   selector: 'app-basket',
@@ -18,7 +19,8 @@ export class BasketComponent implements OnInit {
   customerName: string = '';
   constructor(
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+   public advisorService: AdvisorService
   ) { }
 
   ngOnInit(): void {
@@ -64,10 +66,6 @@ get totalFormatted(): string {
 
   onPrev(): void {
     this.router.navigate(['/another-cut']);
-  }
-
-  onAdvice(): void {
-    console.log('Show advice');
   }
 
   cancelAll(): void {

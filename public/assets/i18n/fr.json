@@ -7,7 +7,8 @@
     "CONSEIL": "⊙ Conseil",
     "WELCOME": "Bienvenue",
     "CLIENT": "Client #247",
-    "PREPARATION": "PRÉPARATION"
+    "PREPARATION": "PRÉPARATION",
+    "UNDERSTOOD": "J'ai compris"
   },
   "HEADER": {
     "BRAND": "PRIMECUTS",
@@ -261,7 +262,7 @@
     "BREADCRUMB_PKG": "Emballage",
     "BREADCRUMB_RECAP": "Récap",
     "SECTION_LABEL": "Étape finale",
-    "TITLE": "Ajouter une<br>autre coupe ?",
+    "TITLE": "Ajouter une autre coupe ?",
     "SUBTITLE": "Ajouter une coupe",
     "ORDER_TITLE": "Description de la commande",
     "TOTAL_LABEL": "Total estimé",
@@ -446,5 +447,17 @@
     "AVANT_COOKING": "Cuisson lente / Cubes / Haché",
     "AVANT_DISHES": "Couscous bel 3alouch, Marqa, Kamounia",
     "AVANT_AVOID": "Grill rapide entier"
+  },
+  "THEME": {
+    "LIGHT": "Mode Clair",
+    "DARK": "Mode Sombre",
+    "LABEL": "Thème"
+  },
+  "ADVISOR": {
+    "LABEL": "Conseil de l'Expert",
+    "TITLE": "Le mot du boucher",
+    "CONTENT_GENERAL": "Pour une tendreté optimale, nous vous conseillons de sortir votre viande du réfrigérateur 30 minutes avant la cuisson.",
+    "TIP_1": "Saisissez à feu vif pour emprisonner les sucs.",
+    "TIP_2": "Laissez reposer la viande après cuisson."
   }
 }

@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { OrderService } from '../../shared/services/order.service';
+import { AdvisorService } from '../../shared/services/advisor.service';
 
 export interface PackagingOption {
   id: string;
@@ -55,7 +56,8 @@ export class EmballageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private orderService: OrderService
+    private orderService: OrderService,
+    public advisorService: AdvisorService
   ) {
     const type = this.route.snapshot.paramMap.get('type');
     const size = this.route.snapshot.paramMap.get('size');
@@ -94,12 +96,7 @@ export class EmballageComponent implements OnInit {
     }
   }
 
-  onConseil(): void {
-    console.log('Show advice');
-  }
-
-
-
+ 
   onAddToCart(): void {
     const items = this.orderService.getItems();
 
