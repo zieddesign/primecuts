@@ -485,3 +485,13 @@
   background-color: var(--bg-body);
   border-top: 1px solid var(--border-color);
 }
+.btn-next {
+  transition: all 0.3s ease;
+
+  &:disabled, &.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1); 
+    pointer-events: none; 
+  }
+}
