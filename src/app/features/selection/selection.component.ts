@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { CommonModule } from '@angular/common';
+import { OrderService } from '../../shared/services/order.service';
 
 export interface CutData {
   code: string;
@@ -36,7 +37,7 @@ export class SelectionComponent implements OnInit {
   selectedMeat: any;
   cuts: CutData[] = [];
   selectedCut!: CutData;
-
+  customerName: string = ''
   meats = [
     { code: 'beef',   labelKey: 'MEAT.BEEF',   sublabelKey: 'MEAT.BEEF_SUB',   image: 'assets/images/beef.jpg' },
     { code: 'agneau', labelKey: 'MEAT.AGNEAU', sublabelKey: 'MEAT.AGNEAU_SUB', image: 'assets/images/agneau.jpg' },
@@ -175,7 +176,8 @@ camel: [
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private orderService: OrderService 
   ) {}
 
 ngOnInit(): void {
@@ -186,6 +188,9 @@ ngOnInit(): void {
   if (this.cuts.length > 0) {
     this.selectedCut = this.cuts[0];
   }
+   this.orderService.clientName$.subscribe(name => {
+      this.customerName = name;
+    });
 }
 
   selectCut(cut: CutData): void {

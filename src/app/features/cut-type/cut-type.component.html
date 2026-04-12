@@ -11,7 +11,7 @@
     <div class="d-flex align-items-center justify-content-between mb-3">
       <div>
         <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
-        <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
+        <p class="client-name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
       </div>
       <div class="breadcrumb-nav d-flex align-items-center gap-2">
         <span class="breadcrumb-item-label">Viandes</span>

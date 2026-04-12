@@ -15,7 +15,7 @@ import { OrderService, OrderItem } from '../../shared/services/order.service';
 export class AnotherCutComponent implements OnInit {
   orderItems: OrderItem[] = [];
   totalEstimate: string = '--';
-
+  customerName: string = ''
   constructor(
     private router: Router,
     private orderService: OrderService
@@ -23,6 +23,9 @@ export class AnotherCutComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderItems = this.orderService.getItems();
+     this.orderService.clientName$.subscribe(name => {
+      this.customerName = name;
+    });
   }
 
   addAnotherCut(): void {

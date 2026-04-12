@@ -334,3 +334,20 @@
   color: var(--pc-gold);
   border-color: rgba(201,168,76,0.4);
 }
+
+.client-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.15em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.client-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2C1F0E;
+  margin: 0;
+}

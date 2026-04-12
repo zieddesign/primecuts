@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { VirtualKeyboardComponent } from '../../shared/virtual-keyboard/virtual-keyboard';
+import { PopupService } from '../../shared/services/popup.service';
 
 @Component({
   selector: 'app-meat-choice',
@@ -32,7 +33,8 @@ export class MeatChoiceComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private router: Router
+    private router: Router,
+        private popupService: PopupService   
   ) {}
 
   ngOnInit(): void {
@@ -67,6 +69,9 @@ export class MeatChoiceComponent implements OnInit {
   confirmAndStart(): void {
     this.showPopup    = false;
     this.showKeyboard = false;
+    if (this.clientName) {
+    this.popupService.confirmName(this.clientName);
+  }
   }
 
   selectMeat(code: string): void {

@@ -5,7 +5,7 @@
     <div class="ac-welcome">
         <div class="ac-welcome__user">
             <p class="ac-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
-            <p class="ac-welcome__name">{{ 'HEADER.CLIENT' | translate }}247</p>
+            <p class="ac-welcome__name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
         </div>
         <nav class="ac-breadcrumb">
             <span>{{ 'ANOTHER_CUT.BREADCRUMB_CUT' | translate }}</span>

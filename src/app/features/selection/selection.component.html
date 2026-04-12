@@ -5,9 +5,9 @@
     <div class="meat-badge">{{ selectedMeat.labelKey | translate }}</div>
 
     <div class="sel-toprow">
-      <div>
+     <div>
         <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
-        <p class="client-name">{{ 'COMMON.CLIENT' | translate }}</p>
+        <p class="client-name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
       </div>
       <div class="meat-tag">
         <span class="meat-dot"></span>
