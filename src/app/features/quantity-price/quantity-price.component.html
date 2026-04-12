@@ -25,22 +25,24 @@
             </div>
         </div>
 
-        <div class="cook-hint d-flex align-items-center gap-2 mb-3">
+        <div class="cook-hint cut-card d-flex align-items-center gap-2 mb-3">
             <span class="hint-icon">⊞</span>
             <span class="hint-text">{{ 'COMMON.PREPARATION' | translate }} · {{ cutType | uppercase }}</span>
         </div>
 
-        <!-- Cut cards -->
         @if (cutType === 'cube' || cutType === 'tranche') {
-        <div class="cut-cards d-flex gap-3 mb-4">
+        <div class="cut-cards cut-card d-flex gap-3 mb-4">
             @for (cut of cuts; track cut.code) {
-            <div class="cut-select-card" [class.selected]="cut.selected" (click)="selectCut(cut.code)">
+            @if (!hasSelectedCut() || cut.selected) {
+            <div class="cut-select-card" [class.selected]="cut.selected" [class.w-100]="hasSelectedCut()"
+                (click)="selectCut(cut.code)">
                 <p class="cut-select-label">{{ cut.label }}</p>
                 <p class="cut-select-sub">{{ cut.sublabel }}</p>
                 <div class="cut-select-badge" [class.active]="cut.selected">
                     {{ (cut.selected ? 'CUT.SELECTED' : 'CUT.ALTERNATIVE') | translate }}
                 </div>
             </div>
+            }
             }
         </div>
         }
