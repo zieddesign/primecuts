@@ -24,26 +24,26 @@ export class EmballageComponent implements OnInit {
 
   // ── Params route ──────────────────────────────────────────
   meatType = '';
-  part     = '';
-  cutType  = '';
-  size     = '';       // subOption ex: 'c2', 's2'
+  part = '';
+  cutType = '';
+  size = '';       // subOption ex: 'c2', 's2'
   quantity = 1;
 
   cartCount = signal<number>(0);
-
+  customerName: string = ''
   packagingOptions = signal<PackagingOption[]>([
     {
       id: 'carton',
-      nameKey:   'EMBALLAGE.CARTON_NAME',
+      nameKey: 'EMBALLAGE.CARTON_NAME',
       nameArKey: 'EMBALLAGE.CARTON_NAME_AR',
-      descKey:   'EMBALLAGE.CARTON_DESC',
+      descKey: 'EMBALLAGE.CARTON_DESC',
       selected: true,
     },
     {
       id: 'sachet',
-      nameKey:   'EMBALLAGE.SACHET_NAME',
+      nameKey: 'EMBALLAGE.SACHET_NAME',
       nameArKey: 'EMBALLAGE.SACHET_NAME_AR',
-      descKey:   'EMBALLAGE.SACHET_DESC',
+      descKey: 'EMBALLAGE.SACHET_DESC',
       selected: false,
     },
   ]);
@@ -58,19 +58,22 @@ export class EmballageComponent implements OnInit {
     private orderService: OrderService
   ) {
     const type = this.route.snapshot.paramMap.get('type');
-  const size = this.route.snapshot.paramMap.get('size'); 
-  const quantity = this.route.snapshot.paramMap.get('quantity');
+    const size = this.route.snapshot.paramMap.get('size');
+    const quantity = this.route.snapshot.paramMap.get('quantity');
   }
 
   ngOnInit(): void {
-    const p       = this.route.snapshot.params;
-    this.meatType = p['type']      || '';
-    this.part     = p['part']      || '';
-    this.cutType  = p['cutType']   || '';
-    this.size     = p['size']      || '';
+    const p = this.route.snapshot.params;
+    this.meatType = p['type'] || '';
+    this.part = p['part'] || '';
+    this.cutType = p['cutType'] || '';
+    this.size = p['size'] || '';
     this.quantity = +p['quantity'] || 1;
 
     this.cartCount.set(this.orderService.count);
+    this.orderService.clientName$.subscribe(name => {
+      this.customerName = name;
+    });
   }
 
   selectPackaging(id: string): void {
@@ -95,19 +98,19 @@ export class EmballageComponent implements OnInit {
     console.log('Show advice');
   }
 
-  onAddToCart(): void {
-    this.orderService.addItem({
-      meat:      this.meatType,          
-      cut:       this.part,              
-      cutType:   this.cutType,           
-      subOption: this.size,            
-      quantity:  this.quantity,
-      weight:    0,                      
-      price:     0,                      
-      packaging: this.selectedPackaging().id,  
-    });
 
-    this.cartCount.set(this.orderService.count);
+
+  onAddToCart(): void {
+    const items = this.orderService.getItems();
+
+    if (items.length > 0) {
+      const lastItem = items[items.length - 1];
+
+      lastItem.packaging = this.selectedPackaging().id;
+
+    }
+
+
     this.router.navigate(['/another-cut']);
   }
 
@@ -115,7 +118,7 @@ export class EmballageComponent implements OnInit {
     return opt.id;
   }
 
-  getMeatKey(): string { return 'MEAT.'     + this.meatType.toUpperCase(); }
-  getPartKey(): string { return 'CUTS.'     + this.part.toUpperCase();     }
-  getCutKey(): string  { return 'CUT_TYPE.' + this.cutType.toUpperCase();  }
+  getMeatKey(): string { return 'MEAT.' + this.meatType.toUpperCase(); }
+  getPartKey(): string { return 'CUTS.' + this.part.toUpperCase(); }
+  getCutKey(): string { return 'CUT_TYPE.' + this.cutType.toUpperCase(); }
 }

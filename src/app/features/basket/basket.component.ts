@@ -15,7 +15,7 @@ import { OrderService, OrderItem } from '../../shared/services/order.service';
 export class BasketComponent implements OnInit {
 
   orderItems: OrderItem[] = [];
-
+  customerName: string = '';
   constructor(
     private router: Router,
     private orderService: OrderService
@@ -23,22 +23,23 @@ export class BasketComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderItems = this.orderService.getItems();
+    this.orderService.clientName$.subscribe(name => {
+      this.customerName = name;
+    });
   }
 
   get totalPrice(): number {
     return this.orderItems.reduce((sum, item) => sum + (item.price || 0), 0);
   }
 
-  get totalFormatted(): string {
-    return this.totalPrice > 0
-      ? this.totalPrice.toFixed(2) + ' TND'
-      : '-- TND';
-  }
+get totalFormatted(): string {
+  return this.orderService.getTotalFormatted();
+}
 
   getDetailLine(item: OrderItem): string {
     const parts: string[] = [];
     if (item.subOption) parts.push(item.subOption.toUpperCase());
-    if (item.quantity) parts.push(item.quantity + ' ea');
+    if (item.quantity) parts.push(item.quantity + ' PCS');
     if (item.weight) parts.push(item.weight + ' Kg');
     return parts.join(', ');
   }
@@ -81,4 +82,6 @@ export class BasketComponent implements OnInit {
   trackByItem(_: number, item: OrderItem): string {
     return item.meat + item.cut + item.cutType + item.subOption;
   }
+
+
 }

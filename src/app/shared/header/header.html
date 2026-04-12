@@ -10,7 +10,13 @@
   <div class="d-flex align-items-center gap-3">
     <div class="d-flex flex-column align-items-end">
       <span class="client-label">{{ 'HEADER.WELCOME' | translate }}</span>
-      <span class="client-number">Client #{{ clientNumber }}</span>
+         <span class="client-number">
+        @if (clientName) {
+          {{ clientName }}
+        } @else {
+          {{ 'HEADER.CLIENT_DEFAULT' | translate }}
+        }
+      </span>
     </div>
 
     <!-- Cart Bootstrap dropdown -->

@@ -3,10 +3,10 @@
   <app-header [cartCount]="cartCount()"></app-header>
 
   <div class="emb-welcome">
-    <div class="emb-welcome__user">
-      <p class="emb-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
-      <p class="emb-welcome__name">{{ 'HEADER.CLIENT' | translate }} #247</p>
-    </div>
+   <div>
+        <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
+        <p class="client-name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
+      </div>
 
     <nav class="emb-breadcrumb" aria-label="Breadcrumb">
       <span>{{ getMeatKey() | translate }}</span>

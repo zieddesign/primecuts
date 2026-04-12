@@ -12,7 +12,9 @@
   "HEADER": {
     "BRAND": "PRIMECUTS",
     "WELCOME": "مرحباً",
-    "CLIENT": "العميل #"
+    "CLIENT_DEFAULT": "عميل",
+    "CLIENT": "العميل",
+    "WELCOME_CLIENT": "مرحبا {{name}}"
   },
   "LANGUAGE": {
     "TITLE": "اختر لغتك",
@@ -52,7 +54,12 @@
     "DESC": "يرجى إدخال اسمك لبدء اختيار اللحوم.",
     "CLIENT_NAME": "اسم العميل",
     "PLACEHOLDER": "مثال: أسامة",
-    "START": "ابدأ الآن"
+    "START": "ابدأ الآن",
+    "STEP": "طلب جديد",
+    "TITLE": "أهلاً بك !",
+    "FIELD_LABEL": "اسم العميل",
+    "CONFIRM": "ابدأ",
+    "SKIP": "متابعة بدون اسم"
   },
   "SELECTION": {
     "TOUCH_HINT": "المس منطقة من الحيوان لاختيار القطعة",
@@ -143,8 +150,10 @@
     "CAMEL_FAT_SUB": "نكهة / مزج مع اللحم",
     "ARRIERE": "الربع الخلفي",
     "ARRIERE_SUB": "فخذ مشوي / تقطيع فاخر",
-     "AVANT": "الربع الأمامي",
-    "AVANT_SUB": "مكعبات / كسكسي / مرقة"
+    "AVANT": "الربع الأمامي",
+    "AVANT_SUB": "مكعبات / كسكسي / مرقة",
+    "CARRE":"مكعب",
+    "ROULETTE":"لفافة"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "ضلع",

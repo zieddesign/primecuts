@@ -12,7 +12,9 @@
   "HEADER": {
     "BRAND": "PRIMECUTS",
     "WELCOME": "Welcome",
-    "CLIENT": "Client #"
+    "CLIENT_DEFAULT": "Client",
+    "CLIENT": "Client",
+    "WELCOME_CLIENT": "Welcome {{name}}"
   },
   "LANGUAGE": {
     "TITLE": "Choose your language",
@@ -52,7 +54,12 @@
     "DESC": "Please enter your name to begin your meat selection.",
     "CLIENT_NAME": "Client name",
     "PLACEHOLDER": "e.g. Oussama",
-    "START": "Get Started"
+    "START": "Get Started",
+    "STEP": "New Order",
+    "TITLE": "Welcome!",
+    "FIELD_LABEL": "Client Name",
+    "CONFIRM": "Start",
+    "SKIP": "Continue without name"
   },
   "SELECTION": {
     "TOUCH_HINT": "Touch an area of the animal to choose your cut",
@@ -144,7 +151,9 @@
     "ARRIERE": "Hind quarter",
     "ARRIERE_SUB": "Roast leg / Premium slicing",
     "AVANT": "Front quarter",
-    "AVANT_SUB": "Cubes / Couscous / Stew"
+    "AVANT_SUB": "Cubes / Couscous / Stew",
+    "CARRE":"Cube",
+    "ROULETTE":"Roll"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Rib eye",

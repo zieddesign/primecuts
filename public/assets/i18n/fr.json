@@ -12,7 +12,9 @@
   "HEADER": {
     "BRAND": "PRIMECUTS",
     "WELCOME": "Bienvenue",
-    "CLIENT": "Client #"
+    "CLIENT_DEFAULT": "Client",
+    "CLIENT": "Client",
+    "WELCOME_CLIENT": "Bienvenue {{name}}"
   },
   "LANGUAGE": {
     "TITLE": "Choisissez votre langue",
@@ -52,7 +54,12 @@
     "DESC": "Veuillez saisir votre nom pour commencer la sélection.",
     "CLIENT_NAME": "Nom du client",
     "PLACEHOLDER": "Ex : Oussama",
-    "START": "Commencer"
+    "START": "Commencer",
+    "STEP": "Nouvelle commande",
+    "TITLE": "Bienvenue !",
+    "FIELD_LABEL": "Nom du Client",
+    "CONFIRM": "Commencer",
+    "SKIP": "Continuer sans nom"
   },
   "SELECTION": {
     "TOUCH_HINT": "Touchez une zone de l'animal pour choisir votre coupe",
@@ -144,7 +151,9 @@
     "ARRIERE": "Quartier arrière",
     "ARRIERE_SUB": "Gigot rôti / Découpe premium",
     "AVANT": "Quartier avant",
-    "AVANT_SUB": "Cubes / Couscous / Marqa"
+    "AVANT_SUB": "Cubes / Couscous / Marqa",
+    "CARRE":"Cube",
+    "ROULETTE":"Rouleau"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Entrecôte",
@@ -243,7 +252,9 @@
     "SACHET_NAME": "Sachet",
     "SACHET_DESC": "Sachet papier premium avec fermeture sécurisée",
     "RECAP_LABEL": "Récapitulatif de la commande",
-    "ADD_TO_CART": "Ajouter au panier"
+    "ADD_TO_CART": "Ajouter au panier",
+  "CARTON_NAME_AR": "صندوق",
+  "SACHET_NAME_AR": "كيس"
   },
   "ANOTHER_CUT": {
     "BREADCRUMB_CUT": "Coupe",

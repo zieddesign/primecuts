@@ -5,7 +5,7 @@
   <div class="bsk-welcome">
     <div class="bsk-welcome__user">
       <p class="bsk-welcome__greet">{{ 'HEADER.WELCOME' | translate }}</p>
-      <p class="bsk-welcome__name">{{ 'HEADER.CLIENT' | translate }}247</p>
+      <p class="bsk-welcome__name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
     </div>
     <div class="bsk-welcome__actions">
       <button class="bsk-nav-btn bsk-nav-btn--prev" (click)="onPrev()">
@@ -65,7 +65,7 @@
       <div class="bsk-item__body">
         <div class="bsk-item__body-left">
           <p class="bsk-item__cut-name">
-            {{ ('CUTS.' + item.cut.toUpperCase()) | translate }}
+            {{ ('CUTS.' + (item.cut | uppercase)) | translate }}
             <span class="bsk-item__cut-detail">({{ getDetailLine(item) }})</span>
           </p>
           <div class="bsk-item__tags">
