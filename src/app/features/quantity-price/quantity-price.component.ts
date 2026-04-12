@@ -149,5 +149,7 @@ export class QuantityPriceComponent {
       });
     }
   }
-
+hasSelectedCut(): boolean {
+  return this.cuts.some(cut => cut.selected);
+}
 }

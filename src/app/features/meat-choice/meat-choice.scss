@@ -124,6 +124,7 @@
   color: #9A8A6A;
   transition: color 0.2s ease;
 }
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -137,6 +138,7 @@
   z-index: 9999;
   padding: 24px;
 }
+
 .popup-card {
   background-color: #FDFAF4;
   border: 1px solid #E8DFC8;
@@ -248,6 +250,7 @@
     color: #C9A84C;
   }
 }
+
 // ── Ajouter dans meat-choice.scss ────────────────────────
 
 // Popup s'agrandit quand le clavier est ouvert
@@ -306,9 +309,17 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
+
 .meat-screen {
   background-color: var(--bg-body) !important;
   transition: background-color 0.3s ease;
@@ -321,7 +332,7 @@
 .meat-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  
+
   &:hover {
     border-color: var(--pc-gold2);
   }
@@ -336,7 +347,7 @@
 }
 
 .popup-card {
-  background-color: var(--bg-card); 
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   box-shadow: var(--pc-shadow);
 }
@@ -364,7 +375,7 @@ body.dark-mode {
     background: #252525;
     border-color: #444;
   }
-  
+
   .popup-card {
     background-color: #1A1A1A;
     border-color: #333;
@@ -400,5 +411,16 @@ body.dark-mode {
   span {
     font-size: 0.9rem;
     color: var(--pc-muted);
+  }
+}
+
+.btn-commencer {
+  transition: opacity 0.3s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #cccccc;
+    border-color: #999999;
   }
 }
