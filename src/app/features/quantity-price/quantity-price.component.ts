@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
 import { VirtualKeyboardComponent } from '../../shared/virtual-keyboard/virtual-keyboard';
 import { OrderService } from '../../shared/services/order.service';
+import { AdvisorService } from '../../shared/services/advisor.service';
 
 @Component({
   selector: 'app-quantity-price',
@@ -14,56 +15,54 @@ import { OrderService } from '../../shared/services/order.service';
     UpperCasePipe,
     TranslateModule,
     HeaderComponent,
-    VirtualKeyboardComponent,   
+    VirtualKeyboardComponent,
   ],
   templateUrl: './quantity-price.component.html',
   styleUrl: './quantity-price.component.scss',
 })
 export class QuantityPriceComponent {
 
-  meatType     = 'beef';
+  meatType = 'beef';
   selectedPart = 'entrecote';
-  cutType      = 'cube';
-  size         = '';
+  cutType = 'cube';
+  size = '';
 
   meatTabs = [
-    { code: 'beef',   label: 'MEAT.BEEF'   },
+    { code: 'beef', label: 'MEAT.BEEF' },
     { code: 'agneau', label: 'MEAT.AGNEAU' },
-    { code: 'camel',  label: 'MEAT.CAMEL'  },
+    { code: 'camel', label: 'MEAT.CAMEL' },
     { code: 'chevre', label: 'MEAT.CHEVRE' },
   ];
 
   cuts = [
-    { code: 'cube',    label: 'CUBE',    sublabel: 'C2 — 3cm',  selected: true  },
+    { code: 'cube', label: 'CUBE', sublabel: 'C2 — 3cm', selected: true },
     { code: 'tranche', label: 'TRANCHE', sublabel: 'S2 — 12mm', selected: false },
   ];
 
-  // ── Valeurs saisies ───────────────────────────────────
-  quantity        = 0;
+  quantity = 0;
   estimatedWeight = '';
-  estimatedPrice  = '';
+  estimatedPrice = '';
 
-  // ── Clavier virtuel ───────────────────────────────────
-  showKeyboard    = false;
+  showKeyboard = false;
   keyboardTarget: 'weight' | 'price' | 'quantity' = 'weight';
   customerName: string = ''
-  // Valeur courante affichée dans le clavier
   get currentKeyboardValue(): string {
     if (this.keyboardTarget === 'quantity') return this.quantity > 0 ? String(this.quantity) : '';
-    if (this.keyboardTarget === 'weight')   return this.estimatedWeight;
-    if (this.keyboardTarget === 'price')    return this.estimatedPrice;
+    if (this.keyboardTarget === 'weight') return this.estimatedWeight;
+    if (this.keyboardTarget === 'price') return this.estimatedPrice;
     return '';
   }
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private orderService: OrderService 
+    private orderService: OrderService,
+    public advisorService: AdvisorService
   ) {
-    this.meatType     = this.route.snapshot.paramMap.get('type')    || 'beef';
-    this.selectedPart = this.route.snapshot.paramMap.get('part')    || 'entrecote';
-    this.cutType      = this.route.snapshot.paramMap.get('cutType') || 'cube';
-    this.size         = this.route.snapshot.paramMap.get('size')    || '';
+    this.meatType = this.route.snapshot.paramMap.get('type') || 'beef';
+    this.selectedPart = this.route.snapshot.paramMap.get('part') || 'entrecote';
+    this.cutType = this.route.snapshot.paramMap.get('cutType') || 'cube';
+    this.size = this.route.snapshot.paramMap.get('size') || '';
 
     this.route.queryParamMap.subscribe(params => {
       const options = params.get('options');
@@ -75,15 +74,14 @@ export class QuantityPriceComponent {
       selected: c.code === this.cutType,
     }));
   }
-ngOnInit(): void {
-   this.orderService.clientName$.subscribe(name => {
+  ngOnInit(): void {
+    this.orderService.clientName$.subscribe(name => {
       this.customerName = name;
     });
-}
-  // ── Keyboard handlers ─────────────────────────────────
+  }
   openKeyboard(target: 'weight' | 'price' | 'quantity'): void {
     this.keyboardTarget = target;
-    this.showKeyboard   = true;
+    this.showKeyboard = true;
   }
 
   closeKeyboard(): void {
@@ -92,9 +90,9 @@ ngOnInit(): void {
 
   onValueChange(val: string): void {
     switch (this.keyboardTarget) {
-      case 'quantity': this.quantity        = parseInt(val)  || 0;  break;
-      case 'weight':   this.estimatedWeight = val;                   break;
-      case 'price':    this.estimatedPrice  = val;                   break;
+      case 'quantity': this.quantity = parseInt(val) || 0; break;
+      case 'weight': this.estimatedWeight = val; break;
+      case 'price': this.estimatedPrice = val; break;
     }
   }
 
@@ -102,9 +100,8 @@ ngOnInit(): void {
     this.showKeyboard = false;
   }
 
-  // ── Actions ───────────────────────────────────────────
   selectCut(code: string): void {
-    this.cuts    = this.cuts.map(c => ({ ...c, selected: c.code === code }));
+    this.cuts = this.cuts.map(c => ({ ...c, selected: c.code === code }));
     this.cutType = code;
   }
 
@@ -114,43 +111,43 @@ ngOnInit(): void {
 
 
 
-  getMeatKey(): string { return 'MEAT.' + this.meatType.toUpperCase();  }
+  getMeatKey(): string { return 'MEAT.' + this.meatType.toUpperCase(); }
   getPartKey(): string { return 'CUTS.' + this.selectedPart.toUpperCase(); }
-get canGoNext(): boolean {
-  return (this.quantity > 0) || !!this.estimatedWeight || !!this.estimatedPrice;
-}
-isSubmitting = false;
-
-goNext(): void {
-  if (this.isSubmitting) return; 
-
-  const weightVal = parseFloat(this.estimatedWeight) || 0;
-  const priceVal = parseFloat(this.estimatedPrice) || 0;
-
-  if (this.quantity > 0 || weightVal > 0 || priceVal > 0) {
-    this.isSubmitting = true;
-
-    const item = {
-      meat: this.meatType,
-      cut: this.selectedPart,
-      cutType: this.cutType,
-      subOption: this.size,
-      quantity: this.quantity,
-      weight: weightVal,
-      price: priceVal,
-      packaging: ''
-    };
-
-    this.orderService.addItem(item);
-
-    
-    const base = ['/emballage', this.meatType, this.selectedPart, this.cutType];
-    const targetRoute = this.size ? [...base, this.size, this.quantity] : [...base, this.quantity];
-    
-    this.router.navigate(targetRoute).then(() => {
-      this.isSubmitting = false; 
-    });
+  get canGoNext(): boolean {
+    return (this.quantity > 0) || !!this.estimatedWeight || !!this.estimatedPrice;
   }
-}
+  isSubmitting = false;
+
+  goNext(): void {
+    if (this.isSubmitting) return;
+
+    const weightVal = parseFloat(this.estimatedWeight) || 0;
+    const priceVal = parseFloat(this.estimatedPrice) || 0;
+
+    if (this.quantity > 0 || weightVal > 0 || priceVal > 0) {
+      this.isSubmitting = true;
+
+      const item = {
+        meat: this.meatType,
+        cut: this.selectedPart,
+        cutType: this.cutType,
+        subOption: this.size,
+        quantity: this.quantity,
+        weight: weightVal,
+        price: priceVal,
+        packaging: ''
+      };
+
+      this.orderService.addItem(item);
+
+
+      const base = ['/emballage', this.meatType, this.selectedPart, this.cutType];
+      const targetRoute = this.size ? [...base, this.size, this.quantity] : [...base, this.quantity];
+
+      this.router.navigate(targetRoute).then(() => {
+        this.isSubmitting = false;
+      });
+    }
+  }
 
 }

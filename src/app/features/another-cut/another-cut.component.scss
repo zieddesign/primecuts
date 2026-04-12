@@ -12,7 +12,7 @@
 
 // ── Screen ────────────────────────────────────────────────
 .ac-screen {
-    background-color: var(--pc-cream2);
+    background-color: var(--bg-body) !important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -444,5 +444,65 @@
 
     &:hover {
         color: rgba(200, 80, 80, 0.6);
+    }
+}
+
+
+.ac-welcome__name,
+.ac-title,
+.ac-order-item__name,
+.ac-order-item__qty,
+.ac-order-total__val {
+    color: var(--text-main);
+}
+
+.ac-welcome__greet,
+.ac-detail-tag {
+    color: var(--text-muted);
+}
+
+.ac-order-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+
+    &::before {
+        opacity: 0.8;
+    }
+}
+
+.ac-order-item {
+    border-bottom-color: rgba(201, 168, 76, 0.15);
+
+    &__num {
+        background: rgba(201, 168, 76, 0.15);
+        color: var(--pc-gold2);
+    }
+
+    &__qty {
+        background: rgba(201, 168, 76, 0.1);
+        border-color: rgba(201, 168, 76, 0.2);
+    }
+
+    &__remove {
+        background: var(--bg-body);
+        border-color: var(--border-color);
+
+        &:hover {
+            background: #2D1A1A;
+        }
+    }
+}
+
+.ac-order-total {
+    background: rgba(201, 168, 76, 0.12);
+    border-color: rgba(201, 168, 76, 0.3);
+}
+
+.ac-cancel-link {
+    color: var(--text-muted);
+    opacity: 0.6;
+
+    &:hover {
+        color: #ff6b6b;
     }
 }

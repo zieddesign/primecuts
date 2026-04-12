@@ -1,5 +1,6 @@
 .cut-type-screen {
-  background-color: #F5F0E4;
+  background-color: var(--bg-body) !important;
+  transition: background-color 0.3s ease;
   min-height: 100vh;
   padding-top: 60px;
   display: flex;
@@ -412,4 +413,75 @@
 
 .modal {
   z-index: 1050;
+}
+/* --- Écran de type de découpe --- */
+.cut-type-screen {
+  background-color: var(--bg-body) !important;
+  transition: background-color 0.3s ease;
+}
+
+.client-name, .meat-name, .cut-type-label, .cut-label {
+  color: var(--text-main);
+}
+
+.client-label, .cut-type-sublabel, .cut-sublabel {
+  color: var(--text-muted);
+}
+
+/* Zone sélectionnée (Pointillés) */
+.selected-zone {
+  background-color: var(--bg-card);
+  border: 1.5px dashed var(--pc-gold2);
+}
+
+/* Cartes de découpe */
+.cut-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    border-color: var(--pc-gold2);
+  }
+}
+
+.cut-card-image {
+  background-color: var(--bg-body);
+}
+
+.cut-card-footer {
+  border-top: 1px solid var(--border-color);
+}
+
+.cube-modal {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.cube-modal-header, .cube-modal-footer {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.cube-title, .cube-option-label {
+  color: var(--text-main);
+}
+
+.cube-option {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+
+  &.selected {
+    border-color: var(--pc-gold2);
+    background-color: rgba(201, 168, 76, 0.05); 
+  }
+}
+
+.cube-checkbox {
+  background-color: var(--bg-body);
+  border-color: var(--border-color);
+}
+
+.bottom-nav {
+  background-color: var(--bg-body);
+  border-top: 1px solid var(--border-color);
 }

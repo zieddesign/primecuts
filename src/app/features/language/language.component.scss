@@ -114,3 +114,134 @@ padding: 20px;
     margin-top: -7px;
   }
 }
+.language-screen {
+  background-color: #F5F0E4; // clair par défaut
+  min-height: 100vh;
+  padding-top: 60px;
+
+  &.dark-mode {
+    background-color: #121212; // fond sombre
+  }
+}
+
+.language-content {
+  padding: 40px 24px 24px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  .dark-mode & {
+    color: #E0E0E0; // texte plus clair
+  }
+}
+
+.lang-screen-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #9A8A6A;
+  text-transform: uppercase;
+
+  .dark-mode & {
+    color: #C9C9C9;
+  }
+}
+
+.lang-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #826222;
+  line-height: 1.3;
+
+  .dark-mode & {
+    color: #FFD700; // doré lumineux
+  }
+}
+
+.lang-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  color: #9A8A6A;
+
+  .dark-mode & {
+    color: #B0B0B0;
+  }
+}
+
+.lang-btn {
+  background-color: var(--btn-language);
+  border: 1px solid #E8DFC8;
+  border-radius: 12px;
+  padding: 14px 16px;
+  width: 100%;
+  max-width: 500px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    border-color: #C9A84C;
+  }
+
+  &.selected {
+    border-color: #C9A84C;
+    box-shadow: 0 0 0 1px #C9A84C;
+  }
+
+  .dark-mode & {
+    background-color: #1E1E1E;
+    border-color: #333;
+    color: #E0E0E0;
+
+    &:hover {
+      border-color: #FFD700;
+    }
+
+    &.selected {
+      border-color: #FFD700;
+      box-shadow: 0 0 0 1px #FFD700;
+    }
+  }
+}
+
+.lang-flag-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #E8DFC8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+
+  .dark-mode & {
+    background-color: #2C2C2C;
+    border-color: #444;
+  }
+}
+
+.lang-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2C1F0E;
+
+  .dark-mode & {
+    color: #FFFFFF;
+  }
+}
+
+.lang-sublabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: #9A8A6A;
+
+  .dark-mode & {
+    color: #AAAAAA;
+  }
+}

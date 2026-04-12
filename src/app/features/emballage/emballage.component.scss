@@ -11,7 +11,8 @@
 }
 
 .emb-screen {
-  background-color: var(--pc-cream2);
+  background-color: var(--bg-body) !important;
+  transition: var(--pc-transition);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -85,7 +86,8 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
     font-weight: 300;
-    color: var(--pc-brown);
+    color: var(--text-inverse-txt);
+
   }
 
   .emb-title__sub {
@@ -350,4 +352,55 @@
   font-weight: 700;
   color: #2C1F0E;
   margin: 0;
+}
+
+
+.emb-welcome__name, .emb-title, .emb-card__name, .client-name {
+  color: var(--text-main);
+}
+
+.emb-welcome__greet, .emb-card__desc, .client-label {
+  color: var(--text-muted);
+}
+
+/* Étiquette de sectin */
+.emb-section-label {
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.emb-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+
+  &--active {
+    background: var(--bg-card);
+    border-color: var(--pc-gold2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    
+    &::after {
+      background: radial-gradient(circle at top, rgba(201, 168, 76, 0.2), transparent 70%);
+    }
+  }
+}
+
+.emb-card__check {
+  background: var(--bg-body);
+  border-color: var(--border-color);
+}
+
+.emb-recap {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+}
+
+.emb-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+
+  &--conseil {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--pc-gold2);
+  }
 }
