@@ -14,14 +14,14 @@
   padding: 15px 24px;
 
   &__greet {
-    font-size: 9px;
+    font-size: 15px;
     letter-spacing: 2px;
     color: var(--pc-muted);
     text-transform: uppercase;
   }
 
   &__name {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--pc-brown);
   }
@@ -267,7 +267,7 @@
 
   &__tag {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
+    font-size: 18px;
     font-style: italic;
     color: var(--pc-muted);
     letter-spacing: 0.5px;
@@ -313,7 +313,7 @@
   border-radius: 8px;
 
   &__label {
-    font-size: 10px;
+    font-size: 16px;
     letter-spacing: 3px;
     color: var(--pc-gold);
     text-transform: uppercase;
@@ -352,8 +352,8 @@
   transition: color 0.2s;
 
   svg {
-    width: 13px;
-    height: 13px;
+    width: 33px;
+    height: 33px;
     stroke: currentColor;
     fill: none;
     stroke-width: 2;
@@ -467,12 +467,12 @@
   overflow: hidden;
   transition: var(--pc-transition);
   font-family: 'Montserrat', sans-serif;
-   background: linear-gradient(135deg, #C9A84C, #A07830) !important;
-    box-shadow: 0 6px 20px rgba(139, 105, 20, 0.45);
-    color: #fff !important;
-        font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
+  background: linear-gradient(135deg, #C9A84C, #A07830) !important;
+  box-shadow: 0 6px 20px rgba(139, 105, 20, 0.45);
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .ac-actions-grid{
     margin: 16px 24px 15px;
@@ -498,7 +498,7 @@
    background: linear-gradient(135deg, #C9A84C, #A07830) !important;
     box-shadow: 0 6px 20px rgba(139, 105, 20, 0.45);
     color: #fff !important;
-        font-size: 13px;
+        font-size: 20px;
     font-weight: 700;
     letter-spacing: 2px;
 }

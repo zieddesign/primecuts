@@ -45,7 +45,7 @@
 .emb-breadcrumb {
   display: flex;
   gap: 6px;
-  font-size: 10px;
+  font-size: 15px;
   color: var(--pc-muted);
 
   svg {
@@ -72,7 +72,7 @@
   border-radius: 4px;
 
   span {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 1.5px;
     color: var(--pc-gold);
     text-transform: uppercase;
@@ -91,7 +91,7 @@
   }
 
   .emb-title__sub {
-    font-size: 9px;
+    font-size: 14px;
     letter-spacing: 2px;
     color: var(--pc-gold2);
     text-transform: uppercase;
@@ -191,7 +191,7 @@
 }
 
 .emb-card__name {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--pc-brown);
@@ -212,7 +212,7 @@
 }
 
 .emb-card__desc {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--pc-muted);
 }
 
@@ -262,34 +262,27 @@
 .emb-add-btn {
   width: calc(100% - 48px);
   margin: 0 24px 20px;
-  height: 64px;
-
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.2);
-
   background: linear-gradient(135deg, #C9A84C 0%, #8B6914 100%);
   color: #fff;
-
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
-
   cursor: pointer;
   position: relative;
   overflow: hidden;
-
   box-shadow:
     0 10px 25px rgba(139, 105, 20, 0.25),
     inset 0 1px 0 rgba(255,255,255,0.25);
-
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 30px 90px;
 }
 
 /* ─────────────────────────────
@@ -298,7 +291,7 @@
 .emb-bottom-nav {
   display: flex;
   gap: 12px;
-  padding: 0 16px;
+  margin: 0 24px 20px;
 }
 
 .emb-btn {
@@ -339,7 +332,7 @@
 
 .client-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   color: #9A8A6A;
   text-transform: uppercase;
@@ -398,6 +391,8 @@
   background: rgba(255, 255, 255, 0.05);
   border-color: var(--border-color);
   color: var(--text-muted);
+  padding: 30px 90px;
+  font-size: 18px;
 
   &--conseil {
     background: rgba(201, 168, 76, 0.1);
