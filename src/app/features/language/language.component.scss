@@ -12,7 +12,7 @@
 
 .lang-screen-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.55rem;
+    font-size: 1rem;
     letter-spacing: 0.2em;
     color: #9A8A6A;
     text-transform: uppercase;
@@ -28,7 +28,7 @@
 
 .lang-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #9A8A6A;
 }
 
@@ -162,7 +162,7 @@
 
 .lang-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #9A8A6A;
 
     .dark-mode & {
@@ -174,7 +174,7 @@
     background-color: var(--btn-language);
     border: 1px solid #E8DFC8;
     border-radius: 12px;
-    padding: 14px 16px;
+    padding: 34px 26px;
     width: 100%;
     max-width: 500px;
     cursor: pointer;
@@ -228,7 +228,7 @@
 
 .lang-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #2C1F0E;
 

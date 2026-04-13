@@ -46,7 +46,7 @@
 /* Breadcrumb */
 .breadcrumb-nav {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.8rem;
 }
 
 .breadcrumb-item-label {
@@ -117,11 +117,10 @@
 
 .cut-type-sublabel {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.55rem;
+  font-size: 1rem;
   color: #9A8A6A;
 }
 
-/* Grid 2x2 */
 .cut-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -169,7 +168,7 @@
 
 .cut-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: #2C1F0E;
@@ -177,7 +176,7 @@
 
 .cut-sublabel {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: #9A8A6A;
   margin-top: 2px;
@@ -195,9 +194,9 @@
   background: none;
   border: 1px solid #E8DFC8;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: 30px 90px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 18px;
   color: #9A8A6A;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -212,9 +211,9 @@
   background: none;
   border: 1px solid #E8DFC8;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: 30px 90px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 18px;
   color: #9A8A6A;
   cursor: pointer;
 
@@ -299,7 +298,7 @@
 
 .cube-choose-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: #9A8A6A;
   text-transform: uppercase;
@@ -353,7 +352,7 @@
 
 .cube-option-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #2C1F0E;
   margin: 0;

@@ -84,7 +84,7 @@
 
 .meat-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 1.9rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: #2C1F0E;
@@ -92,17 +92,18 @@
 
 .meat-sublabel {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: #9A8A6A;
   margin-top: 2px;
 }
 
 .boucher-btn {
-  padding: 16px;
-  border-top: 1px solid #E8DFC8;
-  cursor: pointer;
-  background-color: #F5F0E4;
+ padding: 30px 90px;
+    border: 1px solid #E8DFC8;
+    cursor: pointer;
+    background-color: #F5F0E4;
+    margin: 10px;
 
   &:hover .boucher-label {
     color: #C9A84C;
@@ -119,7 +120,7 @@
 
 .boucher-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   color: #9A8A6A;
   transition: color 0.2s ease;
@@ -157,7 +158,7 @@
 
 .popup-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   color: #9A8A6A;
   text-transform: uppercase;
@@ -174,7 +175,7 @@
 
 .popup-desc {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.72rem;
+  font-size: 1rem;
   color: #9A8A6A;
   line-height: 1.6;
   margin-bottom: 16px;
@@ -224,9 +225,9 @@
   color: #FDFAF4;
   border: none;
   border-radius: 8px;
-  padding: 14px;
+  padding: 25px 17px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   cursor: pointer;

@@ -28,14 +28,14 @@
     padding: 15px 24px;
 
     &__greet {
-        font-size: 9px;
+        font-size: 15px;
         letter-spacing: 2px;
         color: var(--pc-muted);
         text-transform: uppercase;
     }
 
     &__name {
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 700;
         color: var(--pc-brown);
     }
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 10px;
+    font-size: 15px;
     color: var(--pc-muted);
 
     svg {
@@ -343,13 +343,13 @@
     }
 
     &__label {
-        font-size: 13px;
+        font-size: 20px;
         font-weight: 700;
         letter-spacing: 2px;
     }
 
     &__sub {
-        font-size: 8px;
+        font-size: 14px;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
