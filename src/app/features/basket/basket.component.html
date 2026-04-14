@@ -76,8 +76,9 @@
               {{ item.weight }} {{ 'UNIT.KG' | translate }}
             </span>
             <span class="bsk-item__tag" *ngIf="item.packaging">
-              {{ item.packaging | titlecase }}
+              {{ ('EMBALLAGE.' + item.packaging.toUpperCase() + '_NAME') | translate }}
             </span>
+
           </div>
         </div>
         <div class="bsk-item__body-right">
