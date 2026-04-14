@@ -53,7 +53,7 @@
                                 <strong *ngIf="item.subOption"> {{ item.subOption | uppercase }}</strong>
                             </span>
                             <span class="ac-detail-tag">{{ item.quantity }} {{ 'UNIT.PCS' | translate }}</span>
-                            <span class="ac-detail-tag">{{ item.packaging | titlecase }}</span>
+                            <span class="ac-detail-tag"> {{ ('EMBALLAGE.' + item.packaging.toUpperCase() + '_NAME') | translate }}</span>
                         </div>
                     </div>
                 </div>

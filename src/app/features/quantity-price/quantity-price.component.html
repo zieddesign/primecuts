@@ -36,7 +36,7 @@
             @if (!hasSelectedCut() || cut.selected) {
             <div class="cut-select-card" [class.selected]="cut.selected" [class.w-100]="hasSelectedCut()"
                 (click)="selectCut(cut.code)">
-                <p class="cut-select-label">{{ cut.label }}</p>
+                <p class="cut-select-label">{{ ('CUT_TYPE.' + cut.code.toUpperCase()) | translate }}</p>
                 <p class="cut-select-sub">{{ cut.sublabel }}</p>
                 <div class="cut-select-badge" [class.active]="cut.selected">
                     {{ (cut.selected ? 'CUT.SELECTED' : 'CUT.ALTERNATIVE') | translate }}

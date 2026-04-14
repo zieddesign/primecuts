@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, TitleCasePipe, DecimalPipe } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header';
@@ -9,7 +9,7 @@ import { AdvisorService } from '../../shared/services/advisor.service';
 @Component({
   selector: 'app-basket',
   standalone: true,
-  imports: [CommonModule, TitleCasePipe, DecimalPipe, RouterModule, TranslateModule, HeaderComponent],
+  imports: [CommonModule, DecimalPipe, RouterModule, TranslateModule, HeaderComponent],
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
 })
@@ -20,7 +20,7 @@ export class BasketComponent implements OnInit {
   constructor(
     private router: Router,
     private orderService: OrderService,
-   public advisorService: AdvisorService
+    public advisorService: AdvisorService
   ) { }
 
   ngOnInit(): void {
@@ -34,9 +34,9 @@ export class BasketComponent implements OnInit {
     return this.orderItems.reduce((sum, item) => sum + (item.price || 0), 0);
   }
 
-get totalFormatted(): string {
-  return this.orderService.getTotalFormatted();
-}
+  get totalFormatted(): string {
+    return this.orderService.getTotalFormatted();
+  }
 
   getDetailLine(item: OrderItem): string {
     const parts: string[] = [];
