@@ -24,7 +24,7 @@ export class MeatChoiceComponent implements OnInit {
   showPopup = false;
   showKeyboard = false;
   clientName = '';
-
+  currentLang: 'fr' | 'en' | 'ar' = 'fr';
   meats = [
     { code: 'beef', labelKey: 'MEAT.BEEF', sublabelKey: 'MEAT.BEEF_SUB', image: 'assets/images/beef-butch-primecuts.png' },
     { code: 'agneau', labelKey: 'MEAT.AGNEAU', sublabelKey: 'MEAT.AGNEAU_SUB', image: 'assets/images/lamb-butche.png' },
@@ -40,6 +40,13 @@ export class MeatChoiceComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const lang = this.translate.currentLang ?? this.translate.getDefaultLang() ?? 'fr';
+    if (lang === 'fr' || lang === 'en' || lang === 'ar') {
+      this.currentLang = lang;
+    } else {
+      this.currentLang = 'fr';
+    }
+
     const navState = this.router.getCurrentNavigation()?.extras?.state || history.state;
     if (navState?.showPopup) {
       this.showPopup = true;

@@ -12,7 +12,7 @@ import { AdvisorService } from '../../shared/services/advisor.service';
   standalone: true,
   imports: [
     CommonModule,
-    UpperCasePipe,
+    
     TranslateModule,
     HeaderComponent,
     VirtualKeyboardComponent,
@@ -21,7 +21,12 @@ import { AdvisorService } from '../../shared/services/advisor.service';
   styleUrl: './quantity-price.component.scss',
 })
 export class QuantityPriceComponent {
-
+    getKeyboardMode(): 'text' | 'numeric' {
+    return (this.keyboardTarget === 'quantity' || this.keyboardTarget === 'weight' || this.keyboardTarget === 'price')
+      ? 'numeric'
+      : 'text';
+  }
+ currentLang: 'fr' | 'en' | 'ar' = 'fr';
   meatType = 'beef';
   selectedPart = 'entrecote';
   cutType = 'cube';
@@ -75,6 +80,9 @@ export class QuantityPriceComponent {
     }));
   }
   ngOnInit(): void {
+      this.orderService.clientName$.subscribe(name => {
+      this.customerName = name;
+    });
     this.orderService.clientName$.subscribe(name => {
       this.customerName = name;
     });
@@ -87,6 +95,9 @@ export class QuantityPriceComponent {
   closeKeyboard(): void {
     this.showKeyboard = false;
   }
+getCutTypeKey(): string {
+  return 'CUT_TYPE.' + this.cutType.toUpperCase();
+}
 
   onValueChange(val: string): void {
     switch (this.keyboardTarget) {

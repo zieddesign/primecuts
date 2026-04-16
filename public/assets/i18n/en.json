@@ -153,8 +153,8 @@
     "ARRIERE_SUB": "Roast leg / Premium slicing",
     "AVANT": "Front quarter",
     "AVANT_SUB": "Cubes / Couscous / Stew",
-    "CARRE":"Cube",
-    "ROULETTE":"Roll"
+    "CARRE": "Cube",
+    "ROULETTE": "Roll"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Rib eye",
@@ -454,6 +454,9 @@
     "CONTENT_GENERAL": "For optimal tenderness, we recommend taking your meat out of the refrigerator 30 minutes before cooking.",
     "TIP_1": "Sear over high heat to lock in the juices.",
     "TIP_2": "Let the meat rest after cooking for a few minutes."
+  },
+  "KEYBOARD": {
+    "SPACE": "Space",
+    "VALIDATE": "Validate"
   }
-
 }
