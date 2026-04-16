@@ -27,7 +27,7 @@
         <span class="boucher-label">{{ 'MEAT.BOUCHER' | translate }}</span>
     </button>
 
-    <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
+    <div *ngIf="showPopup" class="popup-overlay">
         <div class="popup-card" [class.popup-card--keyboard-open]="showKeyboard" (click)="$event.stopPropagation()">
             <div class="d-flex align-items-start justify-content-between mb-3">
                 <div>
@@ -41,7 +41,7 @@
 
             <label class="popup-input-label">{{ 'POPUP.CLIENT_NAME' | translate }}</label>
 
-            <div class="popup-input-display" [class.popup-input-display--active]="showKeyboard"
+            <div class="popup-input-display mb-3" [class.popup-input-display--active]="showKeyboard"
                 (click)="openKeyboard()">
                 <span class="popup-input-display__val">
                     {{ clientName || ('POPUP.PLACEHOLDER' | translate) }}
@@ -58,7 +58,7 @@
                 </svg>
             </div>
 
-            <app-virtual-keyboard *ngIf="showKeyboard" [value]="clientName" mode="text"
+            <app-virtual-keyboard *ngIf="showKeyboard" [value]="clientName" mode="text"  [layout]="currentLang"
                 (valueChange)="onKeyboardChange($event)" (confirmed)="onKeyboardConfirm($event)"
                 (closed)="onKeyboardClose()"></app-virtual-keyboard>
 

@@ -153,8 +153,8 @@
     "ARRIERE_SUB": "Gigot rôti / Découpe premium",
     "AVANT": "Quartier avant",
     "AVANT_SUB": "Cubes / Couscous / Marqa",
-    "CARRE":"Cube",
-    "ROULETTE":"Rouleau"
+    "CARRE": "Cube",
+    "ROULETTE": "Rouleau"
   },
   "DETAILS": {
     "TYPE_ENTRECOTE": "Entrecôte",
@@ -254,8 +254,8 @@
     "SACHET_DESC": "Sachet papier premium avec fermeture sécurisée",
     "RECAP_LABEL": "Récapitulatif de la commande",
     "ADD_TO_CART": "Ajouter au panier",
-  "CARTON_NAME_AR": "صندوق",
-  "SACHET_NAME_AR": "كيس"
+    "CARTON_NAME_AR": "صندوق",
+    "SACHET_NAME_AR": "كيس"
   },
   "ANOTHER_CUT": {
     "BREADCRUMB_CUT": "Coupe",
@@ -459,5 +459,9 @@
     "CONTENT_GENERAL": "Pour une tendreté optimale, nous vous conseillons de sortir votre viande du réfrigérateur 30 minutes avant la cuisson.",
     "TIP_1": "Saisissez à feu vif pour emprisonner les sucs.",
     "TIP_2": "Laissez reposer la viande après cuisson."
+  },
+  "KEYBOARD": {
+    "SPACE": "ESPACE",
+    "VALIDATE": "Valider"
   }
 }

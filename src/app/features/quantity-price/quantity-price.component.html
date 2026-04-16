@@ -27,7 +27,11 @@
 
         <div class="cook-hint cut-card d-flex align-items-center gap-2 mb-3">
             <span class="hint-icon">⊞</span>
-            <span class="hint-text">{{ 'COMMON.PREPARATION' | translate }} · {{ cutType | uppercase }}</span>
+            <span class="hint-text">
+                {{ 'COMMON.PREPARATION' | translate }} · {{ getCutTypeKey() | translate }}
+            </span>
+
+
         </div>
 
         @if (cutType === 'cube' || cutType === 'tranche') {
@@ -142,8 +146,17 @@
                 </span>
             </div>
 
-            <app-virtual-keyboard [value]="currentKeyboardValue" mode="numeric" (valueChange)="onValueChange($event)"
-                (confirmed)="onConfirm()" (closed)="closeKeyboard()"></app-virtual-keyboard>
+           <app-virtual-keyboard
+  *ngIf="showKeyboard"
+  [value]="currentKeyboardValue"
+  [mode]="getKeyboardMode()"
+  [layout]="currentLang"
+  (valueChange)="onValueChange($event)"
+  (confirmed)="onConfirm()"
+  (closed)="closeKeyboard()">
+</app-virtual-keyboard>
+
+
 
         </div>
     </div>
