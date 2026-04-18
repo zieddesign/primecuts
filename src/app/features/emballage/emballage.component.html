@@ -3,10 +3,10 @@
   <app-header [cartCount]="cartCount()"></app-header>
 
   <div class="emb-welcome">
-   <div>
-        <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
-        <p class="client-name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
-      </div>
+    <div>
+      <p class="client-label">{{ 'COMMON.WELCOME' | translate }}</p>
+      <p class="client-name">{{ customerName || ('HEADER.CLIENT_DEFAULT' | translate) }}</p>
+    </div>
 
     <nav class="emb-breadcrumb" aria-label="Breadcrumb">
       <span>{{ getMeatKey() | translate }}</span>
@@ -116,7 +116,7 @@
       <div class="emb-recap__items">
 
         <span class="emb-recap__tag">
-          {{ getMeatKey() | translate }} · {{ getPartKey() | translate }}
+          {{ getMeatKey() | translate }} · {{ getPartKey().toUpperCase() | translate }}
         </span>
 
         <span class="emb-recap__tag">
@@ -131,6 +131,7 @@
         <span class="emb-recap__tag emb-recap__tag--pkg">
           {{ selectedPackaging().nameKey | translate }}
         </span>
+
 
       </div>
     </div>

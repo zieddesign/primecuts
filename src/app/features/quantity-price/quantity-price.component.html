@@ -146,15 +146,10 @@
                 </span>
             </div>
 
-           <app-virtual-keyboard
-  *ngIf="showKeyboard"
-  [value]="currentKeyboardValue"
-  [mode]="getKeyboardMode()"
-  [layout]="currentLang"
-  (valueChange)="onValueChange($event)"
-  (confirmed)="onConfirm()"
-  (closed)="closeKeyboard()">
-</app-virtual-keyboard>
+            <app-virtual-keyboard *ngIf="showKeyboard" [value]="currentKeyboardValue" [mode]="getKeyboardMode()"
+                [layout]="currentLang" (valueChange)="onValueChange($event)" (confirmed)="onConfirm()"
+                (closed)="closeKeyboard()">
+            </app-virtual-keyboard>
 
 
 

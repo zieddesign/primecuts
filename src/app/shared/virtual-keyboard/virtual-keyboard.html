@@ -1,4 +1,7 @@
 <div class="vkb-wrap">
+    <div class="vkb-display">
+    <span class="vkb-value">{{ value || '—' }}</span>
+  </div>
     <div class="vkb-keys">
         <div class="vkb-row" *ngFor="let row of rows">
             <button *ngFor="let key of row" class="vkb-key"
