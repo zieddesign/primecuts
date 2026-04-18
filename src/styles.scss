@@ -2,43 +2,45 @@
 
 // 1. DÉFINITION DES VARIABLES (Thème par défaut : Light)
 :root {
-  --pc-cream:      #FAF8F2;
-  --pc-cream2:     #F5F0E4;
-  --pc-cream3:     #EDE6D2;
-  --pc-gold:       #8B6914;
-  --pc-gold2:      #C9A84C;
-  --pc-gold3:      #A07830;
-  --pc-brown:      #2A1F00;
-  --pc-muted:      #9A8A6A;
-  --pc-border:     #D4C890;
-  --pc-shadow:     0 4px 15px rgba(139, 105, 20, 0.08);
+  --pc-cream: #FAF8F2;
+  --pc-cream2: #F5F0E4;
+  --pc-cream3: #EDE6D2;
+  --pc-gold: #8B6914;
+  --pc-gold2: #C9A84C;
+  --pc-gold3: #A07830;
+  --pc-brown: #2A1F00;
+  --pc-muted: #9A8A6A;
+  --pc-border: #D4C890;
+  --pc-shadow: 0 4px 15px rgba(139, 105, 20, 0.08);
   --pc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --bg-body:       #F5F0E4;
-  --text-main:     #2A1F00;
-  --bg-navbar:     #EDE5CC;
-  --bg-card:       #FDFAF4;
-  --text-muted:    #9A8A6A;
-  --text-inverse:    #9A8A6A;
-  --border-color:  rgba(201, 168, 76, 0.15);
+  --bg-body: #F5F0E4;
+  --text-main: #2A1F00;
+  --bg-navbar: #EDE5CC;
+  --bg-card: #FDFAF4;
+  --text-muted: #9A8A6A;
+  --text-inverse: #9A8A6A;
+  --border-color: rgba(201, 168, 76, 0.15);
   --btn-language: #FDFAF4;
-   --text-inverse-txt:    #2f2424;
+  --text-inverse-txt: #2f2424;
+  --background-color-img: #F5F0E4;
 }
 
 body.dark-mode {
-  --bg-body:       #121212;
-  --bg-card:       #1E1E1E; 
-  --text-main:     #FAF8F2;
-  --border-color:  rgba(255, 215, 0, 0.15);
-  --pc-shadow:     0 10px 40px rgba(0, 0, 0, 0.5);
-  --pc-border:     #444444; 
-  --pc-shadow:     0 4px 15px rgba(0, 0, 0, 0.5);
-  --bg-navbar:     #1A1A1A;
-  --bg-card:       #1E1E1E;
-  --text-muted:    #C9C9C9;
-  --text-inverse:    #1E1E1E;
+  --bg-body: #121212;
+  --bg-card: #1E1E1E;
+  --text-main: #FAF8F2;
+  --border-color: rgba(255, 215, 0, 0.15);
+  --pc-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --pc-border: #444444;
+  --pc-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  --bg-navbar: #1A1A1A;
+  --bg-card: #1E1E1E;
+  --text-muted: #C9C9C9;
+  --text-inverse: #1E1E1E;
   --btn-language: #f7e4bd;
-  --text-inverse-txt:    #f7e4bd;
+  --text-inverse-txt: #f7e4bd;
+  --background-color-img: #121212;
 }
 
 * {
@@ -47,7 +49,8 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 
   background-color: var(--bg-body) !important;
   color: var(--text-main);
@@ -60,7 +63,7 @@ html, body {
 
 .language-screen {
   // Utilise la variable globale du body définie dans styles.scss
-  background-color: var(--bg-body) !important; 
+  background-color: var(--bg-body) !important;
   min-height: 100vh;
   padding-top: 60px;
   transition: background-color 0.3s ease;
@@ -71,13 +74,13 @@ html, body {
   font-size: 1.8rem;
   font-weight: 600;
   // Utilise la variable de texte principale
-  color: var(--text-main); 
+  color: var(--text-main);
   line-height: 1.3;
 }
 
 .lang-btn {
   // Utilise la variable de fond de carte/bouton
-  background-color: var(--card-bg); 
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 14px 16px;
@@ -108,33 +111,39 @@ html, body {
 .lang-flag-wrapper {
   background-color: var(--bg-body);
   border: 1px solid var(--border-color);
-  
+
 }
+
 [dir="rtl"] {
   .form-switch {
     padding-right: 2.5em;
     padding-left: 0;
-    
+
     .form-check-input {
       margin-right: -2.5em;
       margin-left: 0;
       float: right;
     }
   }
-  
+
   .theme-switch-wrapper .ms-2 {
     margin-right: 0.5rem !important;
     margin-left: 0 !important;
   }
 }
+
 [dir="rtl"] .theme-switch-wrapper .theme-toggle-input {
-   
-    left: 77px!important;
-   
-}
-[dir="rtl"] .theme-switch-wrapper {
-   
-    padding: 11px 50px 11px 11px!important;
-   
+
+  left: 77px !important;
+
 }
 
+[dir="rtl"] .theme-switch-wrapper {
+
+  padding: 11px 50px 11px 11px !important;
+
+}
+
+.dark-mode .meat-card-image {
+  background-color: #28241b;
+}
