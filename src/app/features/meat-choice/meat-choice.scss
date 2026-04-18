@@ -60,7 +60,7 @@
 .meat-card-image {
   flex: 1;
   min-height: 160px;
-  background-color: #F5F0E4;
+  background-color: var(--background-color-img);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,6 +381,7 @@ body.dark-mode {
     background-color: #1A1A1A;
     border-color: #333;
   }
+
 }
 
 .advisor-card {
