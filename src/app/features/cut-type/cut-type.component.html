@@ -93,8 +93,8 @@
         }
       </div>
       <div class="modal-footer cube-modal-footer">
-        <button class="btn-annuler" (click)="closeCubePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
-        <button class="btn-confirmer" (click)="confirmCube()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        <button class="btn-annuler" (click)="closeCubePopup()" >{{ 'COMMON.ANNULER' | translate }}</button>
+        <button class="btn-confirmer" (click)="confirmCube()" [disabled]="!selectedCubeOption">{{ 'COMMON.CONFIRMER' | translate }}</button>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
       </div>
       <div class="modal-footer cube-modal-footer">
         <button class="btn-annuler" (click)="closeTranchePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
-        <button class="btn-confirmer" (click)="confirmTranche()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        <button class="btn-confirmer" (click)="confirmTranche()" [disabled]="!selectedTrancheOption">{{ 'COMMON.CONFIRMER' | translate }}</button>
       </div>
     </div>
   </div>
@@ -174,7 +174,7 @@
 
       <div class="modal-footer cube-modal-footer">
         <button class="btn-annuler" (click)="closeHachePopup()">{{ 'COMMON.ANNULER' | translate }}</button>
-        <button class="btn-confirmer" (click)="confirmHache()">{{ 'COMMON.CONFIRMER' | translate }}</button>
+        <button class="btn-confirmer" (click)="confirmHache()" [disabled]="selectedHacheOptions.length === 0">{{ 'COMMON.CONFIRMER' | translate }}</button>
       </div>
 
     </div>

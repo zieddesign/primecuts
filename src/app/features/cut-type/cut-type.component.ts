@@ -24,8 +24,8 @@ export class CutTypeComponent implements OnInit {
   showHachePopup = false;
 
   // ── Options sélectionnées ────────────────
-  selectedCubeOption = 'c2';
-  selectedTrancheOption = 's2';
+  selectedCubeOption = '';
+  selectedTrancheOption = '';
   selectedHacheOptions: string[] = [];
 
   // ── Types de découpe affichés ────────────
@@ -78,12 +78,15 @@ export class CutTypeComponent implements OnInit {
   selectCutType(code: string): void {
     switch (code) {
       case 'cube':
+        this.selectedCubeOption = ''; 
         this.showCubePopup = true;
         break;
       case 'tranche':
+        this.selectedTrancheOption = '';
         this.showTranchePopup = true;
         break;
       case 'hache':
+        this.selectedHacheOptions = []; 
         this.showHachePopup = true;
         break;
       case 'roulette':

@@ -404,6 +404,11 @@
   &:hover {
     background-color: #B8973E;
   }
+   &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(0.3);
+  }
 }
 
 .modal-backdrop {
